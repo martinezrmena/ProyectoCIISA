@@ -1,0 +1,3537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/">
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemCIISA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="_codCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_codAgent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_codRute" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_initials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testConnection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDiaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDiariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDiariaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaAgenteVendedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaAgenteVendedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaAgenteVendedorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaAutorizadoFirmar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaAutorizadoFirmarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaAutorizadoFirmarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaBanco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaBancoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaBancoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClasificacionCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClasificacionClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClasificacionClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCliente_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaCliente_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaCliente_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteFacturacionFaltantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteFacturacionFaltantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteFacturacionFaltantesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCompannia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCompanniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaCompanniaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCuentaCerrada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCuentaCerradaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaCuentaCerradaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoFacturacionFaltantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoFacturacionFaltantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoFacturacionFaltantesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_recarga_manualAgente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_recarga_manualAgenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFactura_recarga_manualAgenteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_inicial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_inicialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFactura_inicialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_seleccionTablas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_seleccionTablasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFactura_seleccionTablasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_recarga_diaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFactura_recarga_diariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFactura_recarga_diariaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFechaServidor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFechaServidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFechaServidorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFormaPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaFormaPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaFormaPagoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_inicial_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaInventario_inicial_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_inicial_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_inicial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_inicialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_inicialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_sincronizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_sincronizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_sincronizacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_seleccionTablas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_seleccionTablasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_seleccionTablasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_recarga_diaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_recarga_diariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_recarga_diariaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_recarga_manualAgente_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaInventario_recarga_manualAgente_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_recarga_manualAgente_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_recarga_manualAgente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInventario_recarga_manualAgenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInventario_recarga_manualAgenteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaImpresora_prueba">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaImpresora_pruebaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaImpresora_pruebaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaImpresora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaImpresoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaImpresoraResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaListaPrecios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaListaPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaListaPreciosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEmbalaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEmbalajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEmbalajeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEspecificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEspecificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEspecificacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaMotivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaMotivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaMotivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioCliente_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaPrecioCliente_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaPrecioCliente_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaPrecioClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioProducto_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaPrecioProducto_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaPrecioProducto_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPrecioProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaPrecioProductoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaProducto_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaProducto_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaProducto_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaProductoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoIva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoIvaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaTipoIvaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaExoneracion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaExoneracionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaExoneracionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaRazonesNV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaRazonesNVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaRazonesNVResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaRuta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaRutaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaRutaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSistema_prueba">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaSistema_pruebaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaSistema_pruebaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSistema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaSistemaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaSmsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSugerido_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaSugerido_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaSugerido_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSugerido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaSugeridoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaSugeridoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoIdentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoIdentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaTipoIdentificacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoTransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaTipoTransaccionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTituloComprobante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTituloComprobanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaTituloComprobanteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaVisitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisitaIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisitaIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaVisitaIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisitaFacturacionFaltantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaVisitaFacturacionFaltantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaVisitaFacturacionFaltantesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEncabezadoPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEncabezadoPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEncabezadoPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDetallePedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDetallePedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDetallePedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaFacturacionFaltantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaFacturacionFaltantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaFacturacionFaltantesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInformacionRuta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaInformacionRutaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaInformacionRutaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuento_PRUEBA">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargaDescuento_PRUEBAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDescuento_PRUEBAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDescuentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuentoPorCodigoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuentoPorCodigoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDescuentoPorCodigoClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPais">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaPaisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaPaisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaProvincia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaProvinciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaProvinciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCanton">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaCantonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaCantonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDistrito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDistritoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDistritoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoViatico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaTipoViaticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaTipoViaticoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndAnulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndAnulacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaMensajeFactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaMensajeFacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaMensajeFacturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDetalleReses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDetalleResesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDetalleResesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuentoGeneralPorCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaDescuentoGeneralPorClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaDescuentoGeneralPorClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoIndividualGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoIndividualGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoIndividualGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoFacturacionFaltantesGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaEstablecimientoFacturacionFaltantesGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaEstablecimientoFacturacionFaltantesGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteIndividualGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteIndividualGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteIndividualGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteFacturacionFaltantesGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaClienteFacturacionFaltantesGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaClienteFacturacionFaltantesGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaIndividualGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaIndividualGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaIndividualGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaFacturacionFaltantesGeo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargaIndicadorFacturaFacturacionFaltantesGeoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargaIndicadorFacturaFacturacionFaltantesGeoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="testConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:testConnection" />
+  </wsdl:message>
+  <wsdl:message name="testConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:testConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDiariaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDiaria" />
+  </wsdl:message>
+  <wsdl:message name="cargaDiariaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDiariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaAgenteVendedorSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaAgenteVendedor" />
+  </wsdl:message>
+  <wsdl:message name="cargaAgenteVendedorSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaAgenteVendedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaAutorizadoFirmarSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaAutorizadoFirmar" />
+  </wsdl:message>
+  <wsdl:message name="cargaAutorizadoFirmarSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaAutorizadoFirmarResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaBancoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaBanco" />
+  </wsdl:message>
+  <wsdl:message name="cargaBancoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaBancoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClasificacionClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClasificacionCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargaClasificacionClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClasificacionClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClaveSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClave" />
+  </wsdl:message>
+  <wsdl:message name="cargaClaveSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaCliente_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaCliente_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaCliente_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaCliente_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClienteIndividual" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteFacturacionFaltantesSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClienteFacturacionFaltantes" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteFacturacionFaltantesSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteFacturacionFaltantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaCompanniaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaCompannia" />
+  </wsdl:message>
+  <wsdl:message name="cargaCompanniaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaCompanniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaCuentaCerradaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaCuentaCerrada" />
+  </wsdl:message>
+  <wsdl:message name="cargaCuentaCerradaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaCuentaCerradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimiento" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoIndividual" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoFacturacionFaltantesSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoFacturacionFaltantes" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoFacturacionFaltantesSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoFacturacionFaltantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_recarga_manualAgenteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFactura_recarga_manualAgente" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_recarga_manualAgenteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFactura_recarga_manualAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_inicialSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFactura_inicial" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_inicialSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFactura_inicialResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_seleccionTablasSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFactura_seleccionTablas" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_seleccionTablasSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFactura_seleccionTablasResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_recarga_diariaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFactura_recarga_diaria" />
+  </wsdl:message>
+  <wsdl:message name="cargaFactura_recarga_diariaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFactura_recarga_diariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFechaServidorSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFechaServidor" />
+  </wsdl:message>
+  <wsdl:message name="cargaFechaServidorSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFechaServidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaFormaPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaFormaPago" />
+  </wsdl:message>
+  <wsdl:message name="cargaFormaPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaFormaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_inicial_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_inicial_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_inicial_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_inicial_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_inicialSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_inicial" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_inicialSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_inicialResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_sincronizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_sincronizacion" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_sincronizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_sincronizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_seleccionTablasSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_seleccionTablas" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_seleccionTablasSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_seleccionTablasResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_diariaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_diaria" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_diariaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_diariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_manualAgente_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_manualAgente_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_manualAgente_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_manualAgente_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_manualAgenteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_manualAgente" />
+  </wsdl:message>
+  <wsdl:message name="cargaInventario_recarga_manualAgenteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInventario_recarga_manualAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaImpresora_pruebaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaImpresora_prueba" />
+  </wsdl:message>
+  <wsdl:message name="cargaImpresora_pruebaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaImpresora_pruebaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaImpresoraSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaImpresora" />
+  </wsdl:message>
+  <wsdl:message name="cargaImpresoraSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaImpresoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaListaPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaListaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="cargaListaPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaListaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEmbalajeSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEmbalaje" />
+  </wsdl:message>
+  <wsdl:message name="cargaEmbalajeSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEmbalajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEspecificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEspecificacion" />
+  </wsdl:message>
+  <wsdl:message name="cargaEspecificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEspecificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaMotivoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaMotivo" />
+  </wsdl:message>
+  <wsdl:message name="cargaMotivoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaMotivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioCliente_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaPrecioCliente_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioCliente_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaPrecioCliente_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaPrecioCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaPrecioClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioProducto_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaPrecioProducto_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioProducto_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaPrecioProducto_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaPrecioProducto" />
+  </wsdl:message>
+  <wsdl:message name="cargaPrecioProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaPrecioProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaProducto_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaProducto_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaProducto_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaProducto_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaProducto" />
+  </wsdl:message>
+  <wsdl:message name="cargaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoIvaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaTipoIva" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoIvaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaTipoIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaExoneracionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaExoneracion" />
+  </wsdl:message>
+  <wsdl:message name="cargaExoneracionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaExoneracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaRazonesNVSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaRazonesNV" />
+  </wsdl:message>
+  <wsdl:message name="cargaRazonesNVSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaRazonesNVResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaRutaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaRuta" />
+  </wsdl:message>
+  <wsdl:message name="cargaRutaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaRutaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaSistema_pruebaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaSistema_prueba" />
+  </wsdl:message>
+  <wsdl:message name="cargaSistema_pruebaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaSistema_pruebaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaSistema" />
+  </wsdl:message>
+  <wsdl:message name="cargaSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaSms" />
+  </wsdl:message>
+  <wsdl:message name="cargaSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaSugerido_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaSugerido_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaSugerido_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaSugerido_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaSugeridoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaSugerido" />
+  </wsdl:message>
+  <wsdl:message name="cargaSugeridoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaSugeridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoIdentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaTipoIdentificacion" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoIdentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaTipoIdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaTipoTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaTipoTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaTituloComprobanteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaTituloComprobante" />
+  </wsdl:message>
+  <wsdl:message name="cargaTituloComprobanteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaTituloComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaVisita" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaVisitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaVisitaIndividual" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaVisitaIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaFacturacionFaltantesSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaVisitaFacturacionFaltantes" />
+  </wsdl:message>
+  <wsdl:message name="cargaVisitaFacturacionFaltantesSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaVisitaFacturacionFaltantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEncabezadoPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEncabezadoPedido" />
+  </wsdl:message>
+  <wsdl:message name="cargaEncabezadoPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEncabezadoPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDetallePedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDetallePedido" />
+  </wsdl:message>
+  <wsdl:message name="cargaDetallePedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDetallePedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFactura" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaIndividual" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaFacturacionFaltantesSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaFacturacionFaltantes" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaFacturacionFaltantesSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaFacturacionFaltantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaInformacionRutaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaInformacionRuta" />
+  </wsdl:message>
+  <wsdl:message name="cargaInformacionRutaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaInformacionRutaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuento_PRUEBASoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDescuento_PRUEBA" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuento_PRUEBASoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDescuento_PRUEBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDescuento" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDescuentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoPorCodigoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDescuentoPorCodigoCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoPorCodigoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDescuentoPorCodigoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaPaisSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaPais" />
+  </wsdl:message>
+  <wsdl:message name="cargaPaisSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaProvinciaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaProvincia" />
+  </wsdl:message>
+  <wsdl:message name="cargaProvinciaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaCantonSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaCanton" />
+  </wsdl:message>
+  <wsdl:message name="cargaCantonSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaCantonResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDistritoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDistrito" />
+  </wsdl:message>
+  <wsdl:message name="cargaDistritoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoViaticoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaTipoViatico" />
+  </wsdl:message>
+  <wsdl:message name="cargaTipoViaticoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaTipoViaticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaMensajeFacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaMensajeFactura" />
+  </wsdl:message>
+  <wsdl:message name="cargaMensajeFacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaMensajeFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDetalleResesSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDetalleReses" />
+  </wsdl:message>
+  <wsdl:message name="cargaDetalleResesSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDetalleResesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoGeneralPorClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaDescuentoGeneralPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargaDescuentoGeneralPorClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaDescuentoGeneralPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoIndividualGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoIndividualGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoIndividualGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoIndividualGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoFacturacionFaltantesGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoFacturacionFaltantesGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaEstablecimientoFacturacionFaltantesGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaEstablecimientoFacturacionFaltantesGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClienteGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteIndividualGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClienteIndividualGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteIndividualGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteIndividualGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteFacturacionFaltantesGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaClienteFacturacionFaltantesGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaClienteFacturacionFaltantesGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaClienteFacturacionFaltantesGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaIndividualGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaIndividualGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaIndividualGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaIndividualGeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaFacturacionFaltantesGeoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaFacturacionFaltantesGeo" />
+  </wsdl:message>
+  <wsdl:message name="cargaIndicadorFacturaFacturacionFaltantesGeoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargaIndicadorFacturaFacturacionFaltantesGeoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VendedorCargaSoap">
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <wsdl:input message="tns:testConnectionSoapIn" />
+      <wsdl:output message="tns:testConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDiaria">
+      <wsdl:input message="tns:cargaDiariaSoapIn" />
+      <wsdl:output message="tns:cargaDiariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaAgenteVendedor">
+      <wsdl:input message="tns:cargaAgenteVendedorSoapIn" />
+      <wsdl:output message="tns:cargaAgenteVendedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaAutorizadoFirmar">
+      <wsdl:input message="tns:cargaAutorizadoFirmarSoapIn" />
+      <wsdl:output message="tns:cargaAutorizadoFirmarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaBanco">
+      <wsdl:input message="tns:cargaBancoSoapIn" />
+      <wsdl:output message="tns:cargaBancoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClasificacionCliente">
+      <wsdl:input message="tns:cargaClasificacionClienteSoapIn" />
+      <wsdl:output message="tns:cargaClasificacionClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClave">
+      <wsdl:input message="tns:cargaClaveSoapIn" />
+      <wsdl:output message="tns:cargaClaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente_PRUEBA">
+      <wsdl:input message="tns:cargaCliente_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaCliente_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente">
+      <wsdl:input message="tns:cargaClienteSoapIn" />
+      <wsdl:output message="tns:cargaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividual">
+      <wsdl:input message="tns:cargaClienteIndividualSoapIn" />
+      <wsdl:output message="tns:cargaClienteIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantes">
+      <wsdl:input message="tns:cargaClienteFacturacionFaltantesSoapIn" />
+      <wsdl:output message="tns:cargaClienteFacturacionFaltantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaCompannia">
+      <wsdl:input message="tns:cargaCompanniaSoapIn" />
+      <wsdl:output message="tns:cargaCompanniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaCuentaCerrada">
+      <wsdl:input message="tns:cargaCuentaCerradaSoapIn" />
+      <wsdl:output message="tns:cargaCuentaCerradaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimiento">
+      <wsdl:input message="tns:cargaEstablecimientoSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividual">
+      <wsdl:input message="tns:cargaEstablecimientoIndividualSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantes">
+      <wsdl:input message="tns:cargaEstablecimientoFacturacionFaltantesSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoFacturacionFaltantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_manualAgente">
+      <wsdl:input message="tns:cargaFactura_recarga_manualAgenteSoapIn" />
+      <wsdl:output message="tns:cargaFactura_recarga_manualAgenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_inicial">
+      <wsdl:input message="tns:cargaFactura_inicialSoapIn" />
+      <wsdl:output message="tns:cargaFactura_inicialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_seleccionTablas">
+      <wsdl:input message="tns:cargaFactura_seleccionTablasSoapIn" />
+      <wsdl:output message="tns:cargaFactura_seleccionTablasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_diaria">
+      <wsdl:input message="tns:cargaFactura_recarga_diariaSoapIn" />
+      <wsdl:output message="tns:cargaFactura_recarga_diariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFechaServidor">
+      <wsdl:input message="tns:cargaFechaServidorSoapIn" />
+      <wsdl:output message="tns:cargaFechaServidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaFormaPago">
+      <wsdl:input message="tns:cargaFormaPagoSoapIn" />
+      <wsdl:output message="tns:cargaFormaPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial_PRUEBA">
+      <wsdl:input message="tns:cargaInventario_inicial_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaInventario_inicial_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial">
+      <wsdl:input message="tns:cargaInventario_inicialSoapIn" />
+      <wsdl:output message="tns:cargaInventario_inicialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_sincronizacion">
+      <wsdl:input message="tns:cargaInventario_sincronizacionSoapIn" />
+      <wsdl:output message="tns:cargaInventario_sincronizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_seleccionTablas">
+      <wsdl:input message="tns:cargaInventario_seleccionTablasSoapIn" />
+      <wsdl:output message="tns:cargaInventario_seleccionTablasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_diaria">
+      <wsdl:input message="tns:cargaInventario_recarga_diariaSoapIn" />
+      <wsdl:output message="tns:cargaInventario_recarga_diariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente_PRUEBA">
+      <wsdl:input message="tns:cargaInventario_recarga_manualAgente_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaInventario_recarga_manualAgente_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente">
+      <wsdl:input message="tns:cargaInventario_recarga_manualAgenteSoapIn" />
+      <wsdl:output message="tns:cargaInventario_recarga_manualAgenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora_prueba">
+      <wsdl:input message="tns:cargaImpresora_pruebaSoapIn" />
+      <wsdl:output message="tns:cargaImpresora_pruebaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora">
+      <wsdl:input message="tns:cargaImpresoraSoapIn" />
+      <wsdl:output message="tns:cargaImpresoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaListaPrecios">
+      <wsdl:input message="tns:cargaListaPreciosSoapIn" />
+      <wsdl:output message="tns:cargaListaPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEmbalaje">
+      <wsdl:input message="tns:cargaEmbalajeSoapIn" />
+      <wsdl:output message="tns:cargaEmbalajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEspecificacion">
+      <wsdl:input message="tns:cargaEspecificacionSoapIn" />
+      <wsdl:output message="tns:cargaEspecificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaMotivo">
+      <wsdl:input message="tns:cargaMotivoSoapIn" />
+      <wsdl:output message="tns:cargaMotivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente_PRUEBA">
+      <wsdl:input message="tns:cargaPrecioCliente_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaPrecioCliente_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente">
+      <wsdl:input message="tns:cargaPrecioClienteSoapIn" />
+      <wsdl:output message="tns:cargaPrecioClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto_PRUEBA">
+      <wsdl:input message="tns:cargaPrecioProducto_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaPrecioProducto_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto">
+      <wsdl:input message="tns:cargaPrecioProductoSoapIn" />
+      <wsdl:output message="tns:cargaPrecioProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto_PRUEBA">
+      <wsdl:input message="tns:cargaProducto_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaProducto_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto">
+      <wsdl:input message="tns:cargaProductoSoapIn" />
+      <wsdl:output message="tns:cargaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIva">
+      <wsdl:input message="tns:cargaTipoIvaSoapIn" />
+      <wsdl:output message="tns:cargaTipoIvaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaExoneracion">
+      <wsdl:input message="tns:cargaExoneracionSoapIn" />
+      <wsdl:output message="tns:cargaExoneracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaRazonesNV">
+      <wsdl:input message="tns:cargaRazonesNVSoapIn" />
+      <wsdl:output message="tns:cargaRazonesNVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaRuta">
+      <wsdl:input message="tns:cargaRutaSoapIn" />
+      <wsdl:output message="tns:cargaRutaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema_prueba">
+      <wsdl:input message="tns:cargaSistema_pruebaSoapIn" />
+      <wsdl:output message="tns:cargaSistema_pruebaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema">
+      <wsdl:input message="tns:cargaSistemaSoapIn" />
+      <wsdl:output message="tns:cargaSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaSms">
+      <wsdl:input message="tns:cargaSmsSoapIn" />
+      <wsdl:output message="tns:cargaSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido_PRUEBA">
+      <wsdl:input message="tns:cargaSugerido_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaSugerido_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido">
+      <wsdl:input message="tns:cargaSugeridoSoapIn" />
+      <wsdl:output message="tns:cargaSugeridoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIdentificacion">
+      <wsdl:input message="tns:cargaTipoIdentificacionSoapIn" />
+      <wsdl:output message="tns:cargaTipoIdentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoTransaccion">
+      <wsdl:input message="tns:cargaTipoTransaccionSoapIn" />
+      <wsdl:output message="tns:cargaTipoTransaccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaTituloComprobante">
+      <wsdl:input message="tns:cargaTituloComprobanteSoapIn" />
+      <wsdl:output message="tns:cargaTituloComprobanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisita">
+      <wsdl:input message="tns:cargaVisitaSoapIn" />
+      <wsdl:output message="tns:cargaVisitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaIndividual">
+      <wsdl:input message="tns:cargaVisitaIndividualSoapIn" />
+      <wsdl:output message="tns:cargaVisitaIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaFacturacionFaltantes">
+      <wsdl:input message="tns:cargaVisitaFacturacionFaltantesSoapIn" />
+      <wsdl:output message="tns:cargaVisitaFacturacionFaltantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEncabezadoPedido">
+      <wsdl:input message="tns:cargaEncabezadoPedidoSoapIn" />
+      <wsdl:output message="tns:cargaEncabezadoPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetallePedido">
+      <wsdl:input message="tns:cargaDetallePedidoSoapIn" />
+      <wsdl:output message="tns:cargaDetallePedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFactura">
+      <wsdl:input message="tns:cargaIndicadorFacturaSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividual">
+      <wsdl:input message="tns:cargaIndicadorFacturaIndividualSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantes">
+      <wsdl:input message="tns:cargaIndicadorFacturaFacturacionFaltantesSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaFacturacionFaltantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaInformacionRuta">
+      <wsdl:input message="tns:cargaInformacionRutaSoapIn" />
+      <wsdl:output message="tns:cargaInformacionRutaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento_PRUEBA">
+      <wsdl:input message="tns:cargaDescuento_PRUEBASoapIn" />
+      <wsdl:output message="tns:cargaDescuento_PRUEBASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento">
+      <wsdl:input message="tns:cargaDescuentoSoapIn" />
+      <wsdl:output message="tns:cargaDescuentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoPorCodigoCliente">
+      <wsdl:input message="tns:cargaDescuentoPorCodigoClienteSoapIn" />
+      <wsdl:output message="tns:cargaDescuentoPorCodigoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaPais">
+      <wsdl:input message="tns:cargaPaisSoapIn" />
+      <wsdl:output message="tns:cargaPaisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaProvincia">
+      <wsdl:input message="tns:cargaProvinciaSoapIn" />
+      <wsdl:output message="tns:cargaProvinciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaCanton">
+      <wsdl:input message="tns:cargaCantonSoapIn" />
+      <wsdl:output message="tns:cargaCantonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDistrito">
+      <wsdl:input message="tns:cargaDistritoSoapIn" />
+      <wsdl:output message="tns:cargaDistritoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoViatico">
+      <wsdl:input message="tns:cargaTipoViaticoSoapIn" />
+      <wsdl:output message="tns:cargaTipoViaticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndAnulacion">
+      <wsdl:input message="tns:cargaIndAnulacionSoapIn" />
+      <wsdl:output message="tns:cargaIndAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaMensajeFactura">
+      <wsdl:input message="tns:cargaMensajeFacturaSoapIn" />
+      <wsdl:output message="tns:cargaMensajeFacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetalleReses">
+      <wsdl:input message="tns:cargaDetalleResesSoapIn" />
+      <wsdl:output message="tns:cargaDetalleResesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoGeneralPorCliente">
+      <wsdl:input message="tns:cargaDescuentoGeneralPorClienteSoapIn" />
+      <wsdl:output message="tns:cargaDescuentoGeneralPorClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoGeo">
+      <wsdl:input message="tns:cargaEstablecimientoGeoSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividualGeo">
+      <wsdl:input message="tns:cargaEstablecimientoIndividualGeoSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoIndividualGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantesGeo">
+      <wsdl:input message="tns:cargaEstablecimientoFacturacionFaltantesGeoSoapIn" />
+      <wsdl:output message="tns:cargaEstablecimientoFacturacionFaltantesGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteGeo">
+      <wsdl:input message="tns:cargaClienteGeoSoapIn" />
+      <wsdl:output message="tns:cargaClienteGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividualGeo">
+      <wsdl:input message="tns:cargaClienteIndividualGeoSoapIn" />
+      <wsdl:output message="tns:cargaClienteIndividualGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantesGeo">
+      <wsdl:input message="tns:cargaClienteFacturacionFaltantesGeoSoapIn" />
+      <wsdl:output message="tns:cargaClienteFacturacionFaltantesGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaGeo">
+      <wsdl:input message="tns:cargaIndicadorFacturaGeoSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividualGeo">
+      <wsdl:input message="tns:cargaIndicadorFacturaIndividualGeoSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaIndividualGeoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantesGeo">
+      <wsdl:input message="tns:cargaIndicadorFacturaFacturacionFaltantesGeoSoapIn" />
+      <wsdl:output message="tns:cargaIndicadorFacturaFacturacionFaltantesGeoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VendedorCargaSoap" type="tns:VendedorCargaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/testConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDiaria">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDiaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaAgenteVendedor">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaAgenteVendedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaAutorizadoFirmar">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaAutorizadoFirmar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaBanco">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaBanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClasificacionCliente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClasificacionCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClave">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCliente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividual">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantes">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCompannia">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCompannia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCuentaCerrada">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCuentaCerrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimiento">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividual">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantes">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_manualAgente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_recarga_manualAgente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_inicial">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_inicial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_seleccionTablas">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_seleccionTablas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_diaria">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_recarga_diaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFechaServidor">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFechaServidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFormaPago">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFormaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_inicial_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_inicial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_sincronizacion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_sincronizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_seleccionTablas">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_seleccionTablas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_diaria">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_diaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_manualAgente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_manualAgente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora_prueba">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaImpresora_prueba" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaImpresora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaListaPrecios">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaListaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEmbalaje">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEmbalaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEspecificacion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEspecificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaMotivo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaMotivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioCliente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioProducto_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProducto_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIva">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoIva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaExoneracion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaExoneracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaRazonesNV">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaRazonesNV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaRuta">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema_prueba">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSistema_prueba" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSms">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSugerido_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSugerido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIdentificacion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoIdentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoTransaccion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTituloComprobante">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTituloComprobante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisita">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaIndividual">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisitaIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaFacturacionFaltantes">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisitaFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEncabezadoPedido">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEncabezadoPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetallePedido">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDetallePedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFactura">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividual">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantes">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInformacionRuta">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInformacionRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento_PRUEBA">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuento_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoPorCodigoCliente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuentoPorCodigoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPais">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProvincia">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProvincia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCanton">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCanton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDistrito">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDistrito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoViatico">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoViatico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndAnulacion">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaMensajeFactura">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaMensajeFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetalleReses">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDetalleReses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoGeneralPorCliente">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuentoGeneralPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividualGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantesGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividualGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantesGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividualGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantesGeo">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VendedorCargaSoap12" type="tns:VendedorCargaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/testConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDiaria">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDiaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaAgenteVendedor">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaAgenteVendedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaAutorizadoFirmar">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaAutorizadoFirmar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaBanco">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaBanco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClasificacionCliente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClasificacionCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClave">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCliente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCliente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividual">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantes">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCompannia">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCompannia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCuentaCerrada">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCuentaCerrada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimiento">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividual">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantes">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_manualAgente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_recarga_manualAgente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_inicial">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_inicial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_seleccionTablas">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_seleccionTablas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFactura_recarga_diaria">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFactura_recarga_diaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFechaServidor">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFechaServidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaFormaPago">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaFormaPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_inicial_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_inicial">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_inicial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_sincronizacion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_sincronizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_seleccionTablas">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_seleccionTablas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_diaria">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_diaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_manualAgente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInventario_recarga_manualAgente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInventario_recarga_manualAgente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora_prueba">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaImpresora_prueba" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaImpresora">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaImpresora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaListaPrecios">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaListaPrecios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEmbalaje">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEmbalaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEspecificacion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEspecificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaMotivo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaMotivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioCliente_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioCliente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioProducto_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPrecioProducto">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPrecioProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProducto_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProducto">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIva">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoIva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaExoneracion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaExoneracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaRazonesNV">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaRazonesNV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaRuta">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaRuta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema_prueba">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSistema_prueba" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSistema">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSms">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSugerido_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaSugerido">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaSugerido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoIdentificacion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoIdentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoTransaccion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTituloComprobante">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTituloComprobante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisita">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaIndividual">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisitaIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaVisitaFacturacionFaltantes">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaVisitaFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEncabezadoPedido">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEncabezadoPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetallePedido">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDetallePedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFactura">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividual">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantes">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaFacturacionFaltantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaInformacionRuta">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaInformacionRuta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento_PRUEBA">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuento_PRUEBA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuento">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoPorCodigoCliente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuentoPorCodigoCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaPais">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaPais" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaProvincia">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaProvincia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaCanton">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaCanton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDistrito">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDistrito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaTipoViatico">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaTipoViatico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndAnulacion">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaMensajeFactura">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaMensajeFactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDetalleReses">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDetalleReses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaDescuentoGeneralPorCliente">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaDescuentoGeneralPorCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoIndividualGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaEstablecimientoFacturacionFaltantesGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaEstablecimientoFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteIndividualGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaClienteFacturacionFaltantesGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaClienteFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaIndividualGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaIndividualGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargaIndicadorFacturaFacturacionFaltantesGeo">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/cargaIndicadorFacturaFacturacionFaltantesGeo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VendedorCarga">
+    <wsdl:port name="VendedorCargaSoap" binding="tns:VendedorCargaSoap">
+      <soap:address location="http://mobile.crciisa.com/ws-v27042017-srol-prod/VendedorCarga.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VendedorCargaSoap12" binding="tns:VendedorCargaSoap12">
+      <soap12:address location="http://mobile.crciisa.com/ws-v27042017-srol-prod/VendedorCarga.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

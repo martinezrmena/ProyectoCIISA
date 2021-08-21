@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomListview"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.Carniceria.vistaCarniceria">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniPruebaImpresion" Text="Prueba Impresion" Clicked="menu_mniPruebaImpresion_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniBloquear" Text="Bloquear" Clicked="menu_mniBloquear_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCoordenadas" Text="Coordenadas" Clicked="menu_mniCoordenadas_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="Cerrar" Text="Cerrar" Clicked="Cerrar_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout x:Name="pnlCarniceria" Margin="15" VerticalOptions="FillAndExpand">
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlCarniceria_lblCliente" Text="Cliente"/>
+                    <Label Grid.Column="1" x:Name="pnlCarniceria_lblNombreCliente" Style="{StaticResource ControlLabel}" FontAttributes="Bold"/>
+                </Grid>
+                
+                <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="110"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlCarniceria_clhEscaneado" Text="Escaneado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlCarniceria_clhCodigo" Text="Código"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlCarniceria_clhDescripcion" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlCarniceria_clhExento" Text="Fecha Escaneo"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlCarniceria_ltvBoxes" HasUnevenRows="True" ItemTapped="pnlCarniceria_ltvBoxes_ItemSelected" VerticalOptions="Fill">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="200"/>
+                                                <ColumnDefinition Width="110"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding ESCANEADO}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding CODIGO}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding DESCRIPCION}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding FECHAESCANEO}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+                <Button x:Name="btnEscribirCodigo" Text="Digitar Codigo" Clicked="btnEscribirCodigo_Clicked" Style="{StaticResource PrincipalButton}"/>
+                
+            </StackLayout>
+
+            <Grid x:Name="pnlCarniceria_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlCarniceria_stkRevert" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Revert_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="REVERTIR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCarniceria_stkScann" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ScannBoxes_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="ESCANEAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCarniceria_stkGuardar" Grid.Column="2">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Guardar_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="GUARDAR" />
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+   
+</ContentPage>

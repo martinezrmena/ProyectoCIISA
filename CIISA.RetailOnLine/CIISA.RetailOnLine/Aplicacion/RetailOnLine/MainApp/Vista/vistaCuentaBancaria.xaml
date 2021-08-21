@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaCuentaBancaria">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniBuscar" Text="Buscar" Clicked="menu_mniBuscar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+
+            <StackLayout x:Name="pnlCuentaBancaria" Margin="15" VerticalOptions="FillAndExpand">
+
+                <Grid ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlCuentaBancaria_lblNombreBanco" Style="{StaticResource ControlLabel}" Text="Nombre:"/>
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlCuentaBancaria_txtNombreBanco"/>
+                    <Button Grid.Column="2" Style="{StaticResource BackButtonStyle}" x:Name="pnlCuentaBancaria_btnBorrarBuscar" Clicked="pnlCuentaBancaria_btnBorrarBuscar_Clicked"/>
+                    <Button Grid.Column="3" Style="{StaticResource DeleteButtonStyle}" x:Name="pnlCuentaBancaria_btnLimpiarBuscar" Clicked="pnlCuentaBancaria_btnLimpiarBuscar_Clicked"/>
+                    <Button Grid.Column="4" x:Name="pnlCuentaBancaria_btnImprimir" Image="{StaticResource PrintIcon}" Clicked="pnlCuentaBancaria_btnImprimir_Clicked"/>
+                </Grid>
+                                                                                
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlCuentaBancaria_clhBanco" Text="Banco"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlCuentaBancaria_clhDescripcion" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlCuentaBancaria_clhCuenta" Text="Cuenta"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlCuentaBancaria_clhSigla" Text="Sigla"/>
+                        </Grid>
+                        <ListView x:Name="pnlCuentaBancaria_ltvCuentas" HasUnevenRows="True" ItemAppearing="pnlCuentaBancaria_ltvCuentas_ItemAppearing">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="250"/>
+                                                <ColumnDefinition Width="140"/>
+                                                <ColumnDefinition Width="70"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding BANCO}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding DESCRIPCION}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding DESCRIP_RUTERO}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding SIGLA}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+
+            <Grid x:Name="pnlCuentaBancariaOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlCuentaBancaria_stckBuscar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniBuscar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="BUSCAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCuentaBancaria_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

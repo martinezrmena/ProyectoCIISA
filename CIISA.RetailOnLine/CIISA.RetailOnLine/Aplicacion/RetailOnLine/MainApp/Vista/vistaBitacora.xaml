@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaBitacora">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="pnlBitacora"
+                             Margin="15"
+                             VerticalOptions="Center">
+                    
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="Fecha de visita: "
+                               Grid.Row="0" Grid.Column="0"/>
+                        <DatePicker x:Name="dtpFechaVisita"
+                                    Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Text="Nombre/Código del cliente: "
+                               Grid.Row="1" Grid.Column="0"/>
+                        <controls:ExtendedEntry x:Name="txbCodigoCliente"
+                                                Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="Vol de compra estimada: "
+                               Grid.Row="2" Grid.Column="0"/>
+                        <controls:ExtendedEntry x:Name="txbVolCompra"
+                                                Grid.Row="2" Grid.Column="1"
+                                                Keyboard="Numeric"/>
+
+                        <Label Text="Porcentaje Compra: "
+                               Grid.Row="3" Grid.Column="0"/>
+                        <controls:ExtendedEntry x:Name="txbPorcentajeCompra"
+                                                Grid.Row="3" Grid.Column="1" 
+                                                Keyboard="Numeric">
+                            <controls:ExtendedEntry.Behaviors>
+                                <Behaviors:JustDecimal/>
+                            </controls:ExtendedEntry.Behaviors>
+                        </controls:ExtendedEntry>
+
+                        <Label Text="Situación del Negocio: "
+                               Grid.Row="4" Grid.Column="0"/>
+                        <Picker x:Name="pkSituacionNegocio"
+                                Grid.Row="4" Grid.Column="1"/>
+
+                        <Label Text="Quejas: "
+                               Grid.Row="5" Grid.Column="0"/>
+                        <Editor x:Name="txbQuejas"
+                                Grid.Row="5" Grid.Column="1"
+                                Grid.RowSpan="2"/>
+
+                        <Label Text="Oportunidades: "
+                               Grid.Row="7" Grid.Column="0"/>
+                        <Editor x:Name="txbOportunidades"
+                                Grid.Row="7" Grid.Column="1"
+                                Grid.RowSpan="2"/>
+
+                        <Label Text="Compentencias: "
+                               Grid.Row="9" Grid.Column="0"/>
+                        <Editor x:Name="txbCompetencias"
+                                Grid.Row="9" Grid.Column="1"
+                                Grid.RowSpan="2"/>
+
+                    </Grid>
+                    <Button x:Name="btnGuardar" 
+                            Text="Guardar"
+                            Margin="0,10,0,0"
+                            Clicked="btnGuardar_Clicked"/>
+                </StackLayout>
+            </ScrollView>
+            <Grid x:Name="pnlBitacora_grdOptions"
+                  ColumnSpacing="0"
+                  VerticalOptions="EndAndExpand"
+                  Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlBitacora_Salir" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Salir_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="SALIR"  />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

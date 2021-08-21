@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaFormaPago">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregarPago" Text="PAGO" Clicked="menu_mniAgregarPago_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniFinalizar" Text="FINALIZAR" Clicked="menu_mniFinalizar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Margin="15">
+                    <StackLayout x:Name="pnlFormaPago">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" BackgroundColor="LightYellow" x:Name="pnlFormaPago_lblFormaPago" Text="Forma Pago"/>
+                            <Picker Grid.Row="0" Grid.Column="1" x:Name="pnlFormaPago_cbxFormaPago" SelectedIndexChanged="pnlFormaPago_cbxFormaPago_SelectedIndexChanged"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" BackgroundColor="LightGreen" x:Name="pnlFormaPago_lblBanco" Text="Banco" IsVisible="False"/>
+                            <Picker Grid.Row="1" Grid.Column="1" x:Name="pnlFormaPago_cbxBanco" SelectedIndexChanged="pnlFormaPago_cbxBanco_SelectedIndexChanged" IsVisible="false"/>
+                        </Grid>
+
+                        <Label x:Name="pnlFormaPago_lblCuentaDeposito" BackgroundColor="Silver" TextColor="Maroon" IsVisible="false"/>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFormaPago_lblNumTransaccion" Style="{StaticResource ControlLabel}" Text="Número" IsVisible="False"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlFormaPago_txtNumTransaccion" MaxLength="12" IsVisible="False" Keyboard="Numeric"/>
+                            <Button Grid.Row="0" Grid.Column="2" x:Name="pnlFormaPago_btnLimpiarNumero" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFormaPago_btnLimpiarNumero_Clicked"/>
+                            <Button Grid.Row="0" Grid.Column="3" x:Name="pnlFormaPago_btnBorrarNumero" Style="{StaticResource BackButtonStyle}" Clicked="pnlFormaPago_btnBorrarNumero_Clicked"/>
+                            <Button Grid.Row="0" Grid.Column="4" x:Name="pnlFormaPago_btnGuionNumero" Text="-" FontSize="Large" Clicked="pnlFormaPago_btnGuionNumero_Clicked"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource ControlLabel}" x:Name="pnlFormaPago_lblSerie" Text="Serie"/>
+                            <controls:ExtendedEntry Grid.Row="1" Grid.Column="1" x:Name="pnlFormaPago_txtSerie" MaxLength="15" Keyboard="Numeric"/>
+                            <Button Grid.Row="1" Grid.Column="2" x:Name="pnlFormaPago_btnLimpiarSerie" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFormaPago_btnLimpiarSerie_Clicked"/>
+                            <Button Grid.Row="1" Grid.Column="3" x:Name="pnlFormaPago_btnBorrarSerie" Style="{StaticResource BackButtonStyle}" Clicked="pnlFormaPago_btnBorrarSerie_Clicked"/>
+                            <Button Grid.Row="1" Grid.Column="4" x:Name="pnlFormaPago_btnGuionSerie" Text="-" FontSize="Large" Clicked="pnlFormaPago_btnGuionSerie_Clicked"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" x:Name="pnlFormaPago_lblObservacion" Style="{StaticResource ControlLabel}" Text="Nota"/>
+                            <controls:ExtendedEntry Grid.Column="1" x:Name="pnlFormaPago_txtObservacion" MaxLength="50"/>
+                            <Button Grid.Column="2" x:Name="pnlFormaPago_btnLimpiarObservacion" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFormaPago_btnLimpiarObservacion_Clicked"/>
+                            <Button Grid.Column="3" x:Name="pnlFormaPago_btnBorrarObservacion" Style="{StaticResource BackButtonStyle}" Clicked="pnlFormaPago_btnBorrarObservacion_Clicked"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" x:Name="pnlFormaPago_lblMontoPago" Style="{StaticResource ControlLabel}" Text="Monto Pago"/>
+                            <controls:ExtendedEntry Grid.Column="1" x:Name="pnlFormaPago_txtMontoPago" MaxLength="14" Keyboard="Numeric"/>
+                            <Button Grid.Column="2" x:Name="pnlFormaPago_btnLimpiarMonto" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFormaPago_btnLimpiarMonto_Clicked"/>
+                            <Button Grid.Column="3" x:Name="pnlFormaPago_btnBorrarMonto" Style="{StaticResource BackButtonStyle}" Clicked="pnlFormaPago_btnBorrarMonto_Clicked"/>
+                            <Button Grid.Column="4" x:Name="pnlFormaPago_btnPuntoDecimalMonto" Text="." Clicked="pnlFormaPago_btnPuntoDecimalMonto_Clicked"/>
+                        </Grid>
+
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="140"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="120"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlFormaPago_clhFormaPago" Text="Forma Pago"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlFormaPago_clhMonto" Text="Monto" />
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlFormaPago_clhBanco" Text="Banco"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlFormaPago_clhNumTransaccion" Text="No. Transacción"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlFormaPago_clhSerie" Text="Serie"/>
+                                </Grid>
+
+                                <ListView x:Name="pnlFormaPago_ltvPagos" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ViewCell.ContextActions>
+                                                    <MenuItem x:Name="ctxtMenu_mniEliminar" Text="Eliminar" Clicked="ctxtMenu_mniEliminar_Clicked"/>
+                                                    <MenuItem x:Name="ctxtMenu_mniEliminarTodos" Text="Eliminar Todos" Clicked="ctxtMenu_mniEliminarTodos_Clicked"/>
+                                                </ViewCell.ContextActions>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding FormaPago}" />
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Monto}"  />
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Banco}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NumeroTransaccion}" />
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Serie}" />
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button x:Name="pnlFormaPago_btnBorrarLinea" Text="Borrar Línea" Clicked="pnlFormaPago_btnBorrarLinea_Clicked"/>
+                            <Button x:Name="pnlFormaPago_btnBorrarTodos" Text="Borrar Todos" Clicked="pnlFormaPago_btnBorrarTodos_Clicked"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="pnlFormaPago_lblTotal" Text="Total:"/>
+                            <Label x:Name="pnlFormaPago_lblTotalPago" BackgroundColor="LightYellow" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" TextColor="Maroon" Text="0.00"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            
+            <Grid x:Name="pnlFormaPago_grdOptions" ColumnSpacing="0" VerticalOptions="End" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlFormaPago_stkAgregarPago" Grid.Column="0" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAgregarPago_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="PAGO" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFormaPago_stkFinalizar" Grid.Column="1" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniFinalizar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="FINALIZAR"  />
+                </StackLayout>
+            </Grid>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

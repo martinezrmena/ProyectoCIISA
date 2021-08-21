@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.CIISA.RetailOnLine" android:installLocation="auto" android:versionCode="6" android:versionName="6.6">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="30" />
+	<uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+	<uses-permission android:name="android.permission.BATTERY_STATS" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+	<uses-permission android:name="android.permission.REBOOT" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES" />
+	<uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:label="Retail On Line" android:icon="@drawable/logoCiisa">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBD61bdqeFijomNAibaYwxazIq4e2dy3K4" />
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+	</application>
+</manifest>

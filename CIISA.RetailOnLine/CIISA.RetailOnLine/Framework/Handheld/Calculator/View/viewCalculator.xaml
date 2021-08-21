@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Calculator.View.viewCalculator">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAccept" Text="Aceptar" Priority="0" Clicked="menu_mniAccept_Click"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Priority="0" Clicked="menu_mniClose_Click"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <StackLayout x:Name="pnlCalculator" VerticalOptions="FillAndExpand">
+                <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <controls:ExtendedEntry x:Name="pnlCalculator_txtResult" FontFamily="Tahoma" Keyboard="Numeric" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalTextAlignment="End"/>
+
+                    <Button x:Name="pnlCalculator_btnReduceFont" FontSize="Small" Text="Aa" Grid.Row="1" Grid.Column="0" BorderRadius="0" Clicked="pnlCalculator_btnReduceFont_Click"/>
+                    <Button x:Name="pnlCalculator_btnIncreaseFont" FontFamily="Tahoma" FontSize="Medium" Text="Aa"  Grid.Row="1" Grid.Column="1" BorderRadius="0" Clicked="pnlCalculator_btnIncreaseFont_Click"/>
+                    <Button x:Name="pnlCalculator_btnDelete" Style="{StaticResource BackButtonStyle}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BorderRadius="0" Clicked="pnlCalculator_btnDelete_Click"/>
+
+                    <Button x:Name="pnlCalculator_btnSeven" Text="7" Grid.Row="2" Grid.Column="0" BorderRadius="0" Clicked="pnlCalculator_btnSeven_Click"/>
+                    <Button x:Name="pnlCalculator_btnEight" Text="8" Grid.Row="2" Grid.Column="1" BorderRadius="0" Clicked="pnlCalculator_btnEight_Click" />
+                    <Button x:Name="pnlCalculator_btnNine" Text="9" Grid.Row="2" Grid.Column="2" BorderRadius="0" Clicked="pnlCalculator_btnNine_Click" />
+                    <Button x:Name="pnlCalculator_btnDivision" Grid.Row="2" Grid.Column="3" Text="/" BorderRadius="0" Clicked="pnlCalculator_btnDivision_Click"/>
+
+                    <Button x:Name="pnlCalculator_btnFour" Text="4" Grid.Row="3" Grid.Column="0" BorderRadius="0" Clicked="pnlCalculator_btnFour_Click"/>
+                    <Button x:Name="pnlCalculator_btnFive" Text="5" Grid.Row="3" Grid.Column="1" BorderRadius="0" Clicked="pnlCalculator_btnFive_Click"/>
+                    <Button x:Name="pnlCalculator_btnSix" Text="6" Grid.Row="3" Grid.Column="2" BorderRadius="0" Clicked="pnlCalculator_btnSix_Click"/>
+                    <Button x:Name="pnlCalculator_btnMultiplication" Text="*" Grid.Row="3" Grid.Column="3" BorderRadius="0" Clicked="pnlCalculator_btnMultiplication_Click"/>
+
+                    <Button x:Name="pnlCalculator_btnOne" Text="1" Grid.Row="4" Grid.Column="0" BorderRadius="0" Clicked="pnlCalculator_btnOne_Click"/>
+                    <Button x:Name="pnlCalculator_btnTwo" Text="2" Grid.Row="4" Grid.Column="1" BorderRadius="0" Clicked="pnlCalculator_btnTwo_Click"/>
+                    <Button x:Name="pnlCalculator_btnThree" Text="3" Grid.Row="4" Grid.Column="2" BorderRadius="0" Clicked="pnlCalculator_btnThree_Click"/>
+                    <Button x:Name="pnlCalculator_btnSubtraction" Text="-" Grid.Row="4" Grid.Column="3" BorderRadius="0" Clicked="pnlCalculator_btnSubtraction_Click"/>
+
+                    <Button x:Name="pnlCalculator_btnPoint" Grid.Row="5" Grid.Column="0" Text="." BorderRadius="0" Clicked="pnlCalculator_btnPoint_Click"/>
+                    <Button x:Name="pnlCalculator_btnZero" Text="0" Grid.Row="5" Grid.Column="1" BorderRadius="0" Grid.ColumnSpan="2" Clicked="pnlCalculator_btnZero_Click"/>
+                    <Button x:Name="pnlCalculator_btnSum" Text="+" Grid.Row="5" Grid.Column="3" BorderRadius="0" Clicked="pnlCalculator_btnSum_Click"/>
+
+                    <Button x:Name="pnlCalculator_btnResult" Text="=" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" BorderRadius="0" Clicked="pnlCalculator_btnResult_Click"/>
+                    <Button x:Name="pnlCalculator_btnInitialValue" Text="Valor Inicial" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" BorderRadius="0" Clicked="pnlCalculator_btnInitialValue_Click"/>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

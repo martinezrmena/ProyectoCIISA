@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaVisitaCantidad"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniModificar" Text="Modificar" Clicked="menu_mniModificar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCancelar" Text="Cancelar" Clicked="menu_mniCancelar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlModificarCantidad" Margin="15" VerticalOptions="FillAndExpand">
+                <Label x:Name="pnlModificarCantidad_lblProducto" Style="{StaticResource ControlLabel}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlModificarCantidad_lblComprometido" Style="{StaticResource ControlLabel}" Text="Comprometido en otras líneas"/>
+                    <Entry Grid.Column="1" x:Name="pnlModificarCantidad_txtComprometido" IsEnabled="False"/>
+                    <Label Grid.Column="2" x:Name="pnlModificarCantidad_lblComprometidoUM" Style="{StaticResource ControlLabel}"/>
+                </Grid>
+
+                <Label x:Name="label2" BackgroundColor="LightGray" Text="Disponible"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="pnlModificarCantidad_lblInventario" Style="{StaticResource ControlLabel}" Text="Inventario"/>
+                    <Entry Grid.Row="0" Grid.Column="1" x:Name="pnlModificarCantidad_txtInventario" IsEnabled="False"/>
+                    <Label Grid.Row="0" Grid.Column="2" x:Name="pnlModificarCantidad_lblInventarioUM" Style="{StaticResource ControlLabel}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" x:Name="pnlModificarCantidad_lblReal" Style="{StaticResource ControlLabel}" Text="Real"/>
+                    <Entry Grid.Row="1" Grid.Column="1" x:Name="pnlModificarCantidad_txtReal" IsEnabled="False"/>
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="pnlModificarCantidad_lblRealUM" Style="{StaticResource ControlLabel}"/>
+                    <Button Grid.Row="1" Grid.Column="3" x:Name="pnlModificarCantidad_btnAgregarReal" Text="+" Clicked="pnlModificarCantidad_btnAgregarReal_Clicked"/>
+                </Grid>
+
+                <Label x:Name="pnlModificarCantidad_lblCantidad" BackgroundColor="LightGray" Text="Nueva Cantidad"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:ExtendedEntry Grid.Column="0" x:Name="pnlModificarCantidad_txtCantidad" MaxLength="16" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustDecimal/>
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="1" x:Name="pnlModificarCantidad_btnBorrar" Style="{StaticResource BackButtonStyle}" Clicked="pnlModificarCantidad_btnBorrar_Clicked"/>
+                    <Button Grid.Column="2" x:Name="pnlModificarCantidad_btnLimpiar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlModificarCantidad_btnLimpiar_Clicked"/>
+                    <Button Grid.Column="3" x:Name="pnlModificarCantidad_btnPuntoDecimal" Text="." Clicked="pnlModificarCantidad_btnPuntoDecimal_Clicked"/>
+                </Grid>
+            </StackLayout>
+
+            <Grid x:Name="pnlModificarCantidad_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlModificarCantidad_stkModificar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniModificar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="MODIFICAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlModificarCantidad_stkCancelar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCancelar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CANCELAR"  />
+                </StackLayout>
+
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

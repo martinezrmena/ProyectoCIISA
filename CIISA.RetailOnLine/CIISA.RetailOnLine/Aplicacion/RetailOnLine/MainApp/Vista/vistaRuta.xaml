@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaRuta"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCerrarOrdenAtencion" Text="Cerrar Orden Atención" Clicked="menu_mniCerrarOrdenAtencion_Clicked"/>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniBuscar" Text="Buscar" Clicked="menu_mniBuscar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="context_Visita" Text="Ir a Visita" Clicked="context_Visita_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="context_AgregarMotivo" Text="Agregar Motivo" Clicked="context_AgregarMotivo_Clicked"/>-->
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Margin="15" x:Name="pnlCliente" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource ControlLabel}" Grid.Column="0" x:Name="pnlClientes_lblFiltro" Text="Segmento:" />
+                    <Picker Grid.Column="1" HeightRequest="60" x:Name="pnlClientes_cbxSegmento"/>
+                </Grid>
+
+                <Grid ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource ControlLabel}" Grid.Column="0" x:Name="pnlClientes_lblFiltroBusqueda"  Text="Cliente"/>
+                    <Picker Grid.Column="1" HeightRequest="60" x:Name="pnlClientes_cbxTipoBusqueda" SelectedIndexChanged="pnlClientes_cbxTipoBusqueda_SelectedIndexChanged" PropertyChanged="pnlClientes_cbxTipoBusqueda_PropertyChanged"/>
+                    <controls:ExtendedEntry Grid.Column="2" x:Name="pnlClientes_txtBuscar" MaxLength="10" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="3" x:Name="pnlClientes_btnBorrarBuscar" Style="{StaticResource BackButtonStyle}" Clicked="pnlClientes_btnBorrarBuscar_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="4" x:Name="pnlClientes_btnLimpiarBuscar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlClientes_btnLimpiarBuscar_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlClientes_clhOrden" Text="Orden"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlClientes_clhCodCliente" Text="Código" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlClientes_clhDescCliente" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlClientes_clhCodEstablecimiento" Text="Establecimiento"/>
+                            
+                        </Grid>
+
+                        <ListView x:Name="pnlClientes_ltvClientes" ItemSelected="pnlClientes_ltvClientes_ItemSelected" HasUnevenRows="True" HeightRequest="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!--<ViewCell.ContextActions>
+                                            <MenuItem x:Name="context_Visita" Text="Ir a Visita" Clicked="context_Visita_Clicked"/>
+                                            <MenuItem x:Name="context_AgregarMotivo" Text="Agregar Motivo" Clicked="context_AgregarMotivo_Clicked"/>
+                                        </ViewCell.ContextActions>-->
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="120"/>
+                                                <ColumnDefinition Width="250"/>
+                                                <ColumnDefinition Width="180"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding ORDEN}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding CODCLIENTE}" TextColor="{Binding ItemTextColor}" />
+                                            <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Grid.Column="2" Text="{Binding NOMBRE}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding CODESTABLECIMIENTO}" TextColor="{Binding ItemTextColor}"/>
+                                            
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource ControlLabel}" Grid.Column="0" x:Name="pnlClientes_lblMotivo" Text="Motivo:"/>
+                    <Picker Grid.Column="1" HeightRequest="60" x:Name="pnlClientes_cbxMotivo"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource ControlLabel}" Grid.Column="0" x:Name="pnlClientes_lblCobertura" Text="% efectividad: "/>
+                    <Label Grid.Column="1" x:Name="pnlClientes_txtCobertura" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Font="Bold" />
+                    <Button Grid.Column="2" x:Name="pnlClientes_btnCobertura" Text="Calcular" HeightRequest="60" Clicked="pnlClientes_btnCobertura_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <Label x:Name="pnlClientes_lblClienteCerrado" Style="{StaticResource ControlLabel}" Text="* Cliente cerrado." TextColor="{StaticResource RedColor}"/>
+            </StackLayout>
+
+            <Grid ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlClientes_stckBuscar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlClientes_stkBuscar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="BUSCAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlClientes_stkVisita" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlClientes_stkVisita_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="IR A VISITA"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlClientes_stckMotive" Grid.Column="2">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlClientes_stkMotive_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="AGREGAR MOTIVO" />
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

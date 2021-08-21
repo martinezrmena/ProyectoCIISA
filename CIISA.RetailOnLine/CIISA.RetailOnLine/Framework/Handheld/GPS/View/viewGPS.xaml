@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.GPS.View.viewGPS">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCoordinates" Text="Coordenadas" Priority="0" Clicked="menu_mniCoordinates_Click"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniExit" Text="Cerrar" Priority="0" Clicked="menu_mniExit_Click"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlGps" Margin="15">
+                <Label x:Name="pnlGps_lblTitulo" Text="INFORMACIÓN DE POSICIONAMIENTO" FontFamily="Tahoma" Style="{StaticResource ControlLabel}" FontSize="Medium"/>
+                <Label x:Name="pnlGps_lblStatus"/>
+                <Button x:Name="pnlGps_btnGpsStop" Text="Detener" Clicked="pnlGps_btnGpsStop_Click"/>
+                <Button x:Name="pnlGps_btnGpsStart" Text="Iniciar" Clicked="pnlGps_btnGpsStart_Click"/>
+                <Label x:Name="pnlGps_lblGps" Text="GPS" FontFamily="Tahoma"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlGpsOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlGps_stkCoordenadas" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCoordinates_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="COORDENADAS" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlGps_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniExit_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

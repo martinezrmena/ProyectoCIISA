@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaFlujoDinero">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniImprimir" Text="Imprimir" Clicked="menu_mniImprimir_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout x:Name="pnlFlujoDinero" Margin="15">
+
+                <Grid>
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFlujoDinero_lblOrdenVenta" BackgroundColor="LightBlue" Text="Orden de Venta:"/>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="pnlFlujoDinero_lblOrdenVentaMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" x:Name="pnlFlujoDinero_lblfacturaContado" BackgroundColor="LightGreen" Text="Factura Contado:"/>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="pnlFlujoDinero_lblFacturaContadoMonto" BackgroundColor="LightGreen" Text="0.00"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="pnlFlujoDinero_lblFacturaCredito" BackgroundColor="LightBlue" Text="Factura Crédito:"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="pnlFlujoDinero_lblFacturaCreditoMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" x:Name="pnlFlujoDinero_lblCotizacion" BackgroundColor="LightBlue" Text="Cotización:"/>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="pnlFlujoDinero_lblCotizacionMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" x:Name="pnlFlujoDinero_lblDevolucion" BackgroundColor="LightBlue" Text="Devolución:"/>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="pnlFlujoDinero_lblDevolucionMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" x:Name="pnlFlujoDinero_lblRegalia" BackgroundColor="LightBlue" Text="Regalía:"/>
+                    <Label Grid.Row="5" Grid.Column="1" x:Name="pnlFlujoDinero_lblRegaliaMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" x:Name="pnlFlujoDinero_lblRecaudacion" BackgroundColor="LightGreen" Text="Recaudación:"/>
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="pnlFlujoDinero_lblRecaudacionMonto" BackgroundColor="LightGreen" Text="0.00"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" x:Name="pnlFlujoDinero_lblAnulacion" BackgroundColor="LightBlue" Text="Anulación:"/>
+                    <Label Grid.Row="7" Grid.Column="1" x:Name="pnlFlujoDinero_lblAnulacionMonto" BackgroundColor="LightBlue" Text="0.00"/>
+
+                    <Label Grid.Row="8" Grid.Column="0" x:Name="pnlFlujoDinero_lblReciboDinero" BackgroundColor="LightGreen" Text="ReciboDinero:"/>
+                    <Label Grid.Row="8" Grid.Column="1" x:Name="pnlFlujoDinero_lblReciboDineroMonto" BackgroundColor="LightGreen" Text="0.00"/>
+
+                    <Label Grid.Row="9" Grid.Column="0" x:Name="pnlFlujoDinero_lblTramite" BackgroundColor="LightBlue" Text="Trámite:"/>
+                    <Label Grid.Row="9" Grid.Column="1" x:Name="pnlFlujoDinero_lblTramiteMonto" BackgroundColor="LightBlue" Text="0.00"/>
+                </Grid>
+
+                <Label x:Name="pnlFlujoDinero_lblTotales" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" Text="TOTALES"/>
+
+                <Grid>
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFlujoDinero_lblTotalEfectivo" HorizontalTextAlignment="End" BackgroundColor="Gray" Text="Efectivo:"/>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="pnlFlujoDinero_lblTotalEfectivoMonto" HorizontalTextAlignment="End" BackgroundColor="LightGray" Text="0.00"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" x:Name="pnlFlujoDinero_lblTotalCheque" HorizontalTextAlignment="End" BackgroundColor="Gray" Text="Cheque:"/>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="pnlFlujoDinero_lblTotalChequeMonto" HorizontalTextAlignment="End" BackgroundColor="LightGray" Text="0.00"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="pnlFlujoDinero_lblTotalTransferencia" HorizontalTextAlignment="End" BackgroundColor="Gray" Text="Transferencia:"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="pnlFlujoDinero_lblTotalTransferenciaMonto" HorizontalTextAlignment="End" BackgroundColor="LightGray" Text="0.00"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" x:Name="pnlFlujoDinero_lblTotalDeposito" HorizontalTextAlignment="End" BackgroundColor="Gray" Text="Deposito:"/>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="pnlFlujoDinero_lblTotalDepositoMonto" HorizontalTextAlignment="End" BackgroundColor="LightGray" Text="0.00"/>
+                </Grid>
+
+                <Label x:Name="pnlFlujoDinero_lblTotalADepositar" HorizontalTextAlignment="Center" Text="TOTAL A DEPOSITAR" FontFamily="Tahoma" FontAttributes="Bold" FontSize="Medium"/>
+                <Label x:Name="pnlFlujoDinero_lblTotalADepositarMonto" HorizontalTextAlignment="Center" TextColor="Maroon" FontFamily="Tahoma" FontAttributes="Bold" FontSize="Large" Text="0.00"/>
+                                                
+            </StackLayout>
+
+            <Grid x:Name="pnlFlujoDineroOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlFlujoDinero_stkImprimir" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniImprimir_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="IMPRIMIR"  />
+                </StackLayout>
+                
+                <StackLayout x:Name="pnlFlujoDinero_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

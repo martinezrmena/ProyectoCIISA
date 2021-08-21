@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaIndicadoresFacturacion"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_btnBuscar" Text="Buscar" Clicked="menu_btnBuscar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_btnCerrar" Text="Cerrar" Clicked="menu_btnCerrar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="MainLayout">
+                
+                <StackLayout x:Name="pnlIndicadores" Margin="15">
+                    
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="pnlIndicadores_lblCodCliente" Style="{StaticResource ControlLabel}" Text="Código:"/>
+                        <controls:ExtendedEntry Grid.Column="1" x:Name="pnlIndicadores_txtCodCliente" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <Behaviors:JustNumeric />
+                            </Entry.Behaviors>
+                        </controls:ExtendedEntry>
+                    </Grid>
+                    
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout>
+                            <Grid BackgroundColor="{StaticResource LightBlack}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="160"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlIndicadores_clhCompannia" Text="Compañía"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlIndicadores_clhCodigo" Text="Código"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlIndicadores_clhNombre" Text="Nombre"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlIndicadores_clhPedido" Text="Pedido"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlIndicadores_clhContado" Text="Contado"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlIndicadores_clhCredito" Text="Crédito"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlIndicadores_clhRespetaLimite" Text="Respeta Límite"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlIndicadores_clhCheque" Text="Cheque"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlIndicadores_clhMontoLimite" Text="Monto Límite"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlIndicadores_clhVencimiento" Text="Vencimiento"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="pnlIndicadores_clhActivo" Text="Activo"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="pnlIndicadores_clhRuta" Text="Ruta"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="12" x:Name="pnlIndicadores_clhCobrador" Text="Cobrador"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="13" x:Name="pnlIndicadores_clhGeolocalizacion" Text="Geolocalización"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="14" x:Name="pnlIndicadores_clhNumOrden" Text="Número Orden"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="15" x:Name="pnlIndicadores_clhFechaOrden" Text="Fecha Orden"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="16" x:Name="pnlIndicadores_clhNumRecepcion" Text="Número Recepción"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="17" x:Name="pnlIndicadores_clhFechaRecepcion" Text="Fecha Recepción"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="18" x:Name="pnlIndicadores_clhNumReclamo" Text="Número Reclamo"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="19" x:Name="pnlIndicadores_clhFechaReclamo" Text="Fecha Reclamo"/>
+                                <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="20" x:Name="pnlIndicadores_clhCodProveedor" Text="Código Proveedor"/>
+                            </Grid>
+                            <ListView x:Name="pnlIndicadores_ltvIndicadores" HasUnevenRows="True" ItemAppearing="pnlIndicadores_ltvIndicadores_ItemAppearing">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="300"/>
+                                                    <ColumnDefinition Width="70"/>
+                                                    <ColumnDefinition Width="90"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="130"/>
+                                                    <ColumnDefinition Width="70"/>
+                                                    <ColumnDefinition Width="60"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="160"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_CIA}" TextColor="{Binding ItemTextColor}" />
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_CLIENTE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding NOMBRE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding IND_PED}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding IND_FACCONT}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding IND_FACCRED}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding IND_RESPETA_LIMITE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding IND_CHEQUE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding MONTO_LIMITE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding IND_VENCIMIENTO}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding IND_ESTADO}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding NO_AGENTE}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="12" Text="{Binding COBRADOR}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="13" Text="{Binding IND_GEO}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="14" Text="{Binding IND_NUM_ORDEN}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="15" Text="{Binding IND_FECHA_ORDEN}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="16" Text="{Binding IND_NUM_RECEPCION}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="17" Text="{Binding IND_FECHA_RECEPCION}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="18" Text="{Binding IND_NUM_RECLAMO}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="19" Text="{Binding IND_FECHA_RECLAMO}" TextColor="{Binding ItemTextColor}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="20" Text="{Binding IND_COD_PROVEEDOR}" TextColor="{Binding ItemTextColor}"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </ScrollView>
+                    <Label x:Name="pnlIndicadores_lblClienteInactivo" Style="{StaticResource ControlLabel}" TextColor="{StaticResource RedColor}" Text="* Cliente inactivo."/>
+                </StackLayout>
+
+                <Grid x:Name="pnlIndicadoresOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout x:Name="pnlIndicadores_stckBuscar" Grid.Column="0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="menu_btnBuscar_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                        <Label Style="{StaticResource ActionLabel}" Text="BUSCAR" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="pnlIndicadores_stkCerrar" Grid.Column="1">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="menu_btnCerrar_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                        <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                    </StackLayout>
+
+                </Grid>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

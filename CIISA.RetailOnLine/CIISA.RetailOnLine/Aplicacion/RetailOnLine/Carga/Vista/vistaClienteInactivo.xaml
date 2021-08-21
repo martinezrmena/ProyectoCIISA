@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Carga.Vista.vistaClienteInactivo"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAceptar" Text="Aceptar" Clicked="menu_mniAceptar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlCliente" Margin="15">
+                <Label x:Name="pnlCliente_lblCodCliente" Text="Digite el código del Cliente:"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:ExtendedEntry Grid.Column="0" MaxLength="10" Keyboard="Numeric" x:Name="pnlClientes_txtBuscar">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="1" x:Name="pnlClientes_btnLimpiarBuscar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlClientes_btnLimpiarBuscar_Clicked"/>
+                    <Button Grid.Column="2" x:Name="pnlClientes_btnBorrarBuscar" Style="{StaticResource BackButtonStyle}" Clicked="pnlClientes_btnBorrarBuscar_Clicked"/>
+                </Grid>
+            </StackLayout>
+            
+            <Grid x:Name="pnlClienteOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlCliente_stkAceptar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAceptar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="ACEPTAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCliente_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CERRAR"  />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

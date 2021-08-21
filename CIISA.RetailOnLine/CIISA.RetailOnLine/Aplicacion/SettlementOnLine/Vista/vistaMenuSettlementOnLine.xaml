@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.SettlementOnLine.Vista.vistaMenuSettlementOnLine">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15">
+                <StackLayout x:Name="pnlLiquidadores">
+                    <Label x:Name="pnlLiquidadores_lblTitulo" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="Módulo Liquidadores"/>
+                    <Label/>
+                    <Button x:Name="pnlLiquidadores_btnDescarga" Text="Descarga" Clicked="pnlLiquidadores_btnDescarga_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnSincronizarRespaldo" Text="Descargar Respaldo" Clicked="pnlLiquidadores_btnSincronizarRespaldo_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCarga" Text="Carga" Clicked="pnlLiquidadores_btnCarga_Clicked" BorderRadius="10"/>
+                    <Button x:Name="pnlLiquidadores_btnCerradoManual" Text="Cerrado Manual (Cerrado)" Clicked="pnlLiquidadores_btnCerradoManual_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnAperturaManual" Text="Apertura Manual (Pendiente)" Clicked="pnlLiquidadores_btnAperturaManual_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="pnlLiquidadores_lblEstadoMaquina" Style="{StaticResource ControlLabel}" FontAttributes="Bold" Text="Estado Máquina:"/>
+                        <Label x:Name="pnlLiquidadores_lblCerradoAbierto" BackgroundColor="LightBlue"/>
+                    </StackLayout>
+                    <Button x:Name="pnlLiquidadores_btnDescargaConsecutivos" Text="Descarga Consecutivos" Clicked="pnlLiquidadores_btnDescargaConsecutivos_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCargaConsecutivos" Text="Carga Consecutivos" Clicked="pnlLiquidadores_btnCargaConsecutivos_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnReporteConsecutivos" Text="Reporte Consecutivos" Clicked="pnlLiquidadores_btnReporteConsecutivos_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCargaPedidos" Text="Carga Pedidos" Clicked="pnlLiquidadores_btnCargaPedidos_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Editor x:Name="pnlLiquidadores_txtDescarga" IsEnabled="False" HeightRequest="215"/>
+                    <Label x:Name="pnlLiquidadores_lblInsertando" Text="Insertando: 0\\0."/>
+                    <Button x:Name="pnlLiquidadores_btnReimpresion" Text="Reimpresion" Clicked="pnlLiquidadores_btnReimpresion_Clicked" BorderRadius="10"/>
+                    <Button x:Name="pnlLiquidadores_btnReimpresionAntiguedad" Text="Reimpresión Antigüedad" Clicked="pnlLiquidadores_btnReimpresionAntiguedad_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCargarAgente" Text="Cargar Agente" Clicked="pnlLiquidadores_btnCargarAgente_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnConsultarAgente" Text="Consultar Agente" Clicked="pnlLiquidadores_btnConsultarAgente_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Editor x:Name="pnlLiquidadores_txtAgenteVendedor" IsEnabled="False" HeightRequest="215"/>
+                    <Button x:Name="pnlLiquidadores_btnAuditoria" Text="Auditoria" Clicked="pnlLiquidadores_btnAuditoria_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCargaClienteFaltantes" Text="Carga Cliente Facturación Faltantes" Clicked="pnlLiquidadores_btnCargaClienteFaltantes_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnCargarClaves" Text="Cargar Claves" Clicked="pnlLiquidadores_btnCargarClaves_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Button x:Name="pnlLiquidadores_btnMostrarClaves" Text="Mostrar Claves" Clicked="pnlLiquidadores_btnMostrarClaves_Clicked" Style="{StaticResource PrincipalButton}"/>
+                    <Label x:Name="pnlLiquidadores_lblRespaldo" Margin="5" Text="El Respaldo de información, toma los documentos generados en la ruta y los traslada a un repositorio de respaldo y borra las tablas en uso actualmente, con ello a la vez limpia el flujo contable. El proceso no es reversible."/>
+                    <Button x:Name="pnlLiquidadores_btnRespaldo" Text="Respaldo Información" Clicked="pnlLiquidadores_btnRespaldo_Clicked" Style="{StaticResource PrincipalButton}"/>
+
+                    <Button x:Name="pnlMenu_btnFactFaltantes" Text="Facturación Faltantes" Clicked="pnlMenu_btnFactFaltantes_Clicked" Style="{StaticResource PrincipalButton}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

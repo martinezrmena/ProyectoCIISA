@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaRecibo">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniPagar" Text="Pagar" Clicked="menu_mniPagar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAbonar" Text="Abonar" Clicked="menu_mniAbonar_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCliente" Text="Cliente" Clicked="menu_mniCliente_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" x:Name="pnlAbono" Margin="15">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" x:Name="pnlAbono_lblCliente" Text="Cliente"/>
+                            <Label Grid.Column="1" x:Name="pnlAbono_lblNombreCliente"  Style="{StaticResource ControlLabel}" FontAttributes="Bold"/>
+                        </Grid>
+
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="140"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="140"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlAbono_ltvFacturas_clhNoFisico" Text="Documento">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="pnlAbono_ltvFacturas_Columna0Clicked" NumberOfTapsRequired="1"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlAbono_ltvFacturas_clhMonto" Text="Monto">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="pnlAbono_ltvFacturas_Columna1Clicked" NumberOfTapsRequired="1"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlAbono_ltvFacturas_clhMontoAbonos" Text="Abonos"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlAbono_ltvFacturas_clhSaldo" Text="Saldo"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlAbono_ltvFacturas_clhFechaDocumento" Text="Fecha Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlAbono_ltvFacturas_clhFechaVence" Text="Fecha Vence"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlAbono_ltvFacturas_clhTipoDoc" Text="Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlAbono_ltvFacturas_clhTipoDocDescripcion" Text="Tipo Documento"/>
+                                </Grid>
+                                <ListView x:Name="pnlAbono_ltvFacturas" HeightRequest="200" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ViewCell.ContextActions>
+                                                    <MenuItem x:Name="ctxMenu_factura_mniEliminar" Text="Eliminar" Clicked="ctxMenu_factura_mniEliminar_Clicked" />
+                                                    <MenuItem x:Name="ctxMenu_factura_mniEliminarTodas" Text="Eliminar Todas" Clicked="ctxMenu_factura_mniEliminarTodas_Clicked" />
+                                                </ViewCell.ContextActions>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="110"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="0"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NoFisico}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Monto}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding MontoAbono}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Saldo}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding FechaDocumento}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding FechaVencimiento}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding TipoDocumento}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding TipoDocumentoDescripcion}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Style="{StaticResource ControlLabel}" x:Name="pnlAbono_lblMontoAbono" Text="Monto"/>
+                            <controls:ExtendedEntry Grid.Column="1" x:Name="pnlAbono_txtMontoAbono" Keyboard="Numeric"/>
+                            <Button Grid.Column="2" x:Name="pnlAbono_btnBorrar" Style="{StaticResource BackButtonStyle}" Clicked="pnlAbono_btnBorrar_Clicked"/>
+                            <Button Grid.Column="3" x:Name="pnlAbono_btnLimpiar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlAbono_btnLimpiar_Clicked" />
+                            <Button Grid.Column="4" x:Name="pnlAbono_btnPuntoDecimal" FontSize="Medium" Text="." Clicked="pnlAbono_btnPuntoDecimal_Clicked"/>
+                        </Grid>
+
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="140"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="140"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlAbono_ltvPagos_clhFactura" Text="Factura"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlAbono_ltvPagos_clhAbono" Text="Abono"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlAbono_ltvPagos_clhSaldoAnterior" Text="Saldo Anterior"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlAbono_ltvPagos_clhSaldoActual" Text="Saldo Actual"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlAbono_ltvPagos_clhTipoDoc" Text="Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlAbono_ltvPagos_clhTipoDocDescripcion" Text="Tipo Documento"/>
+                                </Grid>
+                                <ListView x:Name="pnlAbono_ltvAbonos" HeightRequest="200" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ViewCell.ContextActions>
+                                                    <MenuItem x:Name="ctxMenu_abono_mniEliminar" Text="Eliminar" Clicked="ctxMenu_abono_mniEliminar_Clicked" />
+                                                    <MenuItem x:Name="ctxMenu_abono_mniEliminarTodos" Text="Eliminar Todos" Clicked="ctxMenu_abono_mniEliminarTodos_Clicked" />
+                                                </ViewCell.ContextActions>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="110"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="0"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Factura}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Abono}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding SaldoAnterior}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding SaldoActual}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding TipoDocumento}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding TipoDocumentoDescripcion}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+
+            <Grid x:Name="pnlRecibo_grdOptions" ColumnSpacing="0" VerticalOptions="End" Style="{StaticResource ControlStackLayout}" IsVisible="False" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlRecibo_stkPagar" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniPagar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="PAGAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlRecibo_stkAbonar" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Grid.Column="0" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAbonar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="ABONAR"  />
+                </StackLayout>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Display.View.viewAccessCode"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAccept" Text="Aceptar" Clicked="menu_mniAccept_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlSecurityCode" Margin="15">
+                <Image x:Name="pnlSecurityCode_ptbImage" Source="candado.png"/>
+                <Label x:Name="pnlSecurityCode_lblMessage" FontSize="Medium" TextColor="Maroon" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlSecurityCode_lblCode" Text="Código Seguridad:" HorizontalTextAlignment="Center"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:ExtendedEntry Keyboard="Numeric" Grid.Column="0" MaxLength="12" IsPassword="True" x:Name="pnlSecurityCode_txtCode">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="1" x:Name="pnlSecurityCode_btnDelete" Style="{StaticResource BackButtonStyle}" Clicked="pnlSecurityCode_btnDelete_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="2" x:Name="pnlSecurityCode_btnClean" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlSecurityCode_btnClean_Clicked" BorderRadius="10"/>
+                </Grid>
+            </StackLayout>
+
+            <Grid x:Name="pnlSecurityCodeOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlSecurityCode_stkAcceder" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAccept_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="ACEPTAR"  />
+                </StackLayout>
+                
+                <StackLayout x:Name="pnlSecurityCode_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

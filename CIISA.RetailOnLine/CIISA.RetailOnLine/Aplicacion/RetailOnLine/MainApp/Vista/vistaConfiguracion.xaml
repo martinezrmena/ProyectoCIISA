@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaConfiguracion">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <StackLayout x:Name="pnlConfiguracion">
+                <Button x:Name="pnlConfiguracion_btnPruebaImpresion" Text="Prueba Impresión" Clicked="pnlConfiguracion_btnPruebaImpresion_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

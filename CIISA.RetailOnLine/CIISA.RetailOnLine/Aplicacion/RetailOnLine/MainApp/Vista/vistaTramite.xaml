@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaTramite">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniTramitar" Text="Tramitar" Clicked="menu_mniTramitar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlTramite" Margin="15">
+                
+                <Label x:Name="pnlTramite_lblTitulo" Text="Documentos que puede tramitar:"/>
+                
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="99"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTramite_clhDocumento" Text="Documento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTramite_clhCliente" Text="Cliente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTramite_clhEstablecimiento" Text="Establecimiento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTramite_clhCreado" Text="Creado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTramite_clhEntrega" Text="Entrega"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlTramite_clhTotal" Text="Total"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlTramite_clhImpuesto" Text="Impuesto"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlTramite_clhDescuento" Text="Descuento"/>
+                        </Grid>
+                        <ListView x:Name="pnlTramite_ltvDocumentos" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="99"/>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Documento}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Cliente}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Establecimiento}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Creado}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Entrega}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding Total}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding Impuesto}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding Descuento}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <Grid x:Name="pnlTramite_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTramite_stkTramitar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniTramitar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="TRAMITAR"  />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

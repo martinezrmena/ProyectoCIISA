@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:local="clr-namespace:CIISA.RetailOnLine.Aplicacion.RetailOnLine.Carga.Helpers"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaIdentificarUsuario"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine"
+             xmlns:control="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomProgressBar"
+             BackgroundColor="{StaticResource GrayColor}">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniAcceder" Text="Acceder" Clicked="menu_mniAcceder_Clicked"/>-->
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniSalir" Text="Salir" Clicked="menu_mniSalir_Clicked"/>-->
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniLiquidadores" Text="Liquidadores" Clicked="menu_mniLiquidadores_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniPruebaImpresion" Text="Prueba Impresión" Clicked="menu_mniPruebaImpresion_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniPruebaConexion" Text="Prueba Conexión" Clicked="menu_mniPruebaConexion_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniEnergia" Text="Energía" Clicked="menu_mniEnergia_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout x:Name="pnlIdentificacion" Margin="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label x:Name="pnlIdentificacion_lblTitulo" FontFamily="Tahoma" FontAttributes="Bold" FontSize="Large" Text="RETAIL ON LINE" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+                <Image Source="logoCiisa.png"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlIdentificacion_lblIdentificacion" Text="Código:" VerticalTextAlignment="Center"/>
+
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlIdentificacion_txtIdentificacion" MaxLength="4" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+
+                    <Button Grid.Column="2" x:Name="pnlIdentificacion_btnBorrarCodigo" Style="{StaticResource BackButtonStyle}" Clicked="pnlIdentificacion_btnBorrarCodigo_Clicked" BorderRadius="10"/>
+
+                    <Button Grid.Column="3" x:Name="pnlIdentificacion_btnLimpiarCodigo" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlIdentificacion_btnLimpiarCodigo_Clicked" BorderRadius="10"/>
+
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlIdentificacion_lblContrasenna" Text="Contraseña:" VerticalTextAlignment="Center"/>
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlIdentificacion_txtContrasenna" MaxLength="6" IsPassword="True" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="2" x:Name="pnlIdentificacion_btnBorrarContrasenna" Style="{StaticResource BackButtonStyle}" Clicked="pnlIdentificacion_btnBorrarContrasenna_Clicked"  BorderRadius="10"/>
+                    <Button Grid.Column="3" x:Name="pnlIdentificacion_btnLimpiarContrasenna" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlIdentificacion_btnLimpiarContrasenna_Clicked"  BorderRadius="10"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlIdentificacion_lblCompannia" Text="Compañia:" VerticalTextAlignment="Center"/>
+                    <Picker Grid.Column="1" x:Name="pnlIdentificacion_cbxCompannia"/>
+                    <controls:CheckBox Grid.Column="2" x:Name="pnlIdentificacion_chkAperturaNocturna" DefaultText="A. Noc." CheckedChanged="pnlIdentificacion_chkAperturaNocturna_CheckedChanged"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+
+                    </Grid.ColumnDefinitions>
+                    <controls:CheckBox Grid.Column="0" x:Name="pnlIdentificacion_chkRecarga" DefaultText="Recarga" CheckedChanged="pnlIdentificacion_chkRecarga_CheckedChanged"/>
+                    <controls:ExtendedEntry Grid.Column="1"  x:Name="pnlIdentificacion_txtRecarga" MaxLength="10" IsPassword="True" IsVisible="False" Keyboard="Numeric">
+                        <!--ReadOnly = true -->
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="2" x:Name="pnlIdentificacion_btnBorrarRecarga" Style="{StaticResource BackButtonStyle}" IsVisible="False" Clicked="pnlIdentificacion_btnBorrarRecarga_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="3" x:Name="pnlIdentificacion_btnLimpiarRecarga" Style="{StaticResource DeleteButtonStyle}" IsVisible="False" Clicked="pnlIdentificacion_btnLimpiarRecarga_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <Label x:Name="pnlIdentificacion_lblVersion" Margin="0,10,0,0" VerticalOptions="EndAndExpand" BackgroundColor="LightGray" FontFamily="Tahoma" TextColor="Gray" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+
+            </StackLayout>
+
+            <StackLayout x:Name="pnlRecargaDiaria" Margin="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="pnlAvance" IsVisible="False" VerticalOptions="Start">
+                    <Label x:Name="lblEstadoCarga" Style="{StaticResource ControlLabelProceso}" FontSize="Medium"/>
+                    <control:CustomProgressBar x:Name="pgbProgresoCarga" BackgroundColor="Black"/>
+                </StackLayout>
+
+                <Label x:Name="pnlRecargaDiaria_lblTitulo" Text="Información apertura máquina:"/>
+
+                <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <local:KExtendedEditor x:Name="pnlRecargaDiaria_txtBitacora" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                </ScrollView>
+
+                <Label x:Name="pnlRecargaDiaria_lblInsertando" Text="Avance: 0\\0."/>
+
+            </StackLayout>
+
+            <Grid x:Name="pnlIdentificacion_grdOptions" ColumnSpacing="0" VerticalOptions="End" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlIdentificacion_stkAcceder" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAcceder_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="ACCEDER" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlIdentificacion_stkLiquidador" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniLiquidadores_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="LIQUIDADORES" />
+                </StackLayout>
+
+            </Grid>
+
+            <Grid x:Name="pnlRecargaDiaria_grdOptions" ColumnSpacing="0" VerticalOptions="End" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlRecargaDiaria_stkSalir" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniSalir_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="SALIR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

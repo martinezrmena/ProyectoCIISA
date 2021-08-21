@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomListview"
+             xmlns:local="clr-namespace:CIISA.RetailOnLine.Aplicacion.RetailOnLine.Carga.Helpers"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Carga.Vista.vistaCarga"
+             xmlns:control="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomProgressBar;assembly=CIISA.RetailOnLine">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniSi" Text="Sí" Clicked="menu_mniSi_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniNo" Text="No" Clicked="menu_mniNo_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="pnlAvance" IsVisible="False" VerticalOptions="Start">
+                <Label x:Name="lblEstadoCarga" Style="{StaticResource ControlLabelProceso}" FontSize="Medium"/>
+                <control:CustomProgressBar x:Name="pgbProgresoCarga" BackgroundColor="Black"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="pnlDetalle" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Label x:Name="pnlDetalle_lblInsertando" BackgroundColor="Gray" Text="Avance: 0\\0."/>
+                <Label x:Name="pnlDetalle_lblInformacion" Text="Proceso de carga de la información:"/>
+                <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <local:KExtendedEditor x:Name="pnlDetalle_txtCargaInformacion" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                </ScrollView>
+            </StackLayout>
+            
+
+            <StackLayout x:Name="pnlParametros" BackgroundColor="Lime" IsVisible="False">
+                <Label x:Name="pnlParametros_lblInformacion" BackgroundColor="LightBlue" Text="Parámetros de inicialización del sistema:"/>
+                <Grid>
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="pnlParametros_lblNombre" BackgroundColor="Gray" Text="Nombre:"/>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="pnlParametros_lblNombreInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" x:Name="pnlParametros_lblTipoRutero" BackgroundColor="Gray" Text="Tipo:"/>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="pnlParametros_lblTipoRuteroInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="pnlParametros_lblCodCompannia" BackgroundColor="Gray" Text="Código Compañia:"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="pnlParametros_lblCodCompanniaInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" x:Name="pnlParametros_lblCodRuta" BackgroundColor="Gray" Text="Código Ruta:"/>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="pnlParametros_lblCodRutaInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" x:Name="pnlParametros_lblCodAgente" BackgroundColor="Gray" Text="Código Agente:"/>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="pnlParametros_lblCodAgenteInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" x:Name="pnlParametros_lblCodCliente" BackgroundColor="Gray" Text="Código Cliente:"/>
+                    <Label Grid.Row="5" Grid.Column="1" x:Name="pnlParametros_lblCodClienteInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" x:Name="pnlParametros_lblCodSuper" BackgroundColor="Gray" Text="Código Supermercado:"/>
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="pnlParametros_lblCodSuperInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" x:Name="pnlParametros_lblCodRuteros" BackgroundColor="Gray" Text="Código Ruteros:"/>
+                    <Label Grid.Row="7" Grid.Column="1" x:Name="pnlParametros_lblCodRuterosInfo" BackgroundColor="LightGray"/>
+
+                    <Label Grid.Row="8" Grid.Column="0" x:Name="pnlParametros_lblBaseDatos" BackgroundColor="Gray" Text="Base Datos:"/>
+                    <Label Grid.Row="8" Grid.Column="1" x:Name="pnlParametros_lblBaseDatosInfo" BackgroundColor="LightGray"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout x:Name="pnlTablas">
+                <Label x:Name="pnlTablas_lblInformacion" Text="Seleccione la(s) tabla(s) a recargar:"/>
+
+                <controls:CheckBox x:Name="pnlTablas_chkTodas" DefaultText="Todas" CheckedChanged="pnlTablas_chkTodas_CheckedChanged"/>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="Tabla" Text="Tabla"/>
+                        </Grid>
+                        <ListView x:Name="pnlTablas_ltvTablas" ms:MultiSelectListView.IsMultiSelect="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ms:SelectableViewCell>
+
+                                        <ms:SelectableViewCell.DataView>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="200"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding}"/>
+                                            </Grid>
+                                        </ms:SelectableViewCell.DataView>
+
+                                    </ms:SelectableViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,1635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74FD5B66-3BEC-41D1-AD8F-93D5D62344FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CIISA.RetailOnLine</RootNamespace>
+    <AssemblyName>CIISA.RetailOnLine</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Aplicacion\AuditOnLine\Controlador\ctrlAuditoria.cs" />
+    <Compile Include="Aplicacion\AuditOnLine\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\AuditOnLine\ListViewModels\pnlInventario_ltvInventario.cs" />
+    <Compile Include="Aplicacion\AuditOnLine\Modelo\Auditoria_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\AuditOnLine\VistaControlador\ShowAuditoria.cs" />
+    <Compile Include="Aplicacion\AuditOnLine\Vista\vistaAuditoria.xaml.cs">
+      <DependentUpon>vistaAuditoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServiceConsultation.cs" />
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServiceDownload.cs" />
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServicePassedOn.cs" />
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServiceRute.cs" />
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServiceTotalDownload.cs" />
+    <Compile Include="Aplicacion\Comunication\IWSSRol\IService_WebServiceUpload.cs" />
+    <Compile Include="Aplicacion\Comunication\ProxySrol\ITestConnectionSROL.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\Controller\ctrlTomaFisica.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\ListViewModels\pnlTomaFisica_ltvInventario.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\Modelo\Inventario_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\ViewController\CerradoBackOffice.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\ViewController\CerradoHandheld.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\ViewController\ShowTomaFisica.cs" />
+    <Compile Include="Aplicacion\InventoryOnLine\_View\vistaTomaFisica.xaml.cs">
+      <DependentUpon>vistaTomaFisica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\CargaDiaria\Modelo\Carga_ManagerRecargaDiaria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaCanton.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaClasificacionCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaClave.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaCompannia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaDistrito.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaEmbalaje.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaExoneracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaFechaServidor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaInformacionRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaListaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaMensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaMotivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaPais.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaPrecioCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaProvincia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaSms.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaTipoIdentificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaTipoIva.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaTituloComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Controlador\crtPostCarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Controlador\ctrlCarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Controlador\ctrlClienteInactivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\ControladorCargaDatos\ctrlCarga_DatosTablaFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTabla.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaCanton.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaClasificacionCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaClave.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaCompannia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaDistrito.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaEmbalaje.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaExoneracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaFechaServidor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaInformacionRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaListaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaMensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaMotivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaPais.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaPrecioCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaProvincia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaSms.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaTipoIdentificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaTipoIVA.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaTituloComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\HelperCargaDatos\HelperCargaDatosTablaSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperCanton.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperClasificacionCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperClave.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperCompannia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperDistrito.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperEmbalaje.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperExoneracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperFechaServidor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperIndicadorAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperInformacionRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperListaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperMensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperMotivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperPais.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperPrecioCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperProvincia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperRecargaDatosTabla.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperSms.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperTipoIdentificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperTipoIVA.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperTituloComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\HelperVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Helpers\KExtendedEditor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Modelo\Carga_ManagerAlterTable.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Modelo\Carga_ManagerDatosTabla.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Modelo\Carga_ManagerEstablecerTabla.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\VistaControlador\GUIAvanceManual.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\VistaControlador\ShowCarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\VistaControlador\VariableCarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Vista\vistaCarga.xaml.cs">
+      <DependentUpon>vistaCarga.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Carga\Vista\vistaClienteInactivo.xaml.cs">
+      <DependentUpon>vistaClienteInactivo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Controlador\ctrConsultaTrasladosDiarios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Controlador\ctrlConsultaBitaRecarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Controlador\ctrlConsultaDocumentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Controlador\ctrlConsultaOV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Controlador\ctrlConsultaReciboRecaudacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Helpers\HelperCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Modelo\Consulta_ModeloCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\VistaControlador\ShowConsulta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaDocumentos.xaml.cs">
+      <DependentUpon>vistaConsultaDocumentos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaOV.xaml.cs">
+      <DependentUpon>vistaConsultaOV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaReciboRecaudacion.xaml.cs">
+      <DependentUpon>vistaConsultaReciboRecaudacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Controlador\ctrlDescarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\Carniceria\HelperBitacora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\Carniceria\HelperDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperDetalleAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperEncabezadoRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperFormaPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperFormaPagoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperGenerico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerDSEnvio.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerEnvio.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerGenerico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Modelo\Descarga_ManagerTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\VistaControlador\GUIDescarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\VistaControlador\ShowDescarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\VistaControlador\TipoDescarga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Descarga\Vista\vistaDescarga.xaml.cs">
+      <DependentUpon>vistaDescarga.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Constantes\TipoImpresionConst.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\Carniceria\HelperDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\Carniceria\HelperGenericoCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetalleFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperDetalleTransaccionBK.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperGenerico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperSimbologia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperTipoImpresion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Helpers\HelperTituloComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\IndFacturacionNS.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoCopiaCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoDatosCarnicero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoEncabezadoCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoLeyendaCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoMensajeEspecial.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\Carniceria\SegmentoPieCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\impTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\impTransaccionAntiguedad.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\LeyendaCopia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\originalCopias.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ProcesoImpresion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteAnulaciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteConsecutivoDocumentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteCrediticioDeLaRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteCrediticioDelCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteCuentasBancarias.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteDocumentosRealizados.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteEnLineaDocumentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteEnLineaOrdenesVenta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteEnLineaReciboRecaudacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteEnLineaTrasladosDiarios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteFlujoDinero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteIndicadoresFacturacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteInventarioAuditoria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteInventarioConExistencias.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteInventarioTeorico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\reporteInventarioTomaFisica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReportePedidosRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReportePedidosSinAplicar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteRecibosDinero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\ReporteVentasProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\ProcesoImpresion\SplitString.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoDatos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoEncabezado.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoFirma.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoLeyenda.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoNomenclatura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoPie.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoPlazo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoReimpresion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoResolucion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoSupermercados.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Impresiones\SegmentoTitulo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Carniceria\Impresion_ManagerDetalleTransaccionCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Exoneracion\Result_Exoneracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerDetalleTransaccionBK.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\Modelo\Impresion_ManagerTituloComprobante.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionAF.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionCR.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionER.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionET.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionFP.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionITF.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionRD.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\PosicionTD.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionDocumento\Tramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\InventarioAuditoria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\InventarioTeorico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepConsecutivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepCrediticioCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepCrediticioRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepCuentasBancarias.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepFacturas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepFlujoDinero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepIndicadores.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepPedidosRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\PosicionReporte\RepVentas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Impresion\VistaControlador\NumeroCopiasImpresion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\AgenteRutero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\AutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Cliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Direccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Establecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Factura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\FormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Indicador.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\Producto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\ProductoInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\ReciboDineroDetalle.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\TipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\TransaccionDetalle.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Entidades\TransaccionEncabezado.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\Carniceria\HelperDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\Carniceria\HelperMensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\Carniceria\HelperPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\Carniceria\HelperScannBox.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperCanton.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperClasificacionCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDetalleAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperDistrito.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEmbalaje.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoTransaccionBK.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperFechaServidor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperListaDePrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperMasterTable.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperMotivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperPais.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperProvincia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperSms.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperTableMaster.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperTipoIdentificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperClave.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperIndicador.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Helpers\HelperSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Carniceria\Logica_ManagerCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Carniceria\Logica_ManagerDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Carniceria\Logica_ManagerPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerAutorizadoFirmar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerBanco.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerCanton.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerClasificacionCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerClave.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDetalleAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerDistrito.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEmbalaje.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEncabezadoTransaccionBK.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerFechaServidor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerIndicador.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerIndicadorAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerListaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerMotivo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerPais.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerProvincia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerSms.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerTipoIdentificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\Modelo\Logica_ManagerVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Logica\VistaControlador\UtilLogica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Constantes\ExoneracionConst.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\Carniceria\ctrlAgregarEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\Carniceria\ctrlCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\Carniceria\ctrlDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\Carniceria\ctrlPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\Carniceria\ctrlWriteBarCode.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlAnulaciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlBitacora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlConfiguracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlCuentaBancaria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlCuentaCerrada.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlEntregaPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlFacturaElectronica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlFacturaPendiente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlFlujoDinero.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlFormaPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlIdentificarUsuario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlIndicadoresFacturacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlInventarioPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlInventarioTeorico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlMenu.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlTipoImpresion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaCantidad.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaDevolucion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaEspecificacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaRecaudacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaRegalia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\ctrlVisitaSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\DevolucionFactura\ctrlDevolucionFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Controlador\DevolucionFactura\ctrlTipoDevolucion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\AplicationData.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\BrowserView.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\Carniceria\FacturacionVisceras.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\Carniceria\HelperBitacora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\CodigoProveedor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\DevolucionFactura\HelperDetalleDocumento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\DevolucionFactura\Helper_DevolucionFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\DevolucionFactura\Helper_EncabezadoDocumento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\FacturaElectronica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\FacturaLineaCarniceria.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\LogicaFacturaElectronica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Helpers\SimulateClickGestures.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlBarcode_Reader.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlBitacoraModel.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlCarniceria_Boxes.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlEstablecimiento_ltvEstablecimientos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlFacturacionVisceras.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlPedidos_ltvPedidos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Carniceria\pnlTransacciones_ltvDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\DevolucionFactura\pnlDevolucion_ltvTiposDevolucion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Exoneracion\pnlExoneracion_ltvExoneracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlAbono_ltvAbonos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlAbono_ltvFacturas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlAnulacion_ltvAnulaciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlAnulacion_ltvIndicadorAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlAnulacion_ltvTransacciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlClientes_ltvClientes.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlCuentaBancaria_ltvCuentas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlCuentas_ltvCuentas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlFacturas_ltvFacturas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlFormaPago_ltvPagos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlIndicadores_ltvIndicadores.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlInventario_ltvProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlProductos_ltvProductos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlSugerido_ltvSugerido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlTramite_ltvDocumentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlTransacciones_ltvDocumentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\pnlTransacciones_ltvProductos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\ListviewModels\Simbologia\pnlSimbologia_ltvTiposIva.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Anulacion\LogicaAnulacionLevantarObjetos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\LogicaCarniceriaActualizar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\LogicaCarniceriaCalculos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\LogicaCarniceriaEventos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\LogicaCarniceriaGuardar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\Scanner\LogicaCarniceriaScanner.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Companias.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\DevolucionFactura\LogicaDevolucionFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\EspecificacionProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\GUIAvanceManual.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario_Carga.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario_EstadoMaquina.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario_IdentificarUsuario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario_IURender.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\IdentificarUsuario\LogicaIdentificarUsuario_Verificar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\LanzadorMenu.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\MotivoDevolucion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\MotivoRegalia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Carniceria\Scanner\IQScanningService.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\ShowSROL.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\TipoDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_DF.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_DV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_OV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_RC.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_RG.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_RJ.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\ComboTipoTransaccion\LogicaVisitaComboTT_TR.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\Guardar\LogicaVisitaGuardar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaActualizar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaBotones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaCalculos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaComboBox.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaComboTipoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaConstructor.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaContextMenu.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaEventos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaLevantarObjetos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaLtvProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaMenu.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaRender.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaValidaciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\VistaControlador\Visita\LogicaVisitaVerificaciones.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaAgregarEstablecimiento.xaml.cs">
+      <DependentUpon>vistaAgregarEstablecimiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaCarniceria.xaml.cs">
+      <DependentUpon>vistaCarniceria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaDetalleReses.xaml.cs">
+      <DependentUpon>vistaDetalleReses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaPedidos.xaml.cs">
+      <DependentUpon>vistaPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaWriteBarCode.xaml.cs">
+      <DependentUpon>vistaWriteBarCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\ClienteModificar.xaml.cs">
+      <DependentUpon>ClienteModificar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\DevolucionFactura\vistaDevolucionFactura.xaml.cs">
+      <DependentUpon>vistaDevolucionFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\DevolucionFactura\vistaTipoDevolucion.xaml.cs">
+      <DependentUpon>vistaTipoDevolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaAnulaciones.xaml.cs">
+      <DependentUpon>vistaAnulaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaBitacora.xaml.cs">
+      <DependentUpon>vistaBitacora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaConfiguracion.xaml.cs">
+      <DependentUpon>vistaConfiguracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaCuentaBancaria.xaml.cs">
+      <DependentUpon>vistaCuentaBancaria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaCuentaCerrada.xaml.cs">
+      <DependentUpon>vistaCuentaCerrada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaEntregaPedidos.xaml.cs">
+      <DependentUpon>vistaEntregaPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFacturaElectronica.xaml.cs">
+      <DependentUpon>vistaFacturaElectronica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFacturaPendiente.xaml.cs">
+      <DependentUpon>vistaFacturaPendiente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFlujoDinero.xaml.cs">
+      <DependentUpon>vistaFlujoDinero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFormaPago.xaml.cs">
+      <DependentUpon>vistaFormaPago.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaIdentificarUsuario.xaml.cs">
+      <DependentUpon>vistaIdentificarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaIndicadoresFacturacion.xaml.cs">
+      <DependentUpon>vistaIndicadoresFacturacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaInventarioPedidos.xaml.cs">
+      <DependentUpon>vistaInventarioPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaInventarioTeorico.xaml.cs">
+      <DependentUpon>vistaInventarioTeorico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaMenu.xaml.cs">
+      <DependentUpon>vistaMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaProducto.xaml.cs">
+      <DependentUpon>vistaProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaRecibo.xaml.cs">
+      <DependentUpon>vistaRecibo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaRuta.xaml.cs">
+      <DependentUpon>vistaRuta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaTipoImpresion.xaml.cs">
+      <DependentUpon>vistaTipoImpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaTramite.xaml.cs">
+      <DependentUpon>vistaTramite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisita.xaml.cs">
+      <DependentUpon>vistaVisita.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaCantidad.xaml.cs">
+      <DependentUpon>vistaVisitaCantidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaDevolucion.xaml.cs">
+      <DependentUpon>vistaVisitaDevolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaEspecificacion.xaml.cs">
+      <DependentUpon>vistaVisitaEspecificacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaRecaudacion.xaml.cs">
+      <DependentUpon>vistaVisitaRecaudacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaRegalia.xaml.cs">
+      <DependentUpon>vistaVisitaRegalia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaSugerido.xaml.cs">
+      <DependentUpon>vistaVisitaSugerido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Miscelaneos\Directorios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Miscelaneos\PantallasSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Miscelaneos\Pedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Miscelaneos\VersionROL.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Controlador\ctrlCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Controlador\ctrlNuevoCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Controlador\ctrlReporte.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Controlador\ctrlVistaPrevia.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\ListviewModels\pnlClientes_ltvClientes.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\VistaControlador\ShowPresentacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\VistaControlador\TiposDeReportes.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaCliente.xaml.cs">
+      <DependentUpon>vistaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaNuevoCliente.xaml.cs">
+      <DependentUpon>vistaNuevoCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaReporte.xaml.cs">
+      <DependentUpon>vistaReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaVistaPrevia.xaml.cs">
+      <DependentUpon>vistaVistaPrevia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\Controlador\ctrlTelefono.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\Helpers\HelperInformacionRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\ListviewModels\pnlTelefono_ltvConfiguracion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\Modelo\RadioTelefonico_ManagerInformacionRuta.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\VistaControlador\NumeroTelefonicos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\VistaControlador\ShowRadioTelefonico.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\VistaControlador\VPNMovistar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RadioTelefonico\Vista\vistaTelefono.xaml.cs">
+      <DependentUpon>vistaTelefono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCargaMenu.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_cliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_descuentos.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_descuentosGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_detallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_DetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_encabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_establecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_facturas.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_facturas_logica.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_impresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_indAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_indicadores.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_inventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_listaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_MensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_precioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_producto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_sistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Controlador\ctrlCarga_visita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Helpers\ITaskActivity.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerCliente.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerDescuento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerDescuentoGeneral.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerDetallePedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerEncabezadoPedido.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerEstablecimiento.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerImpresora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerIndicadorAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerIndicadorFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerListaPrecios.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerMensajeFactura.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerPrecioProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerProducto.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerSistema.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Modelo\Carga_ManagerVisita.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\VistaControlador\GUIRecargaManual.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\VistaControlador\ShowRecargaManual.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\RecargaManual\Vista\vistaCargaMenu.xaml.cs">
+      <DependentUpon>vistaCargaMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\Carniceria\HelperBitacora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\Carniceria\HelperDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperDetalleAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperEncabezadoRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Helpers\HelperPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerBitacora.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerDetalleAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerDetalleRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerDetalleReses.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerDetalleTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerDetalleTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerEncabezadoAnulacion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerEncabezadoRazonesNV.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerInventario.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerPago.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerPagoRecibo.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Respaldo\Modelo\Respaldo_ManagerRespaldar.cs" />
+    <Compile Include="Aplicacion\RetailOnLine\Sincronizacion\SincronizacionInformacion.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Controlador\ctrlMenuSettlementOnLine.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Controlador\ctrlReimpresion.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Controlador\ctrlReimpresionAntiguedad.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Helpers\HelperAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Helpers\HelperEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Helpers\HelperEncabezadoTramite.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Helpers\HelperEncabezadoTransaccion.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Helpers\HelperEncabezadoTransaccionBK.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\ListviewModels\pnlTransacciones_ltvTransacciones.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Modelo\Settlement_ManagerAgenteVendedor.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Modelo\Settlement_ManagerEncabezadoRecibo.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Modelo\Settlement_ManagerTramite.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Modelo\Settlement_ManagerTransaccion.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Modelo\Settlement_ManagerTransaccionBK.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\VistaController\ShowLiquidaciones.cs" />
+    <Compile Include="Aplicacion\SettlementOnLine\Vista\vistaMenuSettlementOnLine.xaml.cs">
+      <DependentUpon>vistaMenuSettlementOnLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\SettlementOnLine\Vista\vistaReimpresion.xaml.cs">
+      <DependentUpon>vistaReimpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\SettlementOnLine\Vista\vistaReimpresionAntiguedad.xaml.cs">
+      <DependentUpon>vistaReimpresionAntiguedad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Common\Character\Simbol.cs" />
+    <Compile Include="Framework\Common\Character\Space.cs" />
+    <Compile Include="Framework\Common\Compress\IMC_HH.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\OnUpdateDataBase.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableClaveNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableDetalleDocumentoNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableDetalleReciboNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableEncabezadoDocumentoNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableEncabezadoReciboNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableFacturaNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TablePrecioClienteNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableSmsNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TablesSROLNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\TableVendedorNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\TablesNAF\VistaDescuentosNAF.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableAgenteVendedor.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableAutorizadoFirmar.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableBanco.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableBitacora.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableCanton.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableClasificacionCliente.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableClave.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableCliente.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableCompannia.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableCuentaCerrada.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDescuentoGeneral.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDescuentos.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetalleAnulacion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetalleDocumento.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetallePedido.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetalleRecibo.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetalleReses.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDetalleTramite.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableDistrito.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEmbalaje.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoAnulacion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoDocumento.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoPedido.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoRazonesNV.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoRecibo.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoTramite.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEncabezadoViatico.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEspecificacion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableEstablecimiento.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableExoneracion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableFactura.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableFechaServidor.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableFormaPago.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableImpresora.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableIndicadorAnulacion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableIndicadorFactura.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableInformacionRuta.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableInventario.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableListaPrecios.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableMensajeFactura.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableMotivo.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablePagoRecibo.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablePagos.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablePais.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablePrecioCliente.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablePrecioProducto.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableProducto.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableProvincia.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableRazonesNV.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableRuta.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableSistema.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableSms.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TablesROL.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableSugerido.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTipoIdentificacion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTipoImpresion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTiposIVA.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTipoTransaccion.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTipoViatico.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableTituloComprobante.cs" />
+    <Compile Include="Framework\Common\DataBase\SROL\Tables\TableVisitas.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogDetail.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogDetailDataTable.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogDetailError.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogDetailUtils.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogException.cs" />
+    <Compile Include="Framework\Common\Feedback\Detail\LogStackTrace.cs" />
+    <Compile Include="Framework\Common\Feedback\DownTextList\LogDownTextList.cs" />
+    <Compile Include="Framework\Common\Feedback\ExceptionHH\ExceptionManager.cs" />
+    <Compile Include="Framework\Common\Feedback\FileSystem\IFileTXT.cs" />
+    <Compile Include="Framework\Common\Feedback\FileSystem\IStorage.cs" />
+    <Compile Include="Framework\Common\Feedback\HelpFB.cs" />
+    <Compile Include="Framework\Common\Feedback\Log.cs" />
+    <Compile Include="Framework\Common\Feedback\LogFiles\LogEstruture.cs" />
+    <Compile Include="Framework\Common\Feedback\LogFiles\LogTextBox.cs" />
+    <Compile Include="Framework\Common\Feedback\Message\LogMessageAttention.cs" />
+    <Compile Include="Framework\Common\Feedback\Message\LogMessageError.cs" />
+    <Compile Include="Framework\Common\Feedback\Message\LogMessageException.cs" />
+    <Compile Include="Framework\Common\Feedback\Message\LogMessages.cs" />
+    <Compile Include="Framework\Common\Feedback\Message\LogMessageSuccess.cs" />
+    <Compile Include="Framework\Common\Feedback\VarLog.cs" />
+    <Compile Include="Framework\Common\FileSystem\FileExtension.cs" />
+    <Compile Include="Framework\Common\FileSystem\FolderHH.cs" />
+    <Compile Include="Framework\Common\FileSystem\TypeCompress.cs" />
+    <Compile Include="Framework\Common\Misc\Document.cs" />
+    <Compile Include="Framework\Common\Misc\Numeric.cs" />
+    <Compile Include="Framework\Common\Misc\ROLTransactions.cs" />
+    <Compile Include="Framework\Common\Misc\SellingGroup.cs" />
+    <Compile Include="Framework\Common\Misc\SQL.cs" />
+    <Compile Include="Framework\Common\Misc\SubjectTagEmail.cs" />
+    <Compile Include="Framework\Common\Misc\TypeSlice.cs" />
+    <Compile Include="Framework\Common\Misc\TypeTransaction.cs" />
+    <Compile Include="Framework\Common\Misc\UnidadViceras.cs" />
+    <Compile Include="Framework\Common\Render\Position.cs" />
+    <Compile Include="Framework\Common\Render\RenderTextBox.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\Copy.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\Line.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\Notes.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\ReportType.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\TimeDate.cs" />
+    <Compile Include="Framework\Common\ReportGenerator\Title.cs" />
+    <Compile Include="Framework\Common\SystemInfo\Agent.cs" />
+    <Compile Include="Framework\Common\SystemInfo\COLSystem.cs" />
+    <Compile Include="Framework\Common\SystemInfo\GlobalVariables.cs" />
+    <Compile Include="Framework\Common\SystemInfo\ROLSystem.cs" />
+    <Compile Include="Framework\Common\SystemInfo\SCSystem.cs" />
+    <Compile Include="Framework\Common\SystemInfo\Sistema.cs" />
+    <Compile Include="Framework\Common\SystemInfo\SystemCIISA.cs" />
+    <Compile Include="Framework\Common\SystemInfo\Tipos_Carga.cs" />
+    <Compile Include="Framework\Common\Time\VarTime.cs" />
+    <Compile Include="Framework\Common\Utils\Utils.cs" />
+    <Compile Include="Framework\Common\ValidateHH\DataTableValidate.cs" />
+    <Compile Include="Framework\External\Behaviors\JustAlphanumeric.cs" />
+    <Compile Include="Framework\External\Behaviors\JustDecimal.cs" />
+    <Compile Include="Framework\External\Behaviors\JustNumeric.cs" />
+    <Compile Include="Framework\External\Behaviors\JustText.cs" />
+    <Compile Include="Framework\External\CustomListview\MultiSelectListView.cs" />
+    <Compile Include="Framework\External\CustomListview\SelectableItem.cs" />
+    <Compile Include="Framework\External\CustomListview\SelectableObservableCollection.cs" />
+    <Compile Include="Framework\External\CustomListview\SelectableViewCell.cs" />
+    <Compile Include="Framework\External\CustomProgressBar\CustomProgressBar.cs" />
+    <Compile Include="Framework\External\CustomTreeView\CollapsableItem.cs" />
+    <Compile Include="Framework\External\CustomTreeView\CollapsableListView.cs" />
+    <Compile Include="Framework\External\CustomTreeView\CollapsableViewCell.cs" />
+    <Compile Include="Framework\External\DeviceInformation\DeviceInformation.cs" />
+    <Compile Include="Framework\External\DeviceInformation\IBrightnessService.cs" />
+    <Compile Include="Framework\External\DeviceInformation\IService_DeviceInformation.cs" />
+    <Compile Include="Framework\External\DeviceInformation\StorageInfo.cs" />
+    <Compile Include="Framework\External\GpsThings\IGps.cs" />
+    <Compile Include="Framework\External\IAppVersion.cs" />
+    <Compile Include="Framework\External\IServicio_Aplicacion.cs" />
+    <Compile Include="Framework\External\IServicio_Phone.cs" />
+    <Compile Include="Framework\External\ResizableColumnsListView\CustomDataTemplateSelectorAN.cs" />
+    <Compile Include="Framework\External\ResizableColumnsListView\CustomDataTemplateSelectorTF.cs" />
+    <Compile Include="Framework\External\ResizableColumnsListView\TemplateContractedGridAN.xaml.cs">
+      <DependentUpon>TemplateContractedGridAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\External\ResizableColumnsListView\TemplateContractedGridTF.xaml.cs">
+      <DependentUpon>TemplateContractedGridTF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\External\ResizableColumnsListView\TemplateExpandableGridAN.xaml.cs">
+      <DependentUpon>TemplateExpandableGridAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\External\ResizableColumnsListView\TemplateExpandableGridTF.xaml.cs">
+      <DependentUpon>TemplateExpandableGridTF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\External\ResizableColumnsListView\TemplateStyles.cs" />
+    <Compile Include="Framework\External\ResizableColumnsListView\Visita\CustomDataTemplateSelectorVisita.cs" />
+    <Compile Include="Framework\External\ResizableColumnsListView\Visita\VisitaCarnicero.xaml.cs">
+      <DependentUpon>VisitaCarnicero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\External\ResizableColumnsListView\Visita\VistaRutero.xaml.cs">
+      <DependentUpon>VistaRutero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Backlight\Controller\ctrlBacklight.cs" />
+    <Compile Include="Framework\Handheld\Backlight\ViewController\BacklightSymbol.cs" />
+    <Compile Include="Framework\Handheld\Backlight\ViewController\ShowBacklight.cs" />
+    <Compile Include="Framework\Handheld\Backlight\View\viewBackLight.xaml.cs">
+      <DependentUpon>viewBackLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Calculator\Controller\ctrlCalculator.cs" />
+    <Compile Include="Framework\Handheld\Calculator\ViewController\ShowCalculator.cs" />
+    <Compile Include="Framework\Handheld\Calculator\View\viewCalculator.xaml.cs">
+      <DependentUpon>viewCalculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Connection\EstablishTable.cs" />
+    <Compile Include="Framework\Handheld\Connection\IEstablishDatabase.cs" />
+    <Compile Include="Framework\Handheld\Connection\IFillDataSet_Table.cs" />
+    <Compile Include="Framework\Handheld\Connection\IMultiGeneric.cs" />
+    <Compile Include="Framework\Handheld\Connection\OperationSQL.cs" />
+    <Compile Include="Framework\Handheld\DataBase\DBCF.cs" />
+    <Compile Include="Framework\Handheld\Display\Controller\ctrlAccessCode.cs" />
+    <Compile Include="Framework\Handheld\Display\Controller\ctrlLookScreen.cs" />
+    <Compile Include="Framework\Handheld\Display\Controller\ctrlTestDisplay.cs" />
+    <Compile Include="Framework\Handheld\Display\IMainLockScreen\IAndroidMethods.cs" />
+    <Compile Include="Framework\Handheld\Display\ViewController\ShowDisplay.cs" />
+    <Compile Include="Framework\Handheld\Display\View\viewAccessCode.xaml.cs">
+      <DependentUpon>viewAccessCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Display\View\viewLockScreen.xaml.cs">
+      <DependentUpon>viewLockScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Display\View\viewTestDisplay.xaml.cs">
+      <DependentUpon>viewTestDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Format\FormatUtil.cs" />
+    <Compile Include="Framework\Handheld\GPS\Controller\ctrlGPS.cs" />
+    <Compile Include="Framework\Handheld\GPS\ViewController\GPS_Device.cs" />
+    <Compile Include="Framework\Handheld\GPS\ViewController\GPS_Info.cs" />
+    <Compile Include="Framework\Handheld\GPS\ViewController\GUI_status.cs" />
+    <Compile Include="Framework\Handheld\GPS\ViewController\IServicioDistancia.cs" />
+    <Compile Include="Framework\Handheld\GPS\ViewController\ShowGPS.cs" />
+    <Compile Include="Framework\Handheld\GPS\View\viewGPS.xaml.cs">
+      <DependentUpon>viewGPS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\MemorySpace\Controller\ctrlMemoryState.cs" />
+    <Compile Include="Framework\Handheld\MemorySpace\ViewController\DeviceMemoryInfo.cs" />
+    <Compile Include="Framework\Handheld\MemorySpace\ViewController\DiskFreeSpace.cs" />
+    <Compile Include="Framework\Handheld\MemorySpace\ViewController\ShowMemorySpace.cs" />
+    <Compile Include="Framework\Handheld\MemorySpace\View\viewMemorySpace.xaml.cs">
+      <DependentUpon>viewMemorySpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Misc\BottonNumbers.cs" />
+    <Compile Include="Framework\Handheld\Misc\GenericIndexListView.cs" />
+    <Compile Include="Framework\Handheld\Misc\Indicators.cs" />
+    <Compile Include="Framework\Handheld\Misc\MiscUtils.cs" />
+    <Compile Include="Framework\Handheld\Misc\PaymentForm.cs" />
+    <Compile Include="Framework\Handheld\Misc\VarComboBox.cs" />
+    <Compile Include="Framework\Handheld\Misc\Variable.cs" />
+    <Compile Include="Framework\Handheld\Misc\VarOperators.cs" />
+    <Compile Include="Framework\Handheld\Power\Controller\ctrlPower.cs" />
+    <Compile Include="Framework\Handheld\Power\Controller\ctrlPower_EnergyState.cs" />
+    <Compile Include="Framework\Handheld\Power\Controller\ctrlPower_TurnOffMode.cs" />
+    <Compile Include="Framework\Handheld\Power\Controller\IBattery.cs" />
+    <Compile Include="Framework\Handheld\Power\ViewController\ShowPower.cs" />
+    <Compile Include="Framework\Handheld\Power\View\viewPower.xaml.cs">
+      <DependentUpon>viewPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Handheld\Print\Documents.cs" />
+    <Compile Include="Framework\Handheld\Print\IServicio_Impresion.cs" />
+    <Compile Include="Framework\Handheld\Print\IServicio_Print.cs" />
+    <Compile Include="Framework\Handheld\Print\Print.cs" />
+    <Compile Include="Framework\Handheld\Print\Printer.cs" />
+    <Compile Include="Framework\Handheld\Print\PrintTest.cs" />
+    <Compile Include="Framework\Handheld\Render\RenderHiden.cs" />
+    <Compile Include="Framework\Handheld\Render\RenderLabel.cs" />
+    <Compile Include="Framework\Handheld\Render\RenderPaint.cs" />
+    <Compile Include="Framework\Handheld\Render\RenderPanels.cs" />
+    <Compile Include="Framework\Handheld\Render\RenderWindows.cs" />
+    <Compile Include="Framework\Handheld\Render\StateArguments.cs" />
+    <Compile Include="Framework\Handheld\Render\StateArgumentsButton.cs" />
+    <Compile Include="Framework\Handheld\SystemHH\Controller\ctrlAbout.cs" />
+    <Compile Include="Framework\Handheld\SystemHH\ViewController\ApplicationExit.cs" />
+    <Compile Include="Framework\Handheld\SystemHH\ViewController\ShowSystemHH.cs" />
+    <Compile Include="Framework\Handheld\SystemHH\View\viewAbout.xaml.cs" />
+    <Compile Include="Framework\Handheld\Util\IReadFile.cs" />
+    <Compile Include="Framework\Handheld\Util\MainDateTime.cs" />
+    <Compile Include="Framework\Handheld\Util\Util.cs" />
+    <Compile Include="Framework\Handheld\Validate\ValidateHH.cs" />
+    <Compile Include="Framework\Server\FileSystem\FolderServer.cs" />
+    <Compile Include="Framework\Server\WS\TypeEvents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Acr.UserDialogs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Acr.UserDialogs.6.5.0\lib\netstandard1.1\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Acr.UserDialogs.6.5.0\lib\netstandard1.1\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Geolocator.Plugin, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.1.1.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Geolocator.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Geolocator.Plugin.Abstractions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.1.1.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Geolocator.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.4.0.1.5\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.1.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Messaging.5.1.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.3.0.0.12\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.1.5.180, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.1.5.180\lib\netstandard1.0\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="SignaturePad.Forms, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.Forms.2.3.0\lib\portable-net45+win+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SignaturePad.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Splat.2.0.0\lib\netstandard1.1\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\Nugets\SystemExtended\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Essentials.1.5.2\lib\netstandard1.0\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\netstandard1.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.GoogleMaps, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.GoogleMaps.3.3.0\lib\netstandard1.0\Xamarin.Forms.GoogleMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\netstandard1.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\netstandard1.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Ioc, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.IoC.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\XLabs.Ioc.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable, Version=0.16.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\ZXingNetMobile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaIdentificarUsuario.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Carga\Vista\vistaCarga.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Power\View\viewPower.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\MemorySpace\View\viewMemorySpace.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\SettlementOnLine\Vista\vistaMenuSettlementOnLine.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Display\View\viewLockScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaRuta.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaEntregaPedidos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaCuentaCerrada.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaIndicadoresFacturacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaCuentaBancaria.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisita.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaNuevoCliente.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaAnulaciones.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaCliente.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFacturaPendiente.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaSugerido.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaEspecificacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaRegalia.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaDevolucion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFormaPago.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaRecibo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaRecaudacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaTramite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\RadioTelefonico\Vista\vistaTelefono.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaInventarioTeorico.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaInventarioPedidos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaReporte.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFlujoDinero.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Descarga\Vista\vistaDescarga.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Display\View\viewAccessCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaConfiguracion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\RecargaManual\Vista\vistaCargaMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Carga\Vista\vistaClienteInactivo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\SystemHH\View\viewAbout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaOV.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaDocumentos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Consulta\Vista\vistaConsultaReciboRecaudacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\InventoryOnLine\_View\vistaTomaFisica.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\SettlementOnLine\Vista\vistaReimpresion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\SettlementOnLine\Vista\vistaReimpresionAntiguedad.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\AuditOnLine\Vista\vistaAuditoria.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaVisitaCantidad.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Backlight\View\viewBackLight.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Calculator\View\viewCalculator.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\Display\View\viewTestDisplay.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Handheld\GPS\View\viewGPS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\Presentacion\Vista\vistaVistaPrevia.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\TemplateContractedGridTF.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\TemplateExpandableGridTF.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\TemplateExpandableGridAN.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\TemplateContractedGridAN.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaFacturaElectronica.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaCarniceria.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaAgregarEstablecimiento.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaWriteBarCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\Visita\VisitaCarnicero.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\External\ResizableColumnsListView\Visita\VistaRutero.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaDetalleReses.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaBitacora.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\DevolucionFactura\vistaDevolucionFactura.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\DevolucionFactura\vistaTipoDevolucion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\Carniceria\vistaPedidos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\vistaTipoImpresion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\RetailOnLine\MainApp\Vista\ClienteModificar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

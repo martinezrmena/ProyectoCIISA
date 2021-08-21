@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaProducto">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniBuscar" Text="Buscar" Clicked="menu_mniBuscar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregar" Text="Agregar" Clicked="menu_mniAgregar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Margin="15" x:Name="pnlProductos" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Style="{StaticResource ControlLabel}" x:Name="pnlProductos_lblFiltro" Text="Filtro"/>
+                    <Picker Grid.Column="1" x:Name="pnlProductos_cbxTipoBusqueda" SelectedIndexChanged="pnlProductos_cbxTipoBusqueda_SelectedIndexChanged" PropertyChanged="pnlProductos_cbxTipoBusqueda_PropertyChanged"/>
+                    <controls:ExtendedEntry Grid.Column="2" x:Name="pnlProductos_txtBuscar" MaxLength="8" Keyboard="Numeric"/>
+                    <Button Grid.Column="3" x:Name="pnlProductos_btnBorrarBuscar" Style="{StaticResource BackButtonStyle}" Clicked="pnlProductos_btnBorrarBuscar_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="4" x:Name="pnlProductos_btnLimpiarBuscar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlProductos_btnLimpiarBuscar_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="450"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlProductos_clhDisponible" Text="Disponible"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlProductos_clhReservado" Text="Reservado" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlProductos_clhCodigo" Text="Código"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlProductos_clhDescripcion" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlProductos_clhExento" Text="Exento"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlProductos_ltvProductos" HasUnevenRows="True" HeightRequest="250" ItemSelected="pnlProductos_ltvProductos_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <!--<MenuItem x:Name="pnlProductos_ctxtMnu_Seleccionar" Text="Seleccionar" Clicked="pnlProductos_ctxtMnu_Seleccionar_Clicked"/>-->
+                                            <MenuItem x:Name="pnlProductos_ctxtMnu_mitAyuda" Text="Ayuda" Clicked="pnlProductos_ctxtMnu_mitAyuda_Clicked"/>
+                                        </ViewCell.ContextActions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="450"/>
+                                                <ColumnDefinition Width="0"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Disponible}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Reservado}" />
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Codigo}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Descripcion}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Exento}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="pnlProductos_lblEspecificacion" Style="{StaticResource ControlLabel}" Text="Especificación"/>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="pnlProductos_lblEmbalaje" Style="{StaticResource ControlLabel}" Text="Embalaje"/>
+                    <Button Grid.Row="0" Grid.Column="2" x:Name="pnlProductos_btnInventarioPedidos" Text="P" Clicked="pnlProductos_btnInventarioPedidos_Clicked" BorderRadius="10"/>
+
+                    <Picker Grid.Row="1" Grid.Column="0"  x:Name="pnlProductos_cbxEspecificacion" SelectedIndexChanged="pnlProductos_cbxEspecificacion_SelectedIndexChanged"/>
+                    <Picker Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlProductos_cbxEmbalaje"/>
+
+                    <controls:ExtendedEntry Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" x:Name="pnlProductos_txtEspecificacion" IsEnabled="False" MaxLength="256"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="pnlProductos_lblCantidadProducto" Style="{StaticResource ControlLabel}" Text="Cantidad"/>
+                    <Button Grid.Row="2" Grid.Column="2" x:Name="pnlProductos_btnCopiarCantidad" BackgroundColor="Gray" Text="K" Clicked="pnlProductos_btnCopiarCantidad_Clicked" BorderRadius="10"/>
+
+                    <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="45"/>
+                        </Grid.ColumnDefinitions>
+                        <controls:ExtendedEntry Grid.Column="0" x:Name="pnlProductos_txtCantidad" MaxLength="7" Keyboard="Numeric" Focused="pnlProductos_txtCantidad_Focused">
+                            <Entry.Behaviors>
+                                <Behaviors:JustDecimal/>
+                            </Entry.Behaviors>
+                        </controls:ExtendedEntry>
+                        <Button Grid.Column="1" x:Name="pnlProductos_btnBorrarCantidad" Style="{StaticResource BackButtonStyle}" Clicked="pnlProductos_btnBorrarCantidad_Clicked" BorderRadius="10"/>
+                        <Button Grid.Column="2" x:Name="pnlProductos_btnPuntoDecimal" Text="." Clicked="pnlProductos_btnPuntoDecimal_Clicked" BorderRadius="10"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+
+            <Grid x:Name="pnlProductosOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlProductos_stkBuscar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlProductos_stkBuscar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="BUSCAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlProductos_stkSeleccionar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlProductos_stkSeleccionar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="AGREGAR"  />
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

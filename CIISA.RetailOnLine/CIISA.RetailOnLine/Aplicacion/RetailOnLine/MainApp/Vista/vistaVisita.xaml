@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaVisita"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine"
+             xmlns:ui="clr-namespace:CIISA.RetailOnLine.Framework.External.ResizableColumnsListView.Visita">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCambiarCliente" Text="Cambiar Cliente" Clicked="menu_mniCambiarCliente_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniSugerido" Text="Sugerido" Clicked="menu_mniSugerido_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniFactura" Text="Facturas" Clicked="menu_mniFactura_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniPruebaImpresion" Text="Prueba Impresion" Clicked="menu_mniPruebaImpresion_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCargaPedido" Text="Carga Pedido" Clicked="menu_mniCargaPedido_Clicked"/>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniBloquear" Text="Bloquear" Clicked="menu_mniBloquear_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniFacturaManual" Text="Factura Manual" Clicked="menu_mniFacturaManual_Clicked" />
+        <ToolbarItem Order="Secondary" x:Name="menu_mniTipoDevolucion" Text="Cambiar Tipo Devolución" Clicked="menu_mniTipoDevolucion_Clicked" />
+        <ToolbarItem Order="Secondary" x:Name="menu_mniDevolucionFactura" Text="Devolución Factura" Clicked="menu_mniDevolucionFactura_Clicked" />
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCoordenadas" Text="Coordenadas" Clicked="menu_mniCoordenadas_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_GoogleMaps" Text="Google Maps" Clicked="menu_GoogleMaps_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_Waze" Text="Waze" Clicked="menu_Waze_Clicked"/>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniGuardar" Text="Guardar" Clicked="menu_mniGuardar_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="Cerrar" Text="Cerrar" Clicked="Cerrar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ui:CustomDataTemplateSelectorVisita x:Key="CustomDataTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15" Spacing="3" x:Name="pnlTransacciones" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlTransacciones_lblCliente" Text="Cliente"/>
+                    <ScrollView  Grid.Column="1" Orientation="Vertical">
+                        <Label x:Name="pnlTransacciones_lblNombreCliente" Style="{StaticResource ControlLabel}" FontAttributes="Bold"/>
+                    </ScrollView>
+                    <Button Grid.Column="2" x:Name="ctxMenu_cliente" BackgroundColor="SteelBlue" Text="CM" Clicked="ctxMenu_cliente_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <Grid ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlTransacciones_lblTipoTransaccion" Style="{StaticResource ControlLabel}" Text="Tipo"/>
+                    <Picker Grid.Column="1" x:Name="pnlTransacciones_cbxTipoTransaccion" SelectedIndexChanged="pnlTransacciones_cbxTipoTransaccion_SelectedIndexChanged"/>
+                    <Button Grid.Column="2" x:Name="pnlTransacciones_btnEliminar" Style="{StaticResource BackButtonStyle}" Clicked="pnlTransacciones_btnEliminar_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="3" x:Name="pnlTransacciones_btnEliminarTodos" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlTransacciones_btnEliminarTodos_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="4" x:Name="pnlTransacciones_btnCalcularMontoLinea" Text="CML" Clicked="pnlTransacciones_btnCalcularMontoLinea_Clicked" BorderRadius="10"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid x:Name="pnlVisitaGridTransacciones" BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTransacciones_clhCodigo" Text="Código">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTransacciones_clhCantidad" Text="Cantidad" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTransacciones_clhDescripcion" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTransacciones_clhPrecio" Text="Precio"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTransacciones_clhExento" Text="Exento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlTransacciones_clhImpuesto" Text="Impuesto"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlTransacciones_clhDescuento" Text="Descuento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlTransacciones_clhPorcDescuento" Text="Porcentaje"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlTransacciones_clhMontDescuento" Text="Monto"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlTransacciones_clhComentarios" Text="Comentarios"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="pnlTransacciones_clhMotivo" Text="Motivo"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="pnlTransacciones_clhEstado" Text="Estado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="12" x:Name="pnlTransacciones_clhDisponible" Text="Disponible"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="13" x:Name="pnlTransacciones_clhEmbalaje" Text="Embalaje"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="14" x:Name="pnlTransacciones_clhViceras" Text="Víscera"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="15" x:Name="pnlTransacciones_clhTipoPorcion" Text="Tipo Porción"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlTransacciones_ltvProductos" 
+                                  HasUnevenRows="True" HeightRequest="300" 
+                                  ItemSelected="pnlTransacciones_ltvProductos_ItemSelected" 
+                                  ItemTapped="pnlTransacciones_ltvProductos_ItemTapped" 
+                                  ItemTemplate="{StaticResource CustomDataTemplateSelector}"/>
+
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid ColumnSpacing="3" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Grid.Row="0" x:Name="pnlTransacciones_btnMotivo" Text="Motivo" Clicked="pnlTransacciones_btnMotivo_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="1" Grid.Row="0" x:Name="pnlTransacciones_btnEspecificacion" Text="Especificación" Clicked="pnlTransacciones_btnEspecificacion_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="2" Grid.Row="0" x:Name="pnlTransacciones_btnDetalleReses" Text="D. Reses" Clicked="pnlTransacciones_btnDetalleReses_Clicked" BorderRadius="10"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                        <Label x:Name="pnlTransacciones_lblCreditoDisponible" BackgroundColor="LightBlue" Text="D ¢"/>
+                        <Label x:Name="pnlTransacciones_lblCreditoDisponibleMonto" BackgroundColor="LightBlue" Text="0.00"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                        <Label x:Name="pnlTransacciones_lblTotal" BackgroundColor="LightYellow" Text="T ¢"/>
+                        <Label x:Name="pnlTransacciones_lblTotalMonto" BackgroundColor="LightYellow" TextColor="Maroon" Text="0.00"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            
+            <Grid x:Name="pnlTransacciones_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTransacciones_stkLock" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniBloquear_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="BLOQUEAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlTransacciones_stkGuardar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniGuardar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="GUARDAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

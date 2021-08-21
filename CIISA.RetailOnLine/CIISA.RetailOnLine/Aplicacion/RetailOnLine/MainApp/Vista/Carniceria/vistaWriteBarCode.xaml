@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+    x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.Carniceria.vistaWriteBarCode">
+
+    <StackLayout x:Name="pnlWriteBarCode" Spacing="10" Margin="15" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label x:Name="lblTitle" HorizontalOptions="FillAndExpand" FontSize="Large" Style="{StaticResource ControlLabel}"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="lblCodigo" Text="Código: "/>
+            <controls:ExtendedEntry Grid.Column="1" Grid.Row="0" x:Name="txbCodigo" Keyboard="Numeric" MaxLength="14"/>
+        </Grid>
+        <Label x:Name="lblFormato" Text="Formato: (XXXXXXXXXXXXXX) 14 digitos." HorizontalTextAlignment="Center"/>
+
+        <StackLayout >
+            <Button x:Name="btnAceptar" Style="{StaticResource PrincipalButton}" Text="Aceptar" Clicked="btnAceptar_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+    
+</pages:PopupPage>

@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Messaging</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Messaging.EmailAttachment">
+            <inheritdoc />
+        </member>
+        <member name="M:Plugin.Messaging.EmailAttachment.#ctor(System.String,System.String)">
+            <summary>
+                Create new attachment
+            </summary>
+            <param name="filePath">Full file path to attachment</param>
+            <param name="contentType">Content type for the attachement</param>
+        </member>
+        <member name="P:Plugin.Messaging.EmailAttachment.ContentType">
+            <inheritdoc />
+        </member>
+        <member name="P:Plugin.Messaging.EmailAttachment.FileName">
+            <inheritdoc />
+        </member>
+        <member name="P:Plugin.Messaging.EmailAttachment.FilePath">
+            <inheritdoc />
+        </member>
+        <member name="T:Plugin.Messaging.EmailMessage">
+            <summary>
+                Email used for sending e-mails.
+            </summary>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessage.#ctor(System.String)">
+            <summary>
+                Create new email request
+            </summary>
+            <param name="to">Email recipient</param>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessage.#ctor(System.String,System.String,System.String)">
+            <summary>
+                Create new email request
+            </summary>
+            <param name="to">Email recipient</param>
+            <param name="subject">Email subject</param>
+            <param name="message">Email message</param>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessage.#ctor">
+            <summary>
+                Constructor used by the <see cref="T:Plugin.Messaging.EmailMessageBuilder"/>
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.Message">
+            <summary>
+                Email message body.
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.IsHtml">
+            <summary>
+                Gets or set a value indicating whether the <see cref="P:Plugin.Messaging.EmailMessage.Message"/> is HTML content
+                or plain text.
+            </summary>
+            <remarks>
+                HTML content type is only supported on Android and iOS platforms
+            </remarks>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.Attachments">
+            <summary>
+                List of attachments.
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.Recipients">
+            <summary>
+                List of To recipients
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.RecipientsBcc">
+            <summary>
+                List of Bcc recipients
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.RecipientsCc">
+            <summary>
+                List of Cc recipients
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.EmailMessage.Subject">
+            <summary>
+                Email subject
+            </summary>
+        </member>
+        <member name="T:Plugin.Messaging.EmailMessageBuilder">
+            <summary>
+                Builder pattern for constructing a <see cref="T:Plugin.Messaging.EmailMessage" />
+            </summary>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.#ctor">
+            <summary>
+                Create instance of message builder to construct e-mail message
+            </summary>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Bcc(System.String)">
+            <summary>
+                Add <paramref name="bcc"/> to Bcc recipients of e-mail message
+            </summary>
+            <param name="bcc">Email address of recipient to Bcc on e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Bcc(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Add <paramref name="bcc"/> to Bcc recipients of e-mail message
+            </summary>
+            <param name="bcc">Email addresses of recipient to Bcc on e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Body(System.String)">
+            <summary>
+                Set the body (text) of the e-mail message
+            </summary>
+            <param name="body">Text of the e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.BodyAsHtml(System.String)">
+            <summary>
+                Set the body (text) of the e-mail message as HTML snippet
+            </summary>
+            <param name="htmlBody">Html text of the e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.WithAttachment(System.String,System.String)">
+            <remarks>On Windows, apps cannot access files by <paramref name="filePath"/> unless they reside in <see cref="T:Windows.Storage.ApplicationData"/>. To attach any other file, use
+            <see cref="M:Plugin.Messaging.EmailMessageBuilder.WithAttachment(Windows.Storage.IStorageFile)"/> overload.
+            </remarks>            
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.WithAttachment(Windows.Storage.IStorageFile)">
+            <summary>
+                Add the <paramref name="file"/> as an attachment
+            </summary>
+            <param name="file">File to attach</param>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Build">
+            <summary>
+                Create instance of <see cref="T:Plugin.Messaging.IEmailMessage"/>
+            </summary>
+            <returns>New <see cref="T:Plugin.Messaging.IEmailMessage"/></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Cc(System.String)">
+            <summary>
+                Add <paramref name="cc"/> to Cc recipients of e-mail message
+            </summary>
+            <param name="cc">Email address of recipient to Cc on e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Cc(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Add <paramref name="cc"/> to Cc recipients of e-mail message
+            </summary>
+            <param name="cc">Email addresses of recipient to Cc on e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.Subject(System.String)">
+            <summary>
+                Set the subject of the e-mail message
+            </summary>
+            <param name="subject">Subject of the e-mail message</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.To(System.String)">
+            <summary>
+                Add <paramref name="to"/> to To recipients of e-mail message
+            </summary>
+            <param name="to">Email address of recipient to send e-mail message to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Messaging.EmailMessageBuilder.To(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Add <paramref name="to"/> to To recipients of e-mail message
+            </summary>
+            <param name="to">Email addresses of recipients to send e-mail message to</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Messaging.CrossMessaging">
+            <summary>
+            Cross platform Messaging implementation
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.CrossMessaging.IsSupported">
+            <summary>
+            Gets if the plugin is supported on the current platform.
+            </summary>
+        </member>
+        <member name="P:Plugin.Messaging.CrossMessaging.Current">
+            <summary>
+                Get singleton <see cref="T:Plugin.Messaging.IMessaging"/> instance
+            </summary>
+        </member>
+    </members>
+</doc>

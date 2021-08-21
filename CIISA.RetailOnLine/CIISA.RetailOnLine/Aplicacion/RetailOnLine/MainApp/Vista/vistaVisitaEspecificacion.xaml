@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaVisitaEspecificacion">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregar" Text="Agregar" Clicked="menu_mniAgregar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCancelar" Text="Cancelar" Clicked="menu_mniCancelar_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+
+            <StackLayout x:Name="pnlEspecificacion">
+
+                <Label Style="{StaticResource ControlLabel}" x:Name="pnlEspecificacion_lblProducto" FontSize="Medium"/>
+
+                <Label Style="{StaticResource ControlLabel}" FontAttributes="Bold" x:Name="pnlEspecificacion_lblEspecificacion" Text="Especificación"/>
+
+                <Picker x:Name="pnlEspecificacion_cbxEmbalaje"/>
+
+                <controls:ExtendedEntry x:Name="pnlEspecificacion_txtEspecificacion" MaxLength="250" HeightRequest="100"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Style="{StaticResource ControlLabel}" x:Name="pnlEspecificacion_lblPresentacion" Text="Presentación:"/>
+                    <Picker Grid.Column="1" x:Name="pnlEspecificacion_cbxEspecificacion" SelectedIndexChanged="pnlEspecificacion_cbxEspecificacion_SelectedIndexChanged"/>
+                    <Label Grid.Column="2" Style="{StaticResource ControlLabel}" x:Name="pnlEspecificacion_lblKGS" Text="KGS"/>
+                </Grid>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

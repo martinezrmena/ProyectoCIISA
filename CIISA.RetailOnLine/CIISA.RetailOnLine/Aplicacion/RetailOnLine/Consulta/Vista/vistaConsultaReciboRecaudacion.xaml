@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomTreeView"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Consulta.Vista.vistaConsultaReciboRecaudacion">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniConsultar" Text="Consultar" Clicked="menu_mniConsultar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout x:Name="pnlConsultaDocumentos" Margin="15">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="pnlConsultaDocumentos_lblConsulta" Style="{StaticResource ControlLabel}" Text="Consulta días anteriores:"/>
+                    <Label x:Name="VisualStepper" Text="0" FontSize="Medium" TextColor="Blue" VerticalTextAlignment="Center"/>
+                    <Stepper x:Name="pnlConsultaDocumentos_nudConsulta" Value="0" Minimum="0" Increment="1" ValueChanged="pnlConsultaDocumentos_nudConsulta_ValueChanged"/>
+                </StackLayout>
+
+                <Label x:Name="pnlConsultaDocumentos_lblPedidos" Style="{StaticResource ControlLabel}"  Text="Documentos actuales en CIISA:"/>
+                <ListView x:Name="pnlConsultaDocumentos_trvDocumentos" HasUnevenRows="True" ms:CollapsableListView.IsCollapsable ="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <ms:CollapsableViewCell />
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Label x:Name="label1" Style="{StaticResource ControlLabel}" Text="No. Factura/Monto/Saldo"/>
+                <Button x:Name="pnlConsultaDocumentos_btnImprimir" Text="Imprimir" Clicked="pnlConsultaDocumentos_btnImprimir_Clicked"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="pnlConsultaDocumentos_btnPruebaConexion" Text="Prueba Conexión" Clicked="pnlConsultaDocumentos_btnPruebaConexion_Clicked"/>
+                    <Button x:Name="pnlConsultaDocumentos_btnNomenclatura" Text="Nomenclatura" Clicked="pnlConsultaDocumentos_btnNomenclatura_Clicked"/>
+                </StackLayout>
+
+                <Label x:Name="pnlConsultaDocumentos_lblCantidadOV" Style="{StaticResource ControlLabel}" />
+
+            </StackLayout>
+
+            <Grid x:Name="pnlConsultaDocumentosOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlConsultaDocumentos_stkConsultar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniConsultar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CONSULTAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlConsultaDocumentos_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.External.ResizableColumnsListView.TemplateContractedGridAN">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="65"/>
+        </Grid.ColumnDefinitions>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Estilo}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Codigo}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Descripcion}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Cantidad}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Disponible}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding Auditado}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding Diferencia}"/>
+    </Grid>
+
+</ViewCell>

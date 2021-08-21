@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaInventarioTeorico">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniMenu_mniInventarioTeorico" Text="Inventario Teórico" Clicked="menu_mniMenu_mniInventarioTeorico_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniMenu_mniInventarioDisponible" Text="Inventario Disponible" Clicked="menu_mniMenu_mniInventarioDisponible_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Margin="15" x:Name="pnlInventario">
+
+                <Label x:Name="pnlInventario_lblTitulo" Text="Productos:"/>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="clhCompannia" Text="Compañia"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="clhAgente" Text="Agente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="clhFechaToma" Text="Fecha Toma"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="clhCodigoProducto" Text="Código Producto"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="clhCantidad" Text="Cantidad"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="clhVentas" Text="Ventas"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="clhDevolucionesBuenas" Text="Devoluciones Buenas"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="clhDevolucionesMalas" Text="Devoluciones Malas"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="clhRegalias" Text="Regalías"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="clhAnulaciones" Text="Anulaciones"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="clhAnulacionesBuenas" Text="Anulaciones Buenas"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="clhAnulacionesMalas" Text="Anulaciones Malas"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="12" x:Name="clhDisponible" Text="Disponible"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="13" x:Name="clhFechaCreacion" Text="Fecha Creación"/>
+                        </Grid>
+                        <ListView x:Name="pnlInventario_ltvProducto" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="20"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="90"/>
+                                                <ColumnDefinition Width="90"/>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition Width="140"/>
+                                                <ColumnDefinition Width="140"/>
+                                                <ColumnDefinition Width="90"/>
+                                                <ColumnDefinition Width="130"/>
+                                                <ColumnDefinition Width="130"/>
+                                                <ColumnDefinition Width="130"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="0"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Compannia}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Agente}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding FechaToma}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding CodigoProducto}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Cantidad}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding Ventas}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding DevolucionesBuenas}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding DevolucionesMalas}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding Regalias}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding Anulaciones}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding AnulacionesBuenas}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding AnulacionesMalas}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="12" Text="{Binding Disponible}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="13" Text="{Binding FechaCreación}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+
+            <Grid VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlInventario_stkInventarioTeorico" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniMenu_mniInventarioTeorico_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="INV. TEÓRICO" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlInventario_stkInventarioDisponible" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniMenu_mniInventarioDisponible_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="INV. DISPONIBLE"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlInventario_stkCerrar" Grid.Column="2">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

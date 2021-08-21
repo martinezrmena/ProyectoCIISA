@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaVisitaDevolucion">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregar" Text="Agregar" Clicked="menu_mniAgregar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCancelar" Text="Cancelar" Clicked="menu_mniCancelar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15" x:Name="pnlDevolucion" IsVisible="False">
+
+                <Label Style="{StaticResource ControlLabel}" FontAttributes="Bold" FontSize="Medium" x:Name="pnlDevolucion_lblProducto"/>
+                <Label BackgroundColor="SkyBlue" TextColor="White" FontFamily="Tahoma" FontAttributes="Bold" x:Name="pnlDevolucion_lblMotivo" Text="Motivo Devolución (descripción del estado del producto)"/>
+                <Picker x:Name="pnlDevolucion_cbxMotivo"/>
+                <Label Style="{StaticResource ControlLabel}" FontAttributes="Bold" x:Name="pnlDevolucion_lblEstado" Text="Estado del producto"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:CustomRadioButton Grid.Column="0" BackgroundColor="{StaticResource DarkGray}" TextColor="{StaticResource WhiteColor}" x:Name="pnlDevolucion_rdbBueno" Text="Bueno (ingresa al inventario)" PropertyChanged="pnlDevolucion_rdbBueno_PropertyChanged"/>
+                    <controls:CustomRadioButton Grid.Column="1" BackgroundColor="{StaticResource DarkGray}" TextColor="{StaticResource WhiteColor}" x:Name="pnlDevolucion_rdbMalo" Text="Malo (no ingresa al inventario)" PropertyChanged="pnlDevolucion_rdbMalo_PropertyChanged"/>
+                </Grid>
+                <Label Style="{StaticResource ControlLabel}" FontAttributes="Bold" x:Name="pnlDevolucion_lblComentario" Text="Comentario"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <controls:ExtendedEntry Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" MaxLength="250" HeightRequest="100" x:Name="pnlDevolucion_txtComentario"/>
+                    <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource DeleteButtonStyle}" x:Name="pnlDevolucion_btnLimpiarBuscar" Clicked="pnlDevolucion_btnLimpiarBuscar_Clicked" BorderRadius="10"/>
+                </Grid>
+            </StackLayout>
+
+            <Grid x:Name="pnlDevolucion_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlDevolucion_stkAgregar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAgregar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="AGREGAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlDevolucion_stkCancelar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCancelar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CANCELAR"  />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

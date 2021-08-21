@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+        xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+        xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine"
+        x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaFacturaElectronica">
+
+    <StackLayout BackgroundColor="White" Margin="15" Padding="10" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+        <ScrollView>
+            <StackLayout Spacing="10" VerticalOptions="StartAndExpand">
+
+                <Label x:Name="pnlFacturaElectronicalblTitle" HorizontalOptions="FillAndExpand" FontSize="Large" Style="{StaticResource ControlLabel}"/>
+
+                <StackLayout x:Name="pnlFacturaElectronicaProveedor" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblNumeroProveedor" Style="{StaticResource ControlLabel}" Text="Código Proveedor:"/>
+                        <Picker Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicaPickNumeroProveedor"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaNumeroOrdenCompra" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblOrdenCompra" Style="{StaticResource ControlLabel}" Text="Número Orden:"/>
+                        <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicatxtOrdenCompra">
+                            <Entry.Behaviors>
+                                <Behaviors:JustAlphanumeric/>
+                            </Entry.Behaviors>
+                        </controls:ExtendedEntry>
+                        <Button Grid.Row="0" Grid.Column="2" x:Name="pnlFacturaElectronica_btnEliminarOrdenCompra" Style="{StaticResource BackButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarOrdenCompra_Clicked"/>
+                        <Button Grid.Row="0" Grid.Column="3" x:Name="pnlFacturaElectronica_btnEliminarTodosOrdenCompra" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarTodosOrdenCompra_Clicked"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaFechaOrdenCompra" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblFechaOrden" Style="{StaticResource ControlLabel}" Text="Fecha Orden:"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicadtpFechaOrden" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaNumeroRecibo" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblOrdenRecibo" Style="{StaticResource ControlLabel}" Text="Número Recibo:"/>
+                        <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicatxtOrdenRecibo" >
+                            <Entry.Behaviors>
+                                <Behaviors:JustAlphanumeric/>
+                            </Entry.Behaviors>
+                        </controls:ExtendedEntry>
+                        <Button Grid.Row="0" Grid.Column="2" x:Name="pnlFacturaElectronica_btnEliminarNumeroRecibo" Style="{StaticResource BackButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarNumeroRecibo_Clicked"/>
+                        <Button Grid.Row="0" Grid.Column="3" x:Name="pnlFacturaElectronica_btnEliminarTodosNumeroRecibo" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarTodosNumeroRecibo_Clicked"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaFechaRecibo" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblFechaRecibo" Style="{StaticResource ControlLabel}" Text="Fecha Recibo:"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicadtpFechaRecibo"  IsEnabled="False"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaNumeroReclamo" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblReclamo" Style="{StaticResource ControlLabel}" Text="Número Reclamo:"/>
+                        <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicatxtReclamo">
+                            <Entry.Behaviors>
+                                <Behaviors:JustAlphanumeric/>
+                            </Entry.Behaviors>
+                        </controls:ExtendedEntry>
+                        <Button Grid.Row="0" Grid.Column="2" x:Name="pnlFacturaElectronica_btnEliminarNumeroReclamo" Style="{StaticResource BackButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarNumeroReclamo_Clicked"/>
+                        <Button Grid.Row="0" Grid.Column="3" x:Name="pnlFacturaElectronica_btnEliminarTodosNumeroReclamo" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlFacturaElectronica_btnEliminarTodosNumeroReclamo_Clicked"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaElectronicaFechaReclamo" IsVisible="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" x:Name="pnlFacturaElectronicalblFechaReclamo" Style="{StaticResource ControlLabel}" Text="Fecha Reclamo:"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" x:Name="pnlFacturaElectronicadtpFechaReclamo"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout >
+                    <Button x:Name="pnlFacturaElectronicabtnGuardar" Text="Guardar" Clicked="pnlFacturaElectronicabtnGuardar_Clicked"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+
+</pages:PopupPage>

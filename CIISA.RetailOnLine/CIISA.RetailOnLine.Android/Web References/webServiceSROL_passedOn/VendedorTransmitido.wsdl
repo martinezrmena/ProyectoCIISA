@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/">
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemCIISA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="_codCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_codAgent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_codRute" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_initials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testConnection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaOrdenesVentaTransmitidas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdia" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaOrdenesVentaTransmitidasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultaOrdenesVentaTransmitidasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaDocumentosTransmitidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdia" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaDocumentosTransmitidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultaDocumentosTransmitidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaRecibosRecaudacionesTransmitidas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="psystemCIISA" type="tns:SystemCIISA" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdia" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaRecibosRecaudacionesTransmitidasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultaRecibosRecaudacionesTransmitidasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="testConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:testConnection" />
+  </wsdl:message>
+  <wsdl:message name="testConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:testConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaOrdenesVentaTransmitidasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultaOrdenesVentaTransmitidas" />
+  </wsdl:message>
+  <wsdl:message name="consultaOrdenesVentaTransmitidasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultaOrdenesVentaTransmitidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaDocumentosTransmitidosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultaDocumentosTransmitidos" />
+  </wsdl:message>
+  <wsdl:message name="consultaDocumentosTransmitidosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultaDocumentosTransmitidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaRecibosRecaudacionesTransmitidasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultaRecibosRecaudacionesTransmitidas" />
+  </wsdl:message>
+  <wsdl:message name="consultaRecibosRecaudacionesTransmitidasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultaRecibosRecaudacionesTransmitidasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VendedorTransmitidoSoap">
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <wsdl:input message="tns:testConnectionSoapIn" />
+      <wsdl:output message="tns:testConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaOrdenesVentaTransmitidas">
+      <wsdl:input message="tns:consultaOrdenesVentaTransmitidasSoapIn" />
+      <wsdl:output message="tns:consultaOrdenesVentaTransmitidasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaDocumentosTransmitidos">
+      <wsdl:input message="tns:consultaDocumentosTransmitidosSoapIn" />
+      <wsdl:output message="tns:consultaDocumentosTransmitidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaRecibosRecaudacionesTransmitidas">
+      <wsdl:input message="tns:consultaRecibosRecaudacionesTransmitidasSoapIn" />
+      <wsdl:output message="tns:consultaRecibosRecaudacionesTransmitidasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VendedorTransmitidoSoap" type="tns:VendedorTransmitidoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/testConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaOrdenesVentaTransmitidas">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaOrdenesVentaTransmitidas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaDocumentosTransmitidos">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaDocumentosTransmitidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaRecibosRecaudacionesTransmitidas">
+      <soap:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaRecibosRecaudacionesTransmitidas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VendedorTransmitidoSoap12" type="tns:VendedorTransmitidoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/testConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaOrdenesVentaTransmitidas">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaOrdenesVentaTransmitidas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaDocumentosTransmitidos">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaDocumentosTransmitidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaRecibosRecaudacionesTransmitidas">
+      <soap12:operation soapAction="http://mobile.crciisa.com/WS-SROL-V3CAT-PROD/consultaRecibosRecaudacionesTransmitidas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VendedorTransmitido">
+    <wsdl:port name="VendedorTransmitidoSoap" binding="tns:VendedorTransmitidoSoap">
+      <soap:address location="http://mobile.crciisa.com/ws-v27042017-srol-prod/VendedorTransmitido.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VendedorTransmitidoSoap12" binding="tns:VendedorTransmitidoSoap12">
+      <soap12:address location="http://mobile.crciisa.com/ws-v27042017-srol-prod/VendedorTransmitido.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaAnulaciones">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="MainLayout" Margin="15">
+
+                    <StackLayout x:Name="pnlAnulacion">
+
+                        <Label Style="{StaticResource ControlLabel}" x:Name="pnlAnulacion_lblTitulo" Text="Transacción(es):"/>
+
+                        <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="160"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="120"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlAnulacion_clhNo_cia" Text="Compañía"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlAnulacion_clhNo_transa" Text="Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlAnulacion_clhNo_cliente" Text="Cliente"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlAnulacion_clhNo_establecimiento" Text="Establecimiento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlAnulacion_clhDesc_cliente" Text="Nombre Cliente"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlAnulacion_clhCod_agente" Text="Agente"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlAnulacion_clhCod_tipo_doc" Text="Código Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlAnulacion_clhTipo_documento" Text="Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlAnulacion_clhFecha_crea" Text="Fecha Creación"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlAnulacion_clhTotal" Text="Total"/>
+                                </Grid>
+                                <ListView x:Name="pnlAnulacion_ltvTransacciones" ItemSelected="pnlAnulacion_ltvTransacciones_ItemSelected" HasUnevenRows="True" HeightRequest="300">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="0"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="90"/>
+                                                        <ColumnDefinition Width="170"/>
+                                                        <ColumnDefinition Width="160"/>
+                                                        <ColumnDefinition Width="80"/>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding CODCIA}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding CODDOCUMENTO}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding CODCLIENTE}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding CODESTABLECIMIENTO}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding NOMBRE}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding CODAGENTE}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding CODTIPODOCUMENTO}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding DESCRIPCION}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding FECHACREACION}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding TOTAL}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <Label Style="{StaticResource ControlLabel}" FontFamily="Tahoma" FontAttributes="Bold" x:Name="pnlAnulacion_lblMotivo" Text="Motivo:"/>
+
+                        <Picker x:Name="pnlAnulacion_cbxMotivo"/>
+
+                        <Label Style="{StaticResource ControlLabel}" x:Name="label1" Text="* Se anula unicamente el último documento realizado, siempre que no haya sido descargado."/>
+
+                        <Label Style="{StaticResource ControlLabel}" x:Name="pnlAnulacion_lblAyuda" Text="* Trámites no se anulan."/>
+
+                        <Label Text=" "/>
+
+                        <Label Style="{StaticResource ControlLabel}" x:Name="pnlAnulacion_lblDocumentosAnulados" Text="Documentos Anulados:"/>
+
+                        <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="140"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <!--<ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="100"/>-->
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="no_cia" Text="Compañía"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="no_transa" Text="Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="no_cliente" Text="Cliente"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="no_establecimiento" Text="Establecimiento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="no_agente" Text="Agente"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="tipo_doc" Text="Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="fecha_crea" Text="Fecha Crea"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="fecha_entrega" Text="Fecha Entrega"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="total" Text="Total"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="total_imp" Text="Total Impuesto"/>
+                                    <!--<Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="enviado" Text="Enviado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="fecha_toma" Text="Fecha Toma"/>-->
+                                </Grid>
+                                <ListView x:Name="pnlAnulacion_ltvAnulaciones" HasUnevenRows="True" HeightRequest="300">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="0"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="60"/>
+                                                        <ColumnDefinition Width="140"/>
+                                                        <ColumnDefinition Width="60"/>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <!--<ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="100"/>-->
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_CIA}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_TRANSA}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding NO_CLIENTE}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NO_ESTABLECIMIENTO}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding NO_AGENTE}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding DESCRIPCION}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding FECHA_CREA}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding FECHA_ENTREGA}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding TOTAL}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding TOTAL_IMP}"/>
+                                                    <!--<Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding NO_CIA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding NO_CIA}"/>-->
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Grid x:Name="pnlAnulacion_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlAnulacion_stkBuscar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniBuscar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="BUSCAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlAnulacion_stkAnular" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAnular_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="ANULAR"  />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

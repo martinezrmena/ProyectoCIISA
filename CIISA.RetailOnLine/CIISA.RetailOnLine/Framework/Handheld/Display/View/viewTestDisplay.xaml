@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Display.View.viewTestDisplay">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniCalibrate" Text="Calibrar" Priority="0" Clicked="menu_mniCalibrate_Click"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClean" Text="Limpiar" Priority="0" Clicked="menu_mniLimpiar_Click"/>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Priority="0" Clicked="menu_mniClose_Click"/>-->
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <!-- pnlTestDisplay -->
+        <StackLayout>
+            <StackLayout x:Name="pnlTestDisplay" Margin="15" VerticalOptions="FillAndExpand">
+                <forms:SignaturePadView x:Name="pnlTestDisplay_pbxTestBox" StrokeWidth="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlTestDisplayOptions" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTestDisplay_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

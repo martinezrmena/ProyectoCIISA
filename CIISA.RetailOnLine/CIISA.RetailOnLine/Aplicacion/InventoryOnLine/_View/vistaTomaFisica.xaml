@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
+             x:Class="CIISA.RetailOnLine.Aplicacion.InventoryOnLine._View.vistaTomaFisica"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine"
+             xmlns:ui="clr-namespace:CIISA.RetailOnLine.Framework.External.ResizableColumnsListView">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniConsolidar" Text="Consolidar" Clicked="menu_mniConsolidar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniContinuar" Text="Continuar" Clicked="menu_mniContinuar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniProcedimiento" Text="Procedimiento" Clicked="menu_mniProcedimiento_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniRecalcularInventario" Text="Recalcular Inventario" Clicked="menu_mniRecalcularInventario_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregarCantidad" Text="Agregar Cantidad" Clicked="menu_mniAgregarCantidad_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ui:CustomDataTemplateSelectorTF x:Key="CustomDataTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+
+            <!--pnlTomaFisica -->
+            <StackLayout x:Name="pnlTomaFisica">
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid x:Name="pnlTomaFisicaGridDefinitions" BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="270"/>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="85"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTomaFisica_clhCodigo" Text="Código"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTomaFisica_clhDescripcion" Text="Descripción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTomaFisica_clhCantidad" Text="Cantidad"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTomaFisica_clhTomaFisica" Text="Toma Física"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTomaFisica_clhDiferencia" Text="Diferencia"/>
+                        </Grid>
+                        <ListView x:Name="pnlTomaFisica_ltvInventario" 
+                                  ItemSelected="pnlTomaFisica_ltvInventario_ItemActivate"
+                                  HasUnevenRows="True"
+                                  ItemTemplate="{StaticResource CustomDataTemplateSelector}">
+                            <!--<ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid x:Name="pnlTomaFisicaGridContent">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="270"/>
+                                                <ColumnDefinition Width="75"/>
+                                                <ColumnDefinition Width="140"/>
+                                                <ColumnDefinition Width="85"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Codigo}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Descripcion}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Cantidad}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding TomaFisica}" TextColor="{Binding ItemTextColor}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Diferencia}" TextColor="{Binding ItemTextColor}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>-->
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                
+                
+                <StackLayout Orientation="Horizontal">
+                    <controls:CheckBox x:Name="pnlTomaFisica_chkAjustarColumnas" CheckedChanged="pnlTomaFisica_chkAjustarColumnas_CheckStateChanged"/>
+                    <Label Text="Ajustar Columnas"/>
+                </StackLayout>
+                
+                <Button x:Name="pnlTomaFisica_btnCalculadora" Text="Calculadora" Clicked="pnlTomaFisica_btnCalculadora_Clicked"/>
+
+                <Grid ColumnSpacing="0.2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="pnlTomaFisica_lblCantidad" Text="Cantidad" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlTomaFisica_txtCantidad" HasBorder="True" Keyboard="Numeric" >
+                        <Entry.Behaviors>
+                            <Behaviors:JustDecimal/>
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="2" x:Name="pnlTomaFisica_btnBorrar" Style="{StaticResource BackButtonStyle}" Clicked="pnlTomaFisica_btnBorrar_Clicked"/>
+                    <Button Grid.Column="3" x:Name="pnlTomaFisica_btnLimpiar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlTomaFisica_btnLimpiar_Clicked"/>
+                    <Button Grid.Column="4" x:Name="pnlTomaFisica_btnAgregarCantidad" Style="{StaticResource CompleteButtonStyle}" Clicked="pnlTomaFisica_btnAgregarCantidad_Clicked"/>
+                    <Button Grid.Column="5" x:Name="pnlTomaFisica_btnPuntoDecimal" Text="." WidthRequest="35" Clicked="pnlTomaFisica_btnPuntoDecimal_Clicked"/>
+                    
+                </Grid>
+                <Grid ColumnSpacing="0.2" RowSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="pnlTomaFisica_btnUno" Text="1" Clicked="pnlTomaFisica_btnUno_Clicked"/>
+                    <Button Grid.Column="1" x:Name="pnlTomaFisica_btnDos" Text="2" Clicked="pnlTomaFisica_btnDos_Clicked"/>
+                    <Button Grid.Column="2" x:Name="pnlTomaFisica_btnTres" Text="3" Clicked="pnlTomaFisica_btnTres_Clicked"/>
+                    <Button Grid.Column="3" x:Name="pnlTomaFisica_btnCuatro" Text="4" Clicked="pnlTomaFisica_btnCuatro_Clicked"/>
+                    <Button Grid.Column="4" x:Name="pnlTomaFisica_btnCinco" Text="5" Clicked="pnlTomaFisica_btnCinco_Clicked"/>
+                    <Button Grid.Column="5" x:Name="pnlTomaFisica_btnSeis" Text="6" Clicked="pnlTomaFisica_btnSeis_Clicked"/>
+                    <Button Grid.Column="6" x:Name="pnlTomaFisica_btnSiete" Text="7" Clicked="pnlTomaFisica_btnSiete_Clicked"/>
+                    <Button Grid.Column="7" x:Name="pnlTomaFisica_btnOcho" Text="8" Clicked="pnlTomaFisica_btnOcho_Clicked"/>
+                    <Button Grid.Column="8" x:Name="pnlTomaFisica_btnNueve" Text="9" Clicked="pnlTomaFisica_btnNueve_Clicked"/>
+                    <Button Grid.Column="9" x:Name="pnlTomaFisica_btnCero" Text="0" Clicked="pnlTomaFisica_btnCero_Clicked"/>
+                </Grid>
+
+            </StackLayout>
+
+            <!--pnlProcedimiento-->
+            <StackLayout x:Name="pnlProcedimiento">
+                <Label x:Name="pnlProcedimiento_lblAyuda" Text="PROCEDIMIENTO"/>
+                <Label x:Name="pnlProcedimiento_lblPaso1" Text="1. Realice la toma física y consolídela (botón consolidar)."/>
+                <Label x:Name="pnlProcedimiento_lblPaso2" Text="2. Imprima el reporte de la toma fìsica."/>
+                <Label x:Name="pnlProcedimiento_lblPaso3" Text="3. Envie los datos ingresados  (botón sincronizar). "/>
+                <Label x:Name="label1" Text = "* Verifique que los datos se hayan descargado correctamente en NAF." FontFamily="Tahoma"/>
+                <Label x:Name="pnlProcedimiento_lblPaso4" Text="4. Cierre la máquina (botón cerrar máquina)."/>
+            </StackLayout>
+
+            <!--pnlFinalizar-->
+            <StackLayout x:Name="pnlFinalizar">
+                <Button x:Name="pnlFinalizar_btnImprimir" Text="Imprimir Resultado" Clicked="pnlFinalizar_btnImprimir_Clicked"/>
+                <Button x:Name="pnlFinalizar_btnPruebaConexion" Text="Prueba Conexión"  Clicked="pnlFinalizar_btnPruebaConexion_Clicked" />
+                <Button x:Name="pnlFinalizar_btnSincronizar" Text="Sincronizar" Clicked="pnlFinalizar_btnSincronizar_Clicked"/>
+                <Button x:Name="pnlFinalizar_btnCerrarMaquina" Text="Cerrar Máquina / BackOffice" Clicked="pnlFinalizar_btnCerrarMaquina_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

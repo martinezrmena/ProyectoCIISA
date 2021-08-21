@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomListview"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaVisitaSugerido">
+    
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregar" Text="Agregar" Clicked="menu_mniAgregar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCancelar" Text="Cancelar" Clicked="menu_mniCancelar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout x:Name="pnlSugerido" Margin="15">
+
+                <Label Style="{StaticResource ControlLabel}" x:Name="pnlSugerido_lblTitulo" Text="Historico Compras Cliente:"/>
+
+                <controls:CheckBox x:Name="pnlSugerido_chkTodas" CheckedChanged="pnlSugerido_chkTodas_CheckedChanged" BackgroundColor="{StaticResource DarkGray}" TextColor="{StaticResource WhiteColor}" DefaultText="Todas"/>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlSugerido_clhArticulo" Text="Artículo"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlSugerido_clhDescripcion" Text="Descripción" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlSugerido_clhCantidad" Text="Cantidad"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlSugerido_clhCompannia" Text="Compañia"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlSugerido_clhAgente" Text="Agente"/>
+                        </Grid>
+                        <ListView x:Name="pnlSugerido_ltvSugerido" ms:MultiSelectListView.IsMultiSelect="True" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ms:SelectableViewCell>
+
+                                        <ms:SelectableViewCell.DataView>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="120"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="0"/>
+                                                    <ColumnDefinition Width="0"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding CODPRODUCTO}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding DESCPRODUCTO}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding CANTIDAD}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NO_CIA}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding NO_AGENTE}"/>
+                                            </Grid>
+                                        </ms:SelectableViewCell.DataView>
+
+                                    </ms:SelectableViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+
+            <Grid x:Name="pnlSugerido_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlSugerido_stkAgregar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAgregar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="AGREGAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlSugerido_stkCancelar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCancelar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CANCELAR"  />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

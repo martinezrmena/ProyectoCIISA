@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ui="clr-namespace:CIISA.RetailOnLine.Framework.External.ResizableColumnsListView"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors"
+             x:Class="CIISA.RetailOnLine.Aplicacion.AuditOnLine.Vista.vistaAuditoria">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniLimpiar" Text="Limpiar" Clicked="menu_mniLimpiar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniImprimir" Text="Imprimir" Clicked="menu_mniImprimir_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniGuardar" Text="Guardar" Clicked="menu_mniGuardar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniAgregarCantidad" Text="Agregar Cantidad" Clicked="menu_mniAgregarCantidad_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_close" Text="Cerrar" Clicked="menu_close_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ui:CustomDataTemplateSelectorAN x:Key="CustomDataTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <StackLayout x:Name="pnlInventario">
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid x:Name="pnlInventarioGridDefinitions" BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="270"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlInventario_clhCodigo" Text="Código"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlInventario_clhDescripcion" Text="Descripción" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlInventario_clhCantidad" Text="Cantidad"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlInventario_clhDisponible" Text="Disponible"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlInventario_clhAuditado" Text="Auditado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlInventario_clhDiferencia" Text="Diferencia"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlInventario_ltvInventario" ItemSelected="pnlInventario_ltvInventario_ItemSelected" HasUnevenRows="True" ItemTemplate="{StaticResource CustomDataTemplateSelector}">
+                            <!--<ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="90"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Codigo}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Descripcion}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Cantidad}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Disponible}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Auditado}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding Diferencia}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>-->
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+                <controls:CheckBox x:Name="pnlInventario_chkAjustarColumnas" DefaultText="Ajustar Columnas" CheckedChanged="pnlInventario_chkAjustarColumnas_CheckedChanged"/>
+                <Button x:Name="pnlInventario_btnCalculadora" Text="Calculadora" Clicked="pnlInventario_btnCalculadora_Clicked"/>
+
+                <Grid ColumnSpacing="0.2" RowSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlInventario_lblCantidad" Text="Cantidad" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlInventario_txtCantidad" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustDecimal/>
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="2" x:Name="pnlInventario_btnBorrar" Style="{StaticResource BackButtonStyle}" Clicked="pnlInventario_btnBorrar_Clicked"/>
+                    <Button Grid.Column="3" x:Name="pnlInventario_btnLimpiar" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInventario_btnLimpiar_Clicked"/>
+                    <Button Grid.Column="4" x:Name="pnlInventario_btnAgregarCantidad" Style="{StaticResource CompleteButtonStyle}" Clicked="pnlInventario_btnAgregarCantidad_Clicked"/>
+                    <Button Grid.Column="5" x:Name="pnlInventario_btnPuntoDecimal" Text="." Clicked="pnlInventario_btnPuntoDecimal_Clicked"/>
+                </Grid>
+
+                <Grid ColumnSpacing="0.2" RowSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="pnlInventario_btnOne" Text="1" Clicked="pnlInventario_btnOne_Clicked"/>
+                    <Button Grid.Column="1" x:Name="pnlInventario_btnTwo" Text="2" Clicked="pnlInventario_btnTwo_Clicked"/>
+                    <Button Grid.Column="2" x:Name="pnlInventario_btnThree" Text="3" Clicked="pnlInventario_btnThree_Clicked"/>
+                    <Button Grid.Column="3" x:Name="pnlInventario_btnFour" Text="4" Clicked="pnlInventario_btnFour_Clicked"/>
+                    <Button Grid.Column="4" x:Name="pnlInventario_btnFive" Text="5" Clicked="pnlInventario_btnFive_Clicked"/>
+                    <Button Grid.Column="5" x:Name="pnlInventario_btnSix" Text="6" Clicked="pnlInventario_btnSix_Clicked"/>
+                    <Button Grid.Column="6" x:Name="pnlInventario_btnSeven" Text="7" Clicked="pnlInventario_btnSeven_Clicked"/>
+                    <Button Grid.Column="7" x:Name="pnlInventario_btnEight" Text="8" Clicked="pnlInventario_btnEight_Clicked"/>
+                    <Button Grid.Column="8" x:Name="pnlInventario_btnNine" Text="9" Clicked="pnlInventario_btnNine_Clicked"/>
+                    <Button Grid.Column="9" x:Name="pnlInventario_btnZero" Text="0" Clicked="pnlInventario_btnZero_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

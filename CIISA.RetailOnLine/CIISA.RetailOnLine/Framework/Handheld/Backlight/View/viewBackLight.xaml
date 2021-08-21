@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Backlight.View.viewBackLight">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Priority="0" Clicked="menu_mniClose_Click"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlBacklight" VerticalOptions="FillAndExpand" Margin="15">
+            
+                <StackLayout Orientation="Horizontal" BackgroundColor="LightGray" Padding="10" Margin="0,0,0,20">
+                    <controls:CheckBox x:Name="pnlBacklight_chkBacklight" CheckedChanged="chkBacklight_CheckStateChanged"/>
+                    <Label x:Name="pnlBacklight_chkBacklight_lblBacklight" Text="Luz de fondo (seleccionado = ON)"/>
+                </StackLayout>
+
+                <Label x:Name="pnlBacklight_lblBrightnessLevel" Style="{StaticResource ListviewLabel}" Margin="0,0,0,10" Text="Nivel de Brillo"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="pnlBacklight_lblMinimumBrightnessLevel" Text="0"/>
+                    <Slider x:Name="pnlBacklight_trbBacklightLevel" Minimum="0" Maximum="100" WidthRequest="250"  ValueChanged="trbBacklightLevel_ValueChanged"/>
+                    <Label x:Name="pnlBacklight_lblMaximumBrightnessLevel" Text="10"/>
+                </StackLayout>
+
+                <Label x:Name="pnlBacklight_lblActualValue" Text="0" FontFamily="Tahoma" FontSize="120" HorizontalOptions="Center"/>
+            </StackLayout>
+            
+            <Grid x:Name="pnlBackLightOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlBackLight_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

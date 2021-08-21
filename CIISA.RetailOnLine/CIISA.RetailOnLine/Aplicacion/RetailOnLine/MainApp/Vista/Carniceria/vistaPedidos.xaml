@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.Carniceria.vistaPedidos">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout Margin="15">
+
+                    <StackLayout x:Name="pnlPedidos" IsVisible="False">
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="150"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlPedidos_clhNoDocumento" Text="Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlPedidos_clhEstablecimiento" Text="Establecimiento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlPedidos_clhFechaCreacion" Text="Fecha Creación"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlPedidos_clhFechaEntrega" Text="Fecha Entrega"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlPedidos_clhPlanta" Text="Pedido Planta"/>
+                                </Grid>
+                                <ListView x:Name="pnlPedidos_ltvPedidos" HeightRequest="300" RowHeight="40" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid RowSpacing="40">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="170"/>
+                                                        <ColumnDefinition Width="170"/>
+                                                        <ColumnDefinition Width="170"/>
+                                                        <ColumnDefinition Width="170"/>
+                                                        <ColumnDefinition Width="150"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_TRANSA}" TextColor="{Binding ItemColorText}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_ESTABLECIMIENTO}" TextColor="{Binding ItemColorText}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding FECHA_CREA}" TextColor="{Binding ItemColorText}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding FECHA_ENTREGA}" TextColor="{Binding ItemColorText}"/>
+                                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding PEDIDO_PLANTA}" TextColor="{Binding ItemColorText}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Grid x:Name="pnlPedidos_Controls" VerticalOptions="End" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlPedidos_stkAgregar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAgregar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="AGREGAR"  />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

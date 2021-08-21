@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Power.View.viewPower">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniConsultarEstado" Text="Consultar Estado" Priority="0" Clicked="menu_mniConsultarEstado_Click"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Priority="0" Clicked="menu_mniClose_Click"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15" x:Name="pnlPower">
+                <Label x:Name="pnlPower_lblDevicePowerStates" Text="ESTADOS DE ENERGÍA DEL DISPOSITIVO" FontFamily="Tahoma" Style="{StaticResource ControlLabel}" FontSize="Medium"/>
+                
+                <Label x:Name="pnlPower_lblEnergyState"/>
+                <Button x:Name="pnlPower_btnFullOn" Text="Plena Potencia" Clicked="pnlPower_btnFullOn_Click"/>
+
+                <!--<Button x:Name="pnlPower_btnRestart" Text="Reiniciar" Clicked="btnRestart_Click"/>-->
+                <!--<Button x:Name="pnlPower_btnTurnOff" Text="Apagar" Clicked="btnTurnOff_Click"/>
+                <Label x:Name="pnlPower_lblSystemPowerStates" Text="Estados energía sistema:"/>
+                <Button x:Name="pnlPower_btnStanby" Text="Potencia Parcial" Clicked="pnlPower_btnStanby_Click"/>
+                <Button x:Name="pnlPower_btnLowOn" Text="Baja Potencia" Clicked="pnlPower_btnStanby_Click"/>-->
+                
+                <Button x:Name="pnlPower_btnSuspend" Text="Suspender" Clicked="btnSuspend_Click"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlPowerOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlPower_stkConsultarEstado" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniConsultarEstado_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CONSULTAR ESTADO"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlPower_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

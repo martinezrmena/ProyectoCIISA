@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomTreeView"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaInventarioPedidos">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCerrar" Text="Cerrar" Clicked="menu_mniCerrar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout x:Name="pnlInventario" Margin="15">
+                <Label x:Name="pnlInventario_lblTitulo" Text="Inventario de productos pedidos:"/>
+                <controls:CheckBox x:Name="pnlInventario_chbExpandir" DefaultText="Expandir / contraer" CheckedChanged="pnlInventario_chbExpandir_CheckedChanged"/>
+
+                <ListView x:Name="pnlInventario_trvInventario" HasUnevenRows="True" ms:CollapsableListView.IsCollapsable ="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <ms:CollapsableViewCell />
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Label x:Name="pnlInventario_lblNodo" TextColor="Blue" Text="Código Producto / Disponible / Producto"/>
+                <Label x:Name="pnlInventario_lblSubNodo" TextColor="Green" Text="-> Cantidad Pedida / Cliente"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlInventarioOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlInventario_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCerrar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaCuentaCerrada"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniBuscar" Text="Buscar" Clicked="menu_mniBuscar_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+            
+            <StackLayout x:Name="pnlCuentas" Margin="15">
+                
+                <Grid ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" x:Name="pnlCuentas_lblCodCliente" Style="{StaticResource ControlLabel}" Text="Código:"/>
+                    <controls:ExtendedEntry Grid.Column="1" x:Name="pnlCuentas_txtCodCliente" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <Behaviors:JustNumeric />
+                        </Entry.Behaviors>
+                    </controls:ExtendedEntry>
+                    <Button Grid.Column="2" Style="{StaticResource BackButtonStyle}" x:Name="pnlCuentas_btnBorrarBuscar" Clicked="pnlCuentas_btnBorrarBuscar_Clicked"/>
+                    <Button Grid.Column="3" Style="{StaticResource DeleteButtonStyle}" x:Name="pnlCuentas_btnLimpiarBuscar" Clicked="pnlCuentas_btnLimpiarBuscar_Clicked"/>
+                </Grid>
+                
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="105"/>
+                                <ColumnDefinition Width="600"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlCuentas_clhCompannia" Text="Compañía"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlCuentas_clhAgente" Text="Agente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlCuentas_clhCodigo" Text="Código"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlCuentas_clhCliente" Text="Cliente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlCuentas_clhFechaCierre" Text="Fecha Cierre"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlCuentas_clhMotivo" Text="Motivo"/>
+                        </Grid>
+                        <ListView x:Name="pnlCuentas_ltvCuentas" HasUnevenRows="True" ItemAppearing="pnlCuentas_ltvCuentas_ItemAppearing">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="300"/>
+                                                <ColumnDefinition Width="105"/>
+                                                <ColumnDefinition Width="600"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_CIA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_AGENTE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding NO_CLIENTE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NOMBRE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding F_CIERRE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding MOTIVO}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+
+            <Grid x:Name="pnlCuentasOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlCuentas_stckBuscar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniBuscar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="BUSCAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCuentas_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

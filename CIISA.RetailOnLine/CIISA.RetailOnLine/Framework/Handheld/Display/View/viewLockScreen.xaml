@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.Display.View.viewLockScreen">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniUnlock" Text="Desbloquear" Clicked="menu_mniUnlock_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlLockScreen" Margin="15">
+                <Label x:Name="pnlLockScreen_lblTitle" FontSize="Medium" FontAttributes="Bold" Style="{StaticResource ControlLabel}" Text="PANTALLA BLOQUEADA"/>
+                <Button x:Name="pnlLockScreen_btnGreen" BackgroundColor="Green" Text="CLIC AQUÍ - 3" Clicked="pnlLockScreen_btnGreen_Clicked" BorderRadius="10"/>
+                <Button x:Name="pnlLockScreen_btnYellow" BackgroundColor="Gold" Text="CLIC AQUÍ - 2" Clicked="pnlLockScreen_btnYellow_Clicked" BorderRadius="10"/>
+                <Button x:Name="pnlLockScreen_btnRed" IsEnabled="False" BackgroundColor="Red" Text="CLIC AQUÍ - 1" Clicked="pnlLockScreen_btnRed_Clicked" BorderRadius="10"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlLockScreen_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlLockScreen_stkLock" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniUnlock_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="DESBLOQUEAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

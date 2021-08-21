@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaTipoImpresion">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlTipoImpresion" Margin="15">
+                <Label x:Name="pnlTipoImpresion_lblTitulo" Text="SELECCIONE TIPO DE IMPRESIÓN" FontFamily="Tahoma" Style="{StaticResource ControlLabel}" FontSize="Medium"/>
+                <Button x:Name="pnlTipoImpresion_btnZPL" Text="ZPL" Clicked="pnlTipoImpresion_btnZPL_Clicked"/>
+                <Button x:Name="pnlTipoImpresion_btnESCPOS" Text="ESC/POS" Clicked="pnlTipoImpresion_btnESCPOS_Clicked"/>
+            </StackLayout>
+            
+            <Grid x:Name="pnlTipoImpresionOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTipoImpresion_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniExit_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

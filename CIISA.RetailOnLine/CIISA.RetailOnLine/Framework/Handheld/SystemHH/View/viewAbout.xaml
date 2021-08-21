@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.SystemHH.View.viewAbout">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlAbout" Margin="15">
+                <Label x:Name="pnlAbout_lblSystem" FontAttributes="Bold" FontFamily="Tahoma" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblInitials" FontAttributes="Bold" FontFamily="Tahoma" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="pnlAbout_lblVersion" Text="Versión: " VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="pnlAbout_lblVersionNumber" Text="VersionNumber" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <Label x:Name="pnlAbout_lblCIISA" Text="Centro Internacional de Inversiones" TextColor="Black" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblDTI" Text="Departamento de Tecnologías de la Información" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblContact" Text="Contacto" TextColor="Black" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblTelephoneNumber" Text="Teléfono: 2587-1572" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblEmail" Text="E-mail: fcarvajal@crciisa.com" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblDate" Text="CIISA © 2010-2014" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblSecond" Text="Dependencias" FontAttributes="Bold" FontFamily="Tahoma" HorizontalTextAlignment="Center"/>
+                <Label x:Name="pnlAbout_lblDependencia" Text="La aplicación utiliza ESCPOS NUGET: https://github.com/igorocampos/ESCPOS" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <Grid x:Name="pnlAboutOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlAbout_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

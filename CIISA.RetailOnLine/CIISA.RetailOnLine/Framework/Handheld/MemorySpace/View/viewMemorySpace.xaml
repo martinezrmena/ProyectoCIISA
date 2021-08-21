@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.Handheld.MemorySpace.View.viewMemorySpace"
+             xmlns:control="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomProgressBar;assembly=CIISA.RetailOnLine">
+    
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Priority="0" Clicked="menu_mniClose_Click"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout x:Name="pnlMemory" Margin="15">
+                <Label x:Name="pnlMemory_lblDescription" Text="INFORMACIÓN DE LA MEMORIA" Margin="0,10,0,10" Style="{StaticResource ControlLabel}" FontSize="Medium"/>
+                <Label x:Name="pnlMemory_lblPercentajeFreeMemory" Text="Porcentaje de Memoria Libre:" Margin="0,10,0,10"/>
+                <control:CustomProgressBar x:Name="pnlMemory_pgbPercentaje" BackgroundColor="Black"/>
+                <Label x:Name="pnlMemory_lblTotal" Text="Espacio Total:" Margin="0,10,0,10"/>
+                <Label x:Name="pnlMemory_lblFree" Text="Espacio Libre:"/>
+                <Label x:Name="pnlMemory_lblUsed" Text="Espacio Utilizado:" Margin="0,10,0,10"/>
+                <Label x:Name="pnlMemory_lblState" Style="{StaticResource ControlLabel}"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlMemoryOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlMemory_stkCerrar" Orientation="Vertical" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Click"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

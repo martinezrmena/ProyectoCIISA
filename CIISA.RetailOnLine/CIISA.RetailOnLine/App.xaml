@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- COLORES -->
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="BlackColor">#141414</Color>
+            <!--Color de botones y fondo de pantalla-->
+            <Color x:Key="GrayColor">#414A4C</Color>
+            <Color x:Key="RedColor">#BF332F</Color>
+
+            <!--Color de la barra de estado-->
+            <Color x:Key="LightBlack">#0e1111</Color>
+            <!--Color de la barra de Navegacion-->
+            <Color x:Key="DarkGray">#232b2b</Color> 
+
+            <!-- ICONOS -->
+            <FileImageSource x:Key="BackSpaceIcon">ic_backspace_white_24dp.png</FileImageSource>
+            <FileImageSource x:Key="DeleteIcon">ic_delete_white_24dp.png</FileImageSource>
+            <FileImageSource x:Key="PrintIcon">ic_print_white_24dp.png</FileImageSource>
+            <FileImageSource x:Key="SearchIcon">ic_search_white_24dp.png</FileImageSource>
+            <FileImageSource x:Key="RefreshIcon">ic_refresh_white_24dp.png</FileImageSource>
+            <FileImageSource x:Key="CompleteIcon">ic_check_white_24dp.png</FileImageSource>
+
+            <!-- EXPLICIT STYLES -->
+            <Style x:Key="PrincipalButton" TargetType="{x:Type Button}">
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+            
+            
+            <Style x:Key="CompleteButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Image" Value="{StaticResource CompleteIcon}" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+            
+            <Style x:Key="RefreshButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Image" Value="{StaticResource RefreshIcon}" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+
+            <Style x:Key="SearchButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Image" Value="{StaticResource SearchIcon}" />
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+
+            <Style x:Key="BackButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Image" Value="{StaticResource BackSpaceIcon}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource RedColor}"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+            
+            <Style x:Key="DeleteButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Image" Value="{StaticResource DeleteIcon}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource RedColor}"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+            
+            <Style x:Key="MenuLabel" TargetType="{x:Type Label}">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkGray}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontFamily" Value="Tahoma" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ListviewHeaderLabel" TargetType="{x:Type Label}">
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBlack}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontFamily" Value="Tahoma" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ControlLabel" TargetType="{x:Type Label}">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkGray}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ControlLabelProceso" TargetType="{x:Type Label}">
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ListviewLabel" TargetType="{x:Type Label}">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ActionLabel" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <!-- STACKLAYOUT STYLES-->
+
+            <Style x:Key="ControlStackLayout" TargetType="{x:Type StackLayout}">
+                <Setter Property="BackgroundColor" Value="{StaticResource BlackColor}"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+            </Style>
+
+            <!-- IMPLICIT STYLES -->
+            <Style TargetType="Button" ApplyToDerivedTypes="True" CanCascade="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+
+            <Style TargetType="Picker" ApplyToDerivedTypes="True" CanCascade="True">
+                <!--<Setter Property="HeightRequest" Value="50" />-->
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

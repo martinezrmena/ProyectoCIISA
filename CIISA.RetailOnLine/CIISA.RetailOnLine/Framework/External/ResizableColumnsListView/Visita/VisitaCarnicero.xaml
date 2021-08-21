@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Framework.External.ResizableColumnsListView.Visita.VisitaCarnicero">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="0"/>
+        </Grid.ColumnDefinitions>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding _pt_codigo}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding _pt_cantidad}" TextColor="{Binding ItemTextColor}" />
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding _pt_descripcion}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding _pt_precio}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding _pt_exento}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding MontoImpuestoUnaUnidad}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding _montoDescuento}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding _pt_porcDescuento}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding _pt_montDescuento}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding _pt_comentario}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding _pt_motivo}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding _pt_estado}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="12" Text="{Binding inventarioDisponible}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="13" Text="{Binding _pt_embalaje}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="14" Text="{Binding _pt_viceras}" TextColor="{Binding ItemTextColor}"/>
+        <Label Style="{StaticResource ListviewLabel}" Grid.Column="15" Text="{Binding _pt_tipoporcion}" TextColor="{Binding ItemTextColor}"/>
+    </Grid>
+
+</ViewCell>

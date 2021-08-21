@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomListview"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaFacturaPendiente">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniAgregar" Text="Agregar" Clicked="menu_mniAgregar_Clicked"/>-->
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniSumar" Text="Sumar" Clicked="menu_mniSumar_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniTramitar" Text="Tramitar" Clicked="menu_mniTramitar_Clicked"/>
+        <!--<ToolbarItem Order="Secondary" x:Name="menu_mniVerificar" Text="Verificar" Clicked="menu_mniVerificar_Clicked"/>-->
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout Margin="15">
+
+                    <StackLayout x:Name="pnlFacturas" IsVisible="False">
+
+                        <controls:CheckBox x:Name="pnlFacturas_chkTodas" DefaultText="Todas/Ninguna" CheckedChanged="pnlFacturas_chkTodas_CheckedChanged"/>
+
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Grid BackgroundColor="{StaticResource LightBlack}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="0"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlFacturas_clhNoFisico" Text="Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlFacturas_clhSaldo" Text="Saldo" />
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlFacturas_clhMonto" Text="Monto"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlFacturas_clhMontoAbonos" Text="Abonos"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlFacturas_clhFechaDocumento" Text="Fecha Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlFacturas_clhFechaVence" Text="Fecha Vence"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlFacturas_clhDiasVencida" Text="Días"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlFacturas_clhTipoDocDescripcion" Text="Tipo Documento"/>
+                                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlFacturas_clhTipoDoc" Text="Tipo Documento"/>
+                                </Grid>
+                                <ListView x:Name="pnlFacturas_ltvFacturas" 
+                                          ItemSelected="pnlFacturas_ltvFacturas_ItemSelected" 
+                                          ms:MultiSelectListView.IsMultiSelect="True"
+                                          HasUnevenRows="True" HeightRequest="300">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ms:SelectableViewCell>
+                                                <ms:SelectableViewCell.DataView>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="170"/>
+                                                            <ColumnDefinition Width="170"/>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="40"/>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="0"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_FISICO}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding SALDO}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding MONTO}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding PAGOS}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding FECHA_DOC}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding FECHA_VENCE}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding DIAS_VENCIDO}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding DESCRIPCION}" TextColor="{Binding ItemColorText}"/>
+                                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding TIPO_DOC}" TextColor="{Binding ItemColorText}"/>
+                                                    </Grid>
+                                                </ms:SelectableViewCell.DataView>
+
+                                            </ms:SelectableViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <Label Style="{StaticResource ControlLabel}" x:Name="pnlFacturas_lblLeyenda" Text="* Las documentos se cancelan en orden de antigüedad (Botón Verificar) y se excluyen los cheques devueltos."/>
+                        <Label Style="{StaticResource ControlLabel}" x:Name="pnlFacturas_lblRetroalimentacion"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            
+            <Grid x:Name="pnlFacturaPendiente_Controls" VerticalOptions="End" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlFacturaPendiente_stkAgregar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniAgregar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="AGREGAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaPendiente_stckSumar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniSumar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="SUMAR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlFacturaPendiente_stckCheck" Grid.Column="2">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniVerificar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="VERIFICAR" />
+                </StackLayout>
+            </Grid>
+        </StackLayout> 
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomListview"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.Carniceria.vistaDetalleReses">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlDetalleReses" Orientation="Vertical" Margin="15">
+                <controls:CheckBox x:Name="pnlDetalleReses_chkTodas" DefaultText="Todas/Ninguna" CheckedChanged="pnlDetalleReses_chkTodas_CheckedChanged" />
+                
+                <ScrollView Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlReses_clhTipo" Text="Tipo" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlReses_clhFechaMatanza" Text="Fecha Matanza"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlReses_clhLote" Text="Lote"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlReses_clhNAnimal" Text="No Animal"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlReses_clhPorcion" Text="Tipo Porción"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlReses_clhPeso" Text="Peso"/>
+                        </Grid>
+                        <ListView x:Name="pnlDetalleReses_ltvReses"
+                                  ms:MultiSelectListView.IsMultiSelect="True"
+                                  HasUnevenRows="True"
+                                  HeightRequest="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ms:SelectableViewCell>
+                                        <ms:SelectableViewCell.DataView>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding _vc_indtipo}" TextColor="{Binding ItemColorText}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding _vc_fechamatanza}" TextColor="{Binding ItemColorText}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding _vc_lote}" TextColor="{Binding ItemColorText}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding _vc_noanimal}" TextColor="{Binding ItemColorText}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding _vc_tipoporcion}" TextColor="{Binding ItemColorText}"/>
+                                                <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding _vc_peso}" TextColor="{Binding ItemColorText}"/>
+                                            </Grid>
+                                        </ms:SelectableViewCell.DataView>
+
+                                    </ms:SelectableViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+
+                <Label Style="{StaticResource ControlLabel}" x:Name="pnlDetalleReses_lblSuma"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlDetalleReses_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlDetalleReses_stkProcesar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniProcesar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="PROCESAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlDetalleReses_stkSumar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniSumar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="SUMAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlDetalleReses_stkCancelar" Grid.Column="2">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCancelar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CANCELAR"  />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

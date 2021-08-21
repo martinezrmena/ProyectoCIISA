@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Presentacion.Vista.vistaNuevoCliente"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Margin="15">
+
+                    <StackLayout x:Name="pnlInformacion">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" x:Name="pnlInformacion_lblCedula" Style="{StaticResource ControlLabel}" Text="Cédula"/>
+                            <Label Grid.Column="1" x:Name="pnlInformacion_lblCedulaInfo" Style="{StaticResource ControlLabel}" FontFamily="Tahoma" FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblNomLocal" Text="Nom. Local"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_txtNomLocal" MaxLength="80">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustText />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+                            <Button Grid.Row="0" Grid.Column="2" x:Name="pnlInformacion_btnLimpiarNL" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInformacion_btnLimpiarNL_Clicked"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_lblRazonSocial" Text="Razón Social"/>
+                            <controls:ExtendedEntry Grid.Row="1" Grid.Column="1" x:Name="pnlInformacion_txtRazonSocial" MaxLength="80">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustAlphanumeric />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+                            <Button Grid.Row="1" Grid.Column="2" x:Name="pnlInformacion_btnLimpiarRS" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInformacion_btnLimpiarRS_Clicked"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblNombre" Text="Dueño"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_txtNombre" MaxLength="80">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustText />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_lbl1erApellido" Text="1er Apellido"/>
+                            <controls:ExtendedEntry Grid.Row="1" Grid.Column="1" x:Name="pnlInformacion_txt1erApellido" MaxLength="30">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustText />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+
+                            <Label Grid.Row="2" Grid.Column="0" x:Name="pnlInformacion_lbl2doApellido" Text="2do Apellido"/>
+                            <controls:ExtendedEntry Grid.Row="2" Grid.Column="1" x:Name="pnlInformacion_txt2doApellido" MaxLength="30">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustText />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+
+                            <Label Grid.Row="3" Grid.Column="0" x:Name="pnlInformacion_lblPais" Text="País"/>
+                            <Picker Grid.Row="3" Grid.Column="1" x:Name="pnlInformacion_cbxPais"/>
+
+                            <Label Grid.Row="4" Grid.Column="0" x:Name="pnlInformacion_lblProvincia" Text="Provincia"/>
+                            <Picker Grid.Row="4" Grid.Column="1" x:Name="pnlInformacion_cbxProvincia" SelectedIndexChanged="pnlInformacion_cbxProvincia_SelectedIndexChanged"/>
+
+                            <Label Grid.Row="5" Grid.Column="0" x:Name="pnlInformacion_lblCanton" Text="Cantón"/>
+                            <Picker Grid.Row="5" Grid.Column="1" x:Name="pnlInformacion_cbxCanton" SelectedIndexChanged="pnlInformacion_cbxCanton_SelectedIndexChanged"/>
+
+                            <Label Grid.Row="6" Grid.Column="0" x:Name="pnlInformacion_lblDistrito" Text="Distrito"/>
+                            <Picker Grid.Row="6" Grid.Column="1" x:Name="pnlInformacion_cbxDistrito"/>
+                        </Grid>
+
+
+                        <Label x:Name="pnlInformacion_lblDireccion" Text="Dirección"/>
+                        <controls:ExtendedEntry x:Name="pnlInformacion_txtDireccion" MaxLength="200" HeightRequest="100"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" x:Name="pnlInformacion_lblTelefono" Text="Teléfono"/>
+                            <controls:ExtendedEntry Grid.Column="1" x:Name="pnlInformacion_txtTelefono" Keyboard="Telephone" MaxLength="8">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustNumeric />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+                            <Button Grid.Column="2" x:Name="pnlInformacion_btnBorrarTelefono" Style="{StaticResource BackButtonStyle}" Clicked="pnlInformacion_btnBorrarTelefono_Clicked"/>
+                            <Button Grid.Column="3" x:Name="pnlInformacion_btnLimpiarTelefono" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInformacion_btnLimpiarTelefono_Clicked"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblPrecios" Text="Precios"/>
+                            <Picker Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_cbxListaPrecios"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_lblClasificacionCliente" Text="Tipo"/>
+                            <Picker Grid.Row="1" Grid.Column="1" x:Name="pnlInformacion_cbxClasificacionCliente"/>
+                        </Grid>
+
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblEmail" Text="E-mail"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_txtEmail" Keyboard="Email" MaxLength="100"/>
+
+                            <Label x:Name="pnlInformacion_lblLatitud" Grid.Row="1" Grid.Column="0" Text="Latitud"/>
+                            <Label x:Name="pnlInformacion_txtLatitud" Grid.Row="1" Grid.Column="1" FontSize="Medium"/>
+
+                            <Label x:Name="pnlInformacion_lblLogitud" Grid.Row="2" Grid.Column="0" Text="Longitud"/>
+                            <Label x:Name="pnlInformacion_txtLongitud" Grid.Row="2" Grid.Column="1" FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblNomApo" Text="Nom. Apoderado"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_txtNomApo" MaxLength="80">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustText />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+                            <Button Grid.Row="0" Grid.Column="2" x:Name="pnlInformacion_btnLimpiarNomApo" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInformacion_btnLimpiarNomApo_Clicked"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_lblCedApo" Text="Ced. Apoderado" HeightRequest="40" />
+                            <controls:ExtendedEntry Grid.Row="1" Grid.Column="1" x:Name="pnlInformacion_txtCedApo" Keyboard="Numeric" MaxLength="15">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustNumeric />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+                            <Button Grid.Row="1" Grid.Column="2" x:Name="pnlInformacion_btnLimpiarCedApo" Style="{StaticResource DeleteButtonStyle}" Clicked="pnlInformacion_btnLimpiarCedApo_Clicked"/>
+
+                            <Label Grid.Row="2" Grid.Column="0" x:Name="pnlInformacion_lblProvinciaApo" Text="Provincia Apoderado"/>
+                            <Picker Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlInformacion_cbxProvinciaApo" SelectedIndexChanged="pnlInformacion_cbxProvinciaApo_SelectedIndexChanged"/>
+
+                            <Label Grid.Row="3" Grid.Column="0" x:Name="pnlInformacion_lblCantonApo" Text="Cantón Apoderado"/>
+                            <Picker Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlInformacion_cbxCantonApo" SelectedIndexChanged="pnlInformacion_cbxCantonApo_SelectedIndexChanged"/>
+
+                            <Label Grid.Row="4" Grid.Column="0" x:Name="pnlInformacion_lblDistritoApo" Text="Distrito Apoderado"/>
+                            <Picker Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlInformacion_cbxDistritoApo"/>
+
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_lblDireccionApo" Text="Dirección Apoderado"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlInformacion_txtDireccionApo" MaxLength="200" HeightRequest="100"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_lblObservacionesApo" Text="Observaciones"/>
+                            <controls:ExtendedEditor Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="pnlInformacion_txtObservaciones" TextChanged="pnlInformacion_txtObservaciones_TextChanged" HeightRequest="100"/>
+                        </Grid>
+
+
+                        <Label x:Name="pnlInformacion_lblDiasAtencion" Text="Dias de atención"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <controls:CheckBox Grid.Row="0" Grid.Column="0" x:Name="pnlInformacion_cbxTodos" CheckedChanged="pnlInformacion_cbxTodos_CheckedChanged"/>
+                            <Label Grid.Row="0" Grid.Column="1" x:Name="pnlInformacion_lblTodos" Text="Todos"/>
+
+                            <controls:CheckBox Grid.Row="1" Grid.Column="0" x:Name="pnlInformacion_cbxDomingo"/>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="pnlInformacion_lblDomingo" Text="Domingo"/>
+
+                            <controls:CheckBox Grid.Row="2" Grid.Column="0" x:Name="pnlInformacion_cbxLunes"/>
+                            <Label Grid.Row="2" Grid.Column="1" x:Name="pnlInformacion_lblLunes" Text="Lunes"/>
+
+                            <controls:CheckBox Grid.Row="3" Grid.Column="0" x:Name="pnlInformacion_cbxMartes"/>
+                            <Label Grid.Row="3" Grid.Column="1" x:Name="pnlInformacion_lblMartes" Text="Martes"/>
+
+                            <controls:CheckBox Grid.Row="4" Grid.Column="0" x:Name="pnlInformacion_cbxMiercoles"/>
+                            <Label Grid.Row="4" Grid.Column="1" x:Name="pnlInformacion_lblMiercoles" Text="Miércoles"/>
+
+                            <controls:CheckBox Grid.Row="5" Grid.Column="0" x:Name="pnlInformacion_cbxJueves"/>
+                            <Label Grid.Row="5" Grid.Column="1" x:Name="pnlInformacion_lblJueves" Text="Jueves"/>
+
+                            <controls:CheckBox Grid.Row="6" Grid.Column="0" x:Name="pnlInformacion_cbxViernes"/>
+                            <Label Grid.Row="6" Grid.Column="1" x:Name="pnlInformacion_lblViernes" Text="Viernes"/>
+
+                            <controls:CheckBox Grid.Row="7" Grid.Column="0" x:Name="pnlInformacion_cbxSabado"/>
+                            <Label Grid.Row="7" Grid.Column="1" x:Name="pnlInformacion_lblSabado" Text="Sábado"/>
+
+                        </Grid>
+
+                        <Label HorizontalTextAlignment="Center" Margin="0,5,0,5" Text="Nota: El formulario debe venir COMPLETO Y CON COPIA DE IDENTIFICACIÓN OFICIAL para poder tramitar el código del cliente."/>
+
+                    </StackLayout>
+
+                    <StackLayout x:Name="pnlConsulta">
+                        <Label x:Name="pnlConsulta_lblTitulo" Text="Tipo Documento:"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:CheckBox Grid.Row="0" Grid.Column="0" CheckedChanged="pnlConsulta_rdbDimex_CheckedChanged" x:Name="pnlConsulta_rdbDimex" DefaultText="DIMEX:"/>
+                            <controls:ExtendedEntry Grid.Row="0" Grid.Column="1" x:Name="pnlConsulta_txtDimex" Keyboard="Numeric" MaxLength="12">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustNumeric />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+
+                            <controls:CheckBox Grid.Row="1" Grid.Column="0" CheckedChanged="pnlConsulta_rdbPasaporte_CheckedChanged" x:Name="pnlConsulta_rdbPasaporte" DefaultText="Pasaporte"/>
+                            <controls:ExtendedEntry Grid.Row="1" Grid.Column="1" x:Name="pnlConsulta_txtPasaporte" Keyboard="Numeric" MaxLength="16">
+                                <Entry.Behaviors>
+                                    <Behaviors:JustNumeric />
+                                </Entry.Behaviors>
+                            </controls:ExtendedEntry>
+
+                            <controls:CheckBox Grid.Row="2" Grid.Column="0" CheckedChanged="pnlConsulta_rdbJuridico_CheckedChanged" x:Name="pnlConsulta_rdbJuridico" DefaultText="Jurídico (Ej: X XXX XXXXXX)"/>
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <controls:ExtendedEntry Grid.Column="0" x:Name="pnlConsulta_txtJuridico1" Keyboard="Numeric" MaxLength="1">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                                <controls:ExtendedEntry Grid.Column="1" x:Name="pnlConsulta_txtJuridico2" Keyboard="Numeric" MaxLength="3">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                                <controls:ExtendedEntry Grid.Column="2" x:Name="pnlConsulta_txtJuridico3" Keyboard="Numeric" MaxLength="6">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                            </Grid>
+
+                            <controls:CheckBox Grid.Row="3" Grid.Column="0" CheckedChanged="pnlConsulta_rdbFisico_CheckedChanged" x:Name="pnlConsulta_rdbFisico" DefaultText="Físico (Ej: XX XXXX XXXX)"/>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <controls:ExtendedEntry Grid.Column="0" x:Name="pnlConsulta_txtFisico1" Keyboard="Numeric" MaxLength="2">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                                <controls:ExtendedEntry Grid.Column="1" x:Name="pnlConsulta_txtFisico02" Keyboard="Numeric" MaxLength="4">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                                <controls:ExtendedEntry Grid.Column="2" x:Name="pnlConsulta_txtFisico03" Keyboard="Numeric" MaxLength="4">
+                                    <Entry.Behaviors>
+                                        <Behaviors:JustNumeric />
+                                    </Entry.Behaviors>
+                                </controls:ExtendedEntry>
+                            </Grid>
+
+                        </Grid>
+                    </StackLayout>
+                                        
+                </StackLayout>
+            </ScrollView>
+
+            <Grid x:Name="pnlClienteOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout x:Name="pnlCliente_stkGuardar" Grid.Column="0" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniGuardar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="GUARDAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCliente_stkConsultar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniConsultar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CONSULTAR"  />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlCliente_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>

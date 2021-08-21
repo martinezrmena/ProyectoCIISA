@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
+             x:Class="CIISA.RetailOnLine.Aplicacion.SettlementOnLine.Vista.vistaReimpresion"
+             xmlns:Behaviors="clr-namespace:CIISA.RetailOnLine.Framework.External.Behaviors;assembly=CIISA.RetailOnLine">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniReimprimir" Text="Reimprimir" Clicked="menu_mniReimprimir_Clicked"/>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlTransacciones" Margin="15">
+
+                <Label x:Name="pnlTransacciones_lblInformacion" Style="{StaticResource ControlLabel}" Text="Transacciones realizadas:"/>
+
+                <ScrollView Orientation="Horizontal">
+
+                    <StackLayout Orientation="Vertical">
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTransacciones_clhCodCompannia" Text="Compañia"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTransacciones_clhCodDocumento" Text="Documento" />
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTransacciones_clhCodAgente" Text="Agente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTransacciones_clhCodCliente" Text="Cliente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTransacciones_clhCodEstablecimiento" Text="Establecimiento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlTransacciones_clhTipoDocumento" Text="Tipo Documento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlTransacciones_clhFechaCreacion" Text="Creado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlTransacciones_clhFechaEntrega" Text="Entrega"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlTransacciones_clhTotal" Text="Total"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlTransacciones_clhImpuesto" Text="Impuesto"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="pnlTransacciones_clhEnviado" Text="Enviado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="pnlTransacciones_clhCodFactura" Text="Cód. Factura"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlTransacciones_ltvTransacciones" ItemSelected="pnlTransacciones_ltvTransacciones_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="85"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="110"/>
+                                                <ColumnDefinition Width="140"/>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="65"/>
+                                                <ColumnDefinition Width="0"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Compannia}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Documento}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding Agente}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding Cliente}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding Establecimiento}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding TipoDocumento}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding Creado}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding Entrega}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding Total}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding Impuesto}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding Enviado}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding CodFactura}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <Grid x:Name="pnlTransacciones_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTransacciones_stkImprimir" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniReimprimir_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="REIMPRIMIR"  />
+                </StackLayout>
+                
+                <StackLayout x:Name="pnlTransacciones_stkCerrar" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CERRAR"  />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

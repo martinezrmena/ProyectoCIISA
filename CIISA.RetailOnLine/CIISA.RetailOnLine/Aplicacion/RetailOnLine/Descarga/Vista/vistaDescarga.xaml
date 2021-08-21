@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:ms="clr-namespace:CIISA.RetailOnLine.Framework.External.CustomTreeView"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Descarga.Vista.vistaDescarga">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniClose" Text="Cerrar" Clicked="menu_mniClose_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="pnlTransacciones" Margin="10">
+                <Label x:Name="pnlTransacciones_lblEstado" Style="{StaticResource ControlLabelProceso}" FontSize="Medium" Text="ESTADO DE LA DESCARGA - 0%"/>
+                <!--<StackLayout Orientation="Vertical">-->
+                    <Grid BackgroundColor="{StaticResource LightBlack}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTransacciones_clhConfiguracion" Text="Configuración"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTransacciones_clhValor" Text="Valor"/>
+                    </Grid>
+                    <ListView x:Name="pnlTransacciones_ltvConfiguracion" HeightRequest="100">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding Configuracion}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding Valor}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                <!--</StackLayout>-->
+                <!--<Grid>
+                            <controls:CheckBox Grid.Row="0" Grid.Column="0" x:Name="pnlTransacciones_chkRadioTelefonico" DefaultText="Radio"/>
+                            <controls:CheckBox Grid.Row="0" Grid.Column="1" x:Name="pnlTransacciones_chkAdministradorConexion" DefaultText="Administrador Conexiones"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="pnlTransacciones_lblEstadoConexion" Style="{StaticResource ControlLabel}" Text="Estado:"/>
+                            <controls:CheckBox Grid.Row="1" Grid.Column="1" x:Name="pnlTransacciones_chkWiFi" DefaultText="WiFi" CheckedChanged="pnlTransacciones_chkWiFi_CheckedChanged"/>
+                        </Grid>
+                        <ListView x:Name="pnlTransacciones_ltbEstado" HeightRequest="120"/>-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="pnlTransacciones_btnEnviar" Text="ENVIAR" BackgroundColor="LimeGreen" Clicked="pnlTransacciones_btnEnviar_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="1" x:Name="pnlTransacciones_btnAbortar" Text="ABORTAR" BackgroundColor="OrangeRed" Clicked="pnlTransacciones_btnAbortar_Clicked" BorderRadius="10"/>
+                    <Button Grid.Column="2" x:Name="pnlTransacciones_btnRefrescar" Style="{StaticResource RefreshButtonStyle}" Clicked="pnlTransacciones_btnRefrescar_Clicked" BorderRadius="10"/>
+                </Grid>
+                <Button x:Name="pnlTransacciones_btnMarcarNoEnviados" Text="Marcar como no enviados" Clicked="pnlTransacciones_btnMarcarNoEnviados_Clicked" BorderRadius="10"/>
+                <Label x:Name="pnlTransacciones_lblInformacion" Style="{StaticResource ControlLabel}" Text="Transacciones realizadas:"/>
+                <controls:CheckBox x:Name="pnlTransacciones_chkExpandirLineas" DefaultText="Expandir Líneas" CheckedChanged="pnlTransacciones_chkExpandirLineas_CheckedChanged"/>
+                <ListView x:Name="pnlTransacciones_trvTransacciones" HeightRequest="120" HasUnevenRows="True" ms:CollapsableListView.IsCollapsable ="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ms:CollapsableViewCell/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label x:Name="pnlTransacciones_lblInfoDetalles"/>
+            </StackLayout>
+
+            <Grid x:Name="pnlIndicadoresOptions" VerticalOptions="EndAndExpand" ColumnSpacing="0" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlTransacciones_btnPruebaConexion" Grid.Column="0" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pnlTransacciones_btnPruebaConexion_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="PRUEBA CONEXIÓN" />
+                </StackLayout>
+                
+                <StackLayout x:Name="pnlTransacciones_stkCerrar" Grid.Column="1" IsVisible="False">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniClose_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="CERRAR" />
+                </StackLayout>
+
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaEntregaPedidos">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+
+            <StackLayout x:Name="pnlTransaccionDetalle">
+
+                <Label x:Name="pnlTransaccionDetalle_lblInformacion" Text="Detalle transacción:"/>
+
+                <StackLayout Orientation="Vertical">
+
+                    <Grid BackgroundColor="{StaticResource LightBlack}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="0"/>
+                            <ColumnDefinition Width="55"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTransaccionDetalle_clhCodCompannia" Text="Compañía"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTransaccionDetalle_clhCodDocumento" Text="Documento"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTransaccionDetalle_clhTipoDocumento" Text="Tipo Documento"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTransaccionDetalle_clhNumLinea" Text="No. Línea"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTransaccionDetalle_clhCodProducto" Text="Código Producto"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlTransaccionDetalle_clhCantidad" Text="Cantidad"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlTransaccionDetalle_clhComentario" Text="Comentario"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlTransaccionDetalle_clhTotal" Text="Total"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlTransaccionDetalle_clhTotalImpuesto" Text="Total Impuesto"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="9" x:Name="pnlTransaccionDetalle_clhAgente" Text="Agente"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="10" x:Name="pnlTransaccionDetalle_clhEnviado" Text="Enviado"/>
+                        <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="11" x:Name="pnlTransaccionDetalle_clhCreado" Text="Creado"/>
+                    </Grid>
+
+                    <ListView x:Name="pnlTransaccionDetalle_ltvDetalle" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0"/>
+                                            <ColumnDefinition Width="0"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="65"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="0"/>
+                                            <ColumnDefinition Width="55"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_CIA}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_TRANSA}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding NO_CLIENTE}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NO_ESTABLECIMIENTO}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding NO_AGENTE}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding FECHA_CREA}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding FECHA_ENTREGA}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding TOTAL}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding TOTAL_IMP}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="9" Text="{Binding TOTAL_IMP}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="10" Text="{Binding TOTAL_IMP}"/>
+                                        <Label Style="{StaticResource ListviewLabel}" Grid.Column="11" Text="{Binding TOTAL_IMP}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout x:Name="pnlTransacciones">
+
+                <Label x:Name="pnlTransacciones_lblInformacion" Text="Pedidos por entregar hoy:"/>
+
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+
+                        <Grid BackgroundColor="{StaticResource LightBlack}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="170"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlTransacciones_clhCodCompannia" Text="Compañia"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="1" x:Name="pnlTransacciones_clhCodDocumento" Text="Documento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="2" x:Name="pnlTransacciones_clhCodCliente" Text="Cliente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="3" x:Name="pnlTransacciones_clhCodEstablecimiento" Text="Establecimiento"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="4" x:Name="pnlTransacciones_clhCodAgente" Text="Agente"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="5" x:Name="pnlTransacciones_clhFechaCreacion" Text="Creado"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="6" x:Name="pnlTransacciones_clhFechaEntrega" Text="Entrega"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="7" x:Name="pnlTransacciones_clhTotal" Text="Total"/>
+                            <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="8" x:Name="pnlTransacciones_clhImpuesto" Text="Impuesto"/>
+                        </Grid>
+
+                        <ListView x:Name="pnlTransacciones_ltvDocumentos" HasUnevenRows="True" HeightRequest="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0"/>
+                                                <ColumnDefinition Width="120"/>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition Width="170"/>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="120"/>
+                                                <ColumnDefinition Width="90"/>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding NO_CIA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="1" Text="{Binding NO_TRANSA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="2" Text="{Binding NO_CLIENTE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="3" Text="{Binding NO_ESTABLECIMIENTO}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="4" Text="{Binding NO_AGENTE}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="5" Text="{Binding FECHA_CREA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="6" Text="{Binding FECHA_ENTREGA}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="7" Text="{Binding TOTAL}"/>
+                                            <Label Style="{StaticResource ListviewLabel}" Grid.Column="8" Text="{Binding TOTAL_IMP}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.vistaMenu"
+             NavigationPage.HasBackButton="False">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout Margin="15" >
+
+                    <StackLayout x:Name="pnlMenu">
+
+                        <StackLayout x:Name="pnlMenu_Rutero" VerticalOptions="StartAndExpand">
+
+                            <Label x:Name="pnlMenu_lblGestionVenta" Style="{StaticResource MenuLabel}" Text="GESTIÓN DE VENTA"/>
+                            <Button x:Name="pnlMenu_btnRuta" Text="1. Ruta" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnRuta_Clicked"/>
+                            <Button x:Name="pnlMenu_btnVisita" Text="2. Visita" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnVisita_Clicked"/>
+                            <Button x:Name="pnlMenu_btnAnulaciones" Text="3. Anulaciones" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnAnulaciones_Clicked"/>
+                            <Button x:Name="pnlMenu_btnNuevoCliente" Text="4. Nuevo Cliente" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnNuevoCliente_Clicked"/>
+                            <Button x:Name="pnlMenu_btnEntregaPedidos" Text="5. Entrega Pedidos" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnEntregaPedidos_Clicked"/>
+                            <Button x:Name="pnlMenu_btnCuentaCerrada" Text="6. Cuenta Cerrada" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnCuentaCerrada_Clicked"/>
+                            <Button x:Name="pnlMenu_btnIndicadoresFacturacion" Text="7. Indicadores Facturación" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnIndicadoresFacturacion_Clicked"/>
+                            <Button x:Name="pnlMenu_btnCuentasBancarias" Text="8. Cuentas Bancarias" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnCuentasBancarias_Clicked"/>
+                            <Button x:Name="pnlMenu_btnTelefono" Text="9. Teléfono" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnTelefono_Clicked"/>
+                            <Button x:Name="pnlMenu_btnBitacora" Text="10. Bitacora" Style="{StaticResource PrincipalButton}" Clicked="Bitacora_Clicked"/>
+
+                            <Label x:Name="pnlMenu_lblInventario" Style="{StaticResource MenuLabel}" Text="INVENTARIO"/>
+                            <Button x:Name="pnlMenu_btnInventarioTeorico" Text="11. Inventario Teórico" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnInventarioTeorico_Clicked" />
+                            <Button x:Name="pnlMenu_btnInventarioPedidos" Text="12. Inventario Pedidos" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnInventarioPedidos_Clicked" />
+                            <Button x:Name="pnlMenu_btnTraslados" Text="13. Traslados Diarios (en línea)" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnTraslados_Clicked" />
+
+                            <Label x:Name="pnlMenu_lblReportes" Style="{StaticResource MenuLabel}" Text="REPORTES"/>
+                            <Button x:Name="pnlMenu_btnReportes" Text="14. Reportes" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnReportes_Clicked" />
+                            <Button x:Name="pnlMenu_btnFlujoContable" Text="15. Flujo Contable" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnFlujoContable_Clicked" />
+
+                            <Label x:Name="pnlMenu_lblSincronizacion" Style="{StaticResource MenuLabel}" Text="SINCRONIZACIÓN"/>
+                            <Button x:Name="pnlMenu_btnDescarga" Text="16. Descarga / Consulta" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnDescarga_Clicked" />
+                            <Button x:Name="pnlMenu_btnCarga" Text="17. Carga" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnCarga_Clicked" />
+                            <Button x:Name="pnlMenu_btnConsultaOV" Text="18. Consulta Ordenes de Venta" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnConsultaOV_Clicked" />
+                            <Button x:Name="pnlMenu_btnConsultaDocs" Text="19. Consulta Documentos" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnConsultaDocs_Clicked" />
+                            <Button x:Name="pnlMenu_btnConsultaRecibos" Text="20. Consulta Recibo/Recaudación" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnConsultaRecibos_Clicked" />
+
+                            <Label x:Name="pnlMenu_lblUtiles" Style="{StaticResource MenuLabel}" Text="UTILES"/>
+                            <Button x:Name="pnlMenu_btnEstadoMemoria" Text="21. Estado Memoria" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnEstadoMemoria_Click"/>
+                            <Button x:Name="pnlMenu_btnPruebaPantalla" Text="22. Prueba Pantalla" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnPruebaPantalla_Click" />
+                            <Button x:Name="pnlMenu_btnIluminacion" Text="23. Iluminación Pantalla" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnIluminacion_Click" />
+                            <Button x:Name="pnlMenu_btnUbicacionGPS" Text="24. Ubicación GPS" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnUbicacionGPS_Click"/>
+                            <Button x:Name="pnlMenu_btnTipoImpresion" Text="25. Tipo Impresión" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnTipoImpresion_Clicked" />
+
+                            <Label x:Name="pnlMenu_lblLiquidadores" Style="{StaticResource MenuLabel}" Text="LIQUIDADORES"/>
+                            <Button x:Name="pnlMenu_btnFactFaltantes" Text="26. Facturación Faltantes" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnFactFaltantes_Clicked" />
+                            <Button x:Name="pnlMenu_btnTomaFisica" Text="27. Toma Física" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnTomaFisica_Clicked" />
+                            <Button x:Name="pnlMenu_btnConsolidarCerrar" Text="28. Consolidar y Cerrar" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnConsolidarCerrar_Clicked" />
+                            <Button x:Name="pnlMenu_btnLiquidadores" Text="29. Liquidadores" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnLiquidadores_Clicked" />
+
+                            <Button x:Name="pnlMenu_btnAcercaDe" Text="30. Acerca de SROL" Style="{StaticResource PrincipalButton}" Clicked="pnlMenu_btnAcercaDe_Clicked" />
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Grid x:Name="pnlMenu_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlMenu_stkSalir" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniSalir_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Style="{StaticResource ActionLabel}" Text="SALIR" />
+                </StackLayout>
+
+                <StackLayout x:Name="pnlMenu_stkBloquear" Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniBloquear_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="BLOQUEAR"  />
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

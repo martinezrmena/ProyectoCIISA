@@ -1,0 +1,11 @@
+﻿1- El recalculo de los detalle reses al asignarse en visita no se efectua puesto 
+que aun existiria en inventario, por lo tanto este sera el encargado de
+decidir si ya no habrá producto, esto ya lo realiza actualmente el sistema
+(antes de carnicero) lo que si se hara es marcar como vendido el producto
+de detalle reses.
+
+2- Existen metodos sobre escritos de updatedatabase asi como ciertos script
+de altertable, estos fueron creados con la intención de modificar el aplicativo
+sin que se deba hacer una recarga desde 0 en aquellos casos donde el sistema
+ya se encuentra en producción, el plugin utilizado no ofrece estas ventajas,
+las cuales si existen en Android Studio por ejemplo.

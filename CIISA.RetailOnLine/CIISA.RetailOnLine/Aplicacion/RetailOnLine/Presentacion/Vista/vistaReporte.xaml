@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.Presentacion.Vista.vistaReporte">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" x:Name="menu_mniCerrar" Text="Cerrar" Clicked="menu_mniCerrar_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="pnlReporte" Margin="15">
+                    <Button x:Name="pnlReporte_btnIndicadores" Text="Indicadores Facturación" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnIndicadores_Clicked"/>
+                    <Button x:Name="pnlReporte_btnVentasProducto" Text="Ventas por Producto" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnVentasProducto_Clicked"/>
+                    <Button x:Name="pnlReporte_btnFacturaCredito" Text="Factura Crédito" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnFacturaCredito_Clicked"/>
+                    <Button x:Name="pnlReporte_btnFacturaContado" Text="Factura Contado" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnFacturaContado_Clicked"/>
+                    <Button x:Name="pnlReporte_btnTramite" Text="Trámite" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnTramite_Clicked"/>
+                    <Button x:Name="pnlReporte_btnAnulacion" Text="Anulación" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnAnulacion_Clicked"/>
+                    <Button x:Name="pnlReporte_btnRecaudacion" Text="Recaudación" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnRecaudacion_Clicked"/>
+                    <Button x:Name="pnlReporte_btnRecibosDinero" Text="Recibos de Dinero" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnRecibosDinero_Clicked"/>
+                    <Button x:Name="pnlReporte_btnRegalia" Text="Regalía" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnRegalia_Clicked"/>
+                    <Button x:Name="pnlReporte_btnDevolucion" Text="Devolución" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnDevolucion_Clicked"/>
+                    <Button x:Name="pnlReporte_btnCotizacion" Text="Cotización" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnCotizacion_Clicked"/>
+                    <Button x:Name="pnlReporte_btnOrdenesVenta" Text="Ordenes de Venta" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnOrdenesVenta_Clicked"/>
+                    <Button x:Name="pnlReporte_btnPedidosSinAplicar" Text="Pedidos Sin Aplicar" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnPedidosSinAplicar_Clicked"/>
+                    <Button x:Name="pnlReporte_btnConsecutivos" Text="Consecutivos" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnConsecutivos_Clicked"/>
+                    <Button x:Name="pnlReporte_btnCrediticioDeLaRuta" Text="Crediticio de la Ruta" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnCrediticioDeLaRuta_Clicked"/>
+                    <Button x:Name="pnlReporte_btnPedidos" Text="Pedidos" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnPedidos_Clicked"/>
+                    <Button x:Name="pnlReporte_btnCrediticioDelCliente" Text="Crediticio del Cliente" Style="{StaticResource PrincipalButton}" Clicked="pnlReporte_btnCrediticioDelCliente_Clicked"/>
+                </StackLayout>
+            </ScrollView>
+
+            <Grid x:Name="pnlReporte_grdOptions" ColumnSpacing="0" VerticalOptions="EndAndExpand" Style="{StaticResource ControlStackLayout}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="pnlReporte_stkCerrar" Grid.Column="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="menu_mniCerrar_Clicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label  Style="{StaticResource ActionLabel}" Text="CERRAR"  />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

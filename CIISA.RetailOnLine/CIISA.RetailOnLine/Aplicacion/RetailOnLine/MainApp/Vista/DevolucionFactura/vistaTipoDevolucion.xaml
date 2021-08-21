@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+            xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CIISA.RetailOnLine.Aplicacion.RetailOnLine.MainApp.Vista.DevolucionFactura.vistaTipoDevolucion"
+            CloseWhenBackgroundIsClicked="False">
+
+    <StackLayout x:Name="pnlTipoDevolucion" Spacing="10" Margin="15" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Label x:Name="lblTitle" HorizontalOptions="FillAndExpand" FontSize="Large" Style="{StaticResource ControlLabel}"/>
+
+        <ScrollView Orientation="Horizontal">
+            <StackLayout Orientation="Vertical">
+                <Grid BackgroundColor="{StaticResource LightBlack}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="ColumnaTipoDevolucion" Width="100*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource ListviewHeaderLabel}" Grid.Column="0" x:Name="pnlDevolucion_clhTipoDevolucion" Text="Tipo de devolución"/>
+                </Grid>
+                <ListView x:Name="pnlDevolucion_ltvTipoDevolucion" HeightRequest="200" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition x:Name="ColumnaDevolucion" Width="100*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource ListviewLabel}" Grid.Column="0" Text="{Binding TipoDevolucion}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout >
+            <Button x:Name="btnSeleccionar" Style="{StaticResource PrincipalButton}" Text="Seleccionar" Clicked="btnSeleccionar_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+    
+</pages:PopupPage>
